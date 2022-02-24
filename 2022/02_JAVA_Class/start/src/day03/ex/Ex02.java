@@ -29,8 +29,9 @@ public class Ex02 {
 		// 출력
 		System.out.println("원의 반지름 : " + int_ra);
 		System.out.println("원의 넓이 : " + cir_area);
-		System.out.println("원의 둘레 : " + circum);
+		System.out.printf("원의 둘레 : %.4f", circum);
 		
+		sc.close();
 		
 	}
 }
