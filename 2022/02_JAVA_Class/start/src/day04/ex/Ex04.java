@@ -30,5 +30,19 @@ public class Ex04 {
 		
 		
 		System.out.println(year + "년은 " + result + "입니다.");
+		
+		// =============================================================
+		
+		// if 로 변환
+		
+		String if_result = "";
+		
+		if (year % 400 == 0) {
+			if_result = "윤년";
+		}else if ((year % 4 ==0) & (year % 100 != 0)) {
+			if_result = "윤년";
+		}else if_result = "평년";
+		
+		System.out.println(if_result);
 	}
 }

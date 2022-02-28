@@ -32,6 +32,21 @@ public class Ex05 {
 		System.out.println(cno + " 은 " + (cno + cno_cal) + "에 가까우므로 " + conv_cal + "만큼 " + cno_or1);
 				
 		
+		
+		// =======================================================================================================
+		
+		// if 로 변환
+		
+		int if_cno_cal = 0;
+		int if_conv_cal = 0;
+		
+		if (cno % 100 >= 50) {
+			if_cno_cal = 100 - (cno % 100);
+		}else if_cno_cal = -(cno % 100);
+		
+		// 출력
+			System.out.println(cno + " 은 " + (cno + if_cno_cal) + "에 가까우므로 " + conv_cal + "만큼 " + cno_or1);
+				
 		/*
 		 * // 숫자 3개 입력받기
 		 * 

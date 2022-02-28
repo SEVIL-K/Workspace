@@ -20,7 +20,7 @@ public class Ex01 {
 		// 비교하기
 		int biggest = (no1 > no2) && (no1 > no3) ? no1 : (no2 > no3 ? no2 : no3);
 		int middle = no1 > no2 ? (no1 > no3 ? (no2 > no3 ? no2 : no3) : no1) : no2 > no3 ? (no1 > no3 ? no1 : no3) : no2;
-		int smallest = (no2 > no1) && (no3 > no1) ? no1 : (no2 > no3 ? no2 : no3);
+		int smallest = (no2 > no1) && (no3 > no1) ? no1 : (no2 > no3 ? no3 : no2);
 		
 		// 출력
 		System.out.println("랜덤한 숫자 " + no1 + ", " + no2 + ", " + no3 + " 중에서 가장 큰 숫자는 " + biggest + " 입니다.");
@@ -38,5 +38,48 @@ public class Ex01 {
 		 * 			\t	tab 표현
 		 * 			\b	backspace
 		 */
+		
+		
+		// =========================================================================================
+		
+		// if ~ else로 바꾸기
+		
+		int if_big = 0;
+		int if_mid = 0;
+		int if_sml = 0;
+		
+		if ((no1 > no2) && (no1 > no3)) {
+			if_big = no1;
+		}else if (no2 > no3) {
+			if_big = no2;
+		}else if_big = no3;
+		
+		// int middle = no1 > no2 ? (no1 > no3 ? (no2 > no3 ? no2 : no3) : no1) : no2 > no3 ? (no1 > no3 ? no1 : no3) : no2;
+		
+		if (no1 > no2) {
+			if (no1 > no3) {
+				if (no2 > no3) {
+					if_mid = no2;
+				}else if_mid = no3;
+			}else if (no2 > no3) {
+				if (no1 > no3) {
+					if_mid = no1;
+				}else if_mid = no3;
+			}else if_mid = no2;
+		}
+		
+		if ((no2 > no1) && (no3 > no1)) {
+			if_sml = no1;
+		}else if (no2 > no3) {
+			if_sml = no3;
+		}else if_sml = no2;
+		
+
+		System.out.println();
+		System.out.println("if 로 변형");
+		System.out.println("랜덤한 숫자 " + no1 + ", " + no2 + ", " + no3 + " 중에서 가장 큰 숫자는 " + biggest + " 입니다.");
+		System.out.println("랜덤한 숫자 3개의 내림차순은 " + if_big + ", " + if_mid + ", " + if_sml + "입니다.");
+		
+		
 	}
 }

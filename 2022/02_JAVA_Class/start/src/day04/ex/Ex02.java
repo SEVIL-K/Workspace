@@ -28,9 +28,7 @@ public class Ex02 {
 		// 대소문자 판별
 		
 		// 아스키코드 이용
-		char result1 = ch < 'A' ? ch :ch <= 'Z' ?
-				(char)(ch + ('a' - 'A')) : ch < 'a' ?
-						ch : ch <= 'z' ? (char)(ch - ('a' - 'A')) : ch;
+		char result1 = (ch < 'A') ? ch : (ch <= 'Z') ? (char)(ch + ('a' - 'A')) : (ch < 'a') ? ch : (ch <= 'z') ? (char)(ch - ('a' - 'A')) : ch;
 	
 	/*
 		특수문자 - A - Z - 특수문자 - a ~ z - 특수문자
@@ -43,5 +41,22 @@ public class Ex02 {
 		char result = Character.isUpperCase(ch) == t1 ? (char) (ch + 32) : Character.isLowerCase(ch) == t1 ? (char) (ch - 32) : ch;
 		
 		System.out.println(result);
+		
+		
+		
+		// -===========================================================================================
+		
+		// if 로 변경
+		
+		char if_result = '0';
+		
+		if ((ch >= 'A') & (ch <= 'Z')) {
+			if_result = (char) (ch + ('a' - 'A'));
+		}else if ((ch >= 'a') & (ch <= 'z')) {
+			if_result = (char) (ch - ('a' - 'A'));
+		}else if_result = ch;
+		
+		System.out.println(if_result);
+		
 	}
 }
