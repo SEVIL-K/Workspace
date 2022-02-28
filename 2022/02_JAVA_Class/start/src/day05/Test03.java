@@ -13,6 +13,8 @@ public class Test03 {
 		
 		// 변수 생성
 		int no = sc.nextInt();
+		sc.close();
+		
 		String result = "";
 		
 		if (no == 0) {
