@@ -11,7 +11,10 @@ public class Ex02 {
 		char ch = 'A';
 		
 		for (int i = 0; i < 10; i++) {
-			System.out.println(ch);
+			
+			char ch1 = (char) (Math.random() * ('Z' - 'A' + 1) + 'A');
+			//System.out.println(ch);
+			System.out.println(ch1);
 			ch++;
 			
 		}
