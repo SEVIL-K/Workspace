@@ -35,6 +35,7 @@ class EndClass extends Thread {
             System.out.println("\t\t스레드 실행중..." + (i+1) + " 회차");
 
             try {
+
                 Thread.sleep(500);
             } catch (Exception e) {
                 e.printStackTrace();
