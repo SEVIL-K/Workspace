@@ -441,12 +441,345 @@ FROM
 
 SELECT
     ename 사원이름,
-    sal 급여
+    sal   급여
 FROM
     emp
 UNION
 SELECT
-    job 직급,
+    job  직급,
     comm 커미션
 FROM
     emp;
+    
+    
+-------------------------------------------------------------------------------------
+
+
+/*
+    함수(Function)
+    ==> 데이터를 가공하기 위해 오라클이 제시한 명령들.. 또는 개체..
+    
+        참고  ]
+            DBMS는 데이터베이스 벤더들 마다 다르다.
+            그런데 함수 부분은 DBMS들 마다 매우 다르다.
+            
+        오라클 함수 종류
+            1. 단일행 함수
+                ==> 한줄 한줄마다 매번 명령이 실행되는 함수
+                
+            2. 그룹함수
+                ==> 여러행이 모여서 한번만 실행되는 함수
+                따라서 그룹 함수는 출력 갯수가 오직 한개이다.
+*/
+
+
+-- 사원들의 사원이름, 이름의 문자수를 조회하세요.
+
+SELECT
+    ename         사원이름,
+    length(ename) 이름문자수
+FROM
+    emp;
+    
+-- 10번 부서의 사원들의 사원수를 조회하세요.
+SELECT
+    COUNT(*) 사원수
+FROM
+    emp
+WHERE
+    deptno = 10;
+
+-- 커미션이 없는 사원들의 수를 조회하세요.
+SELECT
+    COUNT(*) "커미션 없는 사원 수"
+FROM
+    emp
+WHERE
+    comm IS NULL;
+
+-- null 데이터는 모든 연산에서 제외된다.
+-- 따라서 함수에서도 제외가 된다.
+SELECT
+    ( COUNT(*) - COUNT(comm) ) "커미션 없는 사원 수"
+FROM
+    emp;
+
+    
+    
+-----------------------------------------------------------------------------------
+/*
+    단일행 함수
+    
+    숫자 <---------------> 문자 <---------------> 날짜
+    
+    1. 숫자함수
+        ==> 데이터가 숫자인 경우에만 사용할 수 있는 함수
+            1) ABS()        - 절대값
+                형식  ]
+                    ABS(데이터 또는 필드 또는 연산식)
+            2) ROUND()      - 반올림해주는 함수
+                형식  ]
+                    ROUND(데이터 또는 필드 또는 연산식, 자릿수)
+            3) FLOOR()      - 버림함수, 소수점 이하를 무조건 버림
+                형식  ]
+                    FLOOR(데이터 또는 필드 또는 연산식)
+            4) TRUNC()      - 자리수 이하 버림함수, 자리수를 지정해서 버림가능
+                형식  ]
+                    TRUNC((데이터 또는 필드 또는 연산식, 자릿수)
+                    자릿수는 소수이하 자릿수를 의미하고 음수형태로 입력하면 소수이상 자릿수를 의미.
+            5) M0D()        - 나머지 구하는 함수
+                형식  ]
+                    MOD(데이터, 나눌 수)
+        
+    2. 문자함수
+        
+    3. 날짜함수
+    
+    
+    참고  ]
+        CLOB    - 문자데이터를 4기가까지 저장할 수 있는 타입
+        BLOB    - 바이너리코드를 4기가까지 저장할 수 있는 타입
+            문자열 데이터타입의 최대 크기는 4KB이다.
+
+
+
+*/
+
+SELECT
+    abs(- 3.14) pi
+FROM
+    dual;
+
+SELECT
+    round(- 3.14, 1) pi
+FROM
+    dual;
+
+SELECT
+    floor(- 3.14) pi
+FROM
+    dual;
+
+SELECT
+    trunc(- 3.14) pi
+FROM
+    dual;
+
+SELECT
+    mod(10, 3) pi
+FROM
+    dual;
+
+
+-- 사원들의 급여를 15% 인상한 급여를 조회하세요
+-- 단, 소수 첫째자리에서 반올림하여 조회하세요.
+SELECT
+    ename                  사원,
+    sal                    원급여,
+    sal * 1.15             계산값,
+    round(sal * 1.15, - 2) 인상급여,
+    floor(sal * 1.15)      버림함수,
+    trunc(sal * 1.15, - 2) 자릿수버림
+FROM
+    emp;
+    
+    
+-- 급여가 짝수인 사원만 출력하세요.
+SELECT
+    ename,
+    job,
+    sal
+FROM
+    emp
+WHERE
+    mod(sal, 2) = 0;
+    
+    
+--------------------------------------------------------------------
+
+/*
+    2. 문자 처리함수
+        1. LOWER()                  : 소문자로 변환
+        2. UPPER()                  : 대문자로 변환
+        3. INITCAP()                : 각 단어의 첫문자가 대문자로 나머지는 소문자로 변환해주는 함수
+        4. LENGTH() / LENGTHB()     : 문자열의 문자수 / 바이트수 반환
+            형식  ]
+                LENGTH(문자열데이터)
+                LENGTHB(문자열데이터)
+        5. CONCAT()                 : || 결합연산자와 같은 기능
+            형식  ]
+                CONCAT(데이터1, 데이터2)
+        6. SUBSTR() / SUBSTRB()     : 문자열 중에서 특정위치의 문자열만 따로 추출해서 반환해주는 함수
+            형식  ]
+                SUBSTR(데이터, 시작위치, 꺼낼 갯수)
+                주의사항 : 위치값는 데이터베이스에서는 1부터 시작한다.
+                
+            참고  ]
+                갯수는 생략할 수 있다. 이 때 꺼내오는 갯수는 문자열의 끝부부까지 꺼내오게 된다.
+                시작위치를 음수로 기입하는 경우는 문자열의 뒤에서부터 자릿수를 의미한다.
+        7. INSTR() / INSTRB() : 문자열 중에서 원하는 문자열이 몇번째 글자에 있는지를 알아내주는 함수
+            형식  ]
+                INSTR(데이터1, 데이터2, 시작위치, 출현 횟수) - 시작위치, 출현횟수 생략가능
+        
+        8. LPAD() / RPAD()  : 문자열의 길이를 지정한 후 
+                              문자열을 만드는데 남는 공간은 지정한 문자로 채워서
+                              문자열을 만들어주는 함수
+                              
+                              차이점은 남는 공간을 채울때
+                                왼쪽으로 채우려면 LPAD
+                                오른쪽으로 채우려면 RPAD
+            형식  ]
+                LPAD(데이터, 만들길이, '채울문자')
+        
+
+*/
+
+SELECT
+    lower(ename)        소문자이름,
+    upper(lower(ename)) 대문자이름,
+    initcap(ename)      "첫글자만 대문자"
+FROM
+    emp;
+
+SELECT
+    initcap('hello iu')
+FROM
+    dual;  -- 각 단어의 첫문자가 대문자로 바뀜
+
+-- 사원들이 이름, 직급, 급여를 조회하는데
+-- 출력형식을
+--  Mr.이름, ---직급. --- 달러 형식으로 출력하세요.
+
+SELECT
+    concat('Mr.', ename) 사원이름,
+    concat(job, ' 직급')   직급,
+    concat(sal, ' 달러')   급여
+FROM
+    emp;
+
+SELECT
+    substr('Hello IU', 1, 5)
+FROM
+    dual;
+
+SELECT
+    substr('Hello IU', - 3, 5)
+FROM
+    dual;
+
+SELECT
+    instr('Hello IU', 'l', 1, 1)
+FROM
+    dual;
+
+
+-- 사원이름을 조회하는데 이름을 10글자로 만들어서 표현하세요.
+SELECT
+    lpad(ename, 10, '*') "오른쪽 정렬",
+    rpad(ename, 10, '*') "왼쪽 정렬"
+FROM
+    emp;
+
+
+-----------------------------------------------------------------------------------
+
+--사원들의 이름을 앞 두글자만 표시하고 나머지는 *로 표시하세요.
+
+SELECT
+    substr(ename, 1, 2)                           앞두글자,
+    rpad(substr(ename, 1, 2), length(ename), '*') 꺼내온이름,
+    ename                                         이름
+FROM
+    emp;
+
+-------------------------------------------------------------------------------------
+/*
+    문제 1
+        사원이름이 5글자 이하인 사원들의
+        사원번호, 사원이름, 사원이름 글자수, 직급, 급여를 조회하세요
+        
+        출력은 글자수가 작은 사원의 이름순으로 정렬해서 조회하세요
+
+*/
+SELECT
+   empno 사원번호, ename 사원이름, LENGTH(ename) 사원이름글자수, job 직급, sal 급여
+FROM
+emp
+WHERE
+LENGTH(ename) < 6
+ORDER BY
+LENGTH(ename),ename;
+
+
+/*
+    문제 2
+        사원이름 뒤에 ' 사원' 을 붙여서 
+        사원이름 직급 입사일을 조회하세요
+
+*/
+
+SELECT
+CONCAT(ename, ' 사원') 사원이름, job 직급, hiredate 입사일
+FROM
+emp;
+
+
+/*
+    문제 3
+        사원이름의 마지막 글자가 'N'인 사원들의
+        사원이름 입사일 부서번호를 조회하세요
+        정렬은 부서번호 순으로 하고 같은부서는 이름순으로 정렬해서 조회하세요
+
+*/
+
+SELECT
+ename 사원이름, hiredate 입사일, deptno 부서번호
+FROM
+emp
+WHERE
+SUBSTR(ename,-1,1) = 'N'
+ORDER BY
+deptno,ename;
+
+/*
+    문제 4
+        사원이름 중 'A'가 존재하지 않는 사원의 정보를 조회하세요
+
+*/
+SELECT
+ename 사원이름
+FROM
+emp
+WHERE
+INSTR(ename, 'a', 1)=0;
+
+
+/*
+    문제 5
+        사원이름 중에서 뒤 두글자만 남기고 앞글자는 모두 '#'으로 대체해서
+        사원이름 입사일 급여를 조회하세요
+
+*/
+SELECT
+LPAD(SUBSTR(ename,-2,2),LENGTH(ename),'#') 사원이름, hiredate 입사일, sal 급여
+FROM
+emp;
+
+/*
+    문제 6
+        'dlwlrma@githrd.com' 이라는 메일에서
+        아이디부분은 세번째 문자만 표시하고
+        나머지 문자는 '*'로 대체하고
+        @는 표시하고
+        .com 도 표시하고 나머지는 '*'로 대체해서 조회되는 질의명령을 작성하세요
+        
+*/
+
+SELECT
+CONCAT(CONCAT('**',RPAD(SUBSTR('dlwlrma@githrd.com',3,1),INSTR('dlwlrma@githrd.com','@')-3,'*')), LPAD(SUBSTR('dlwlrma@githrd.com',-4,4),LENGTH('dlwlrma@githrd.com')-INSTR('dlwlrma@githrd.com','@'),'*'))
+
+--
+--LPAD(SUBSTR('dlwlrma@githrd.com',3,1),3,'*') || LPAD(SUBSTR('dlwlrma@githrd.com',4,LENGTH('dlwlrma@githrd.com')-INSTR('dlwlrma@githrd.com','@')-3-1)) 메일
+FROM
+dual;
+
