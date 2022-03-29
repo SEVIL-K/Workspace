@@ -783,3 +783,17 @@ CONCAT(CONCAT('**',RPAD(SUBSTR('dlwlrma@githrd.com',3,1),INSTR('dlwlrma@githrd.c
 FROM
 dual;
 
+
+SELECT
+LPAD(SUBSTR('dlwlrma@githrd.com',3,1),3,'*') "3글자 추출",
+INSTR('dlwlrma@githrd.com','@') - 1 "ID 길이",
+RPAD(LPAD(SUBSTR('dlwlrma@githrd.com',3,1),3,'*'),INSTR('dlwlrma@githrd.com','@') - 1,'*') "ID 완성",
+
+SUBSTR('dlwlrma@githrd.com',-4) ".com 추출",
+LPAD(SUBSTR('dlwlrma@githrd.com',-4),LENGTH(SUBSTR('dlwlrma@githrd.com',INSTR('dlwlrma@githrd.com', '@')+ 1)),'*') "메일주소 추출",
+CONCAT('@', LPAD(SUBSTR('dlwlrma@githrd.com',-4),LENGTH(SUBSTR('dlwlrma@githrd.com',INSTR('dlwlrma@githrd.com', '@')+ 1)),'*')) "메일주소 완성",
+
+CONCAT(RPAD(LPAD(SUBSTR('dlwlrma@githrd.com',3,1),3,'*'),INSTR('dlwlrma@githrd.com','@') - 1,'*'), CONCAT('@', LPAD(SUBSTR('dlwlrma@githrd.com',-4),LENGTH(SUBSTR('dlwlrma@githrd.com',INSTR('dlwlrma@githrd.com', '@')+ 1)),'*'))) "완성"
+
+FROM
+dual;
