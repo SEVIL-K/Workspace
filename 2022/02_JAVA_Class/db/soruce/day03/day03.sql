@@ -48,43 +48,31 @@
         
 */
 
-SELECT
-REPLACE('hong gil dong', 'n', 'nn') 홍길동
-FROM
-dual;
+SELECT REPLACE('hong gil dong', 'n', 'nn') 홍길동
+FROM dual;
 
 
-SELECT
-REPLACE('hong gi l dong', ' ', '') 홍길동
-FROM
-dual;
+SELECT REPLACE('hong gi l dong', ' ', '') 홍길동
+FROM dual;
 
-SELECT
-TRIM(' ' FROM '   hong gi l dong'   ) 홍길동
-FROM
-dual;
+SELECT TRIM(' ' FROM '   hong gi l dong') 홍길동
+FROM dual;
 
-SELECT
-LTRIM('oooooooooooooooraleoooooooooooooooooooo', 'o')
-FROM
-dual;
+SELECT LTRIM('oooooooooooooooraleoooooooooooooooooooo', 'o')
+FROM dual;
 
-SELECT
-ASCII('HONG') 코드값,
-CHR(ASCII('HONG')) 알파벳
-FROM
-dual;
+SELECT ASCII('HONG')      코드값,
+       CHR(ASCII('HONG')) 알파벳
+FROM dual;
 
-SELECT
-TRANSLATE('ADBC', 'ABCD', '1234')
+SELECT TRANSLATE('ADBC', 'ABCD', '1234')
     /*
         A --> 1
         B --> 2
         C --> 3
         D --> 4 로 변환한다.
     */
-FROM
-dual;
+FROM dual;
 
 
 
@@ -129,115 +117,116 @@ dual;
                 MONTHS_BETWEEN(날짜, 날짜)
      
 */
-  
+
 -- 사원들의 근무일수를 조회하세요.
-SELECT
-    ename 사원이름, 
-    FLOOR(sysdate - hiredate) 근무일수
-FROM
-    emp
+SELECT ename                     사원이름,
+       FLOOR(SYSDATE - hiredate) 근무일수
+FROM emp
 ;
 
-SELECT
-    SYSDATE + 10 "10일후"
-FROM
-    DUAL
+SELECT SYSDATE + 10 "10일후"
+FROM DUAL
 ;
 
 
 --------------------------------------------------------------------------------
 
 
-  /*
-    날짜데이터 처리함수
-        
-        1. ADD_MONTHS()
-            ==> 날짜에 지정한 달수를 더하거나 뺀 날짜를 알려준다.
-            
-            형식 ]
-                ADD_MONTHS(날짜, 더할개월수)
-                
-            참고 ]
-                더할개월수에 음수를 입력하면
-                해당 개월수를 뺀 날짜를 알려준다.
-                
-        3. LAST_DAY
-            ==> 지정한 날짜가 포함된 월의 마지막 날짜를 알려주는 함수
-        
-            형식  ]
-                LAST_DAY(날짜)
-        
-        4. NEXT_DAY
-            ==> 지정한 날짜 이후에 가장 처음 오는 지정한 요일에 해당하는 날짜를 알려주는 함수
-            
-            형식  ]
-                NEXT_DAY(지정날짜, 지정요일)
-            
-            참고  ]
-                요일 정하는 방법
-                    1. 우리는 한글 세티이 된 오라클이므로
-                        '월' '화' '수',...
-                        '월요일', '화요일'...
-                    2. 영문권에서는
-                    'SUN', 'MON'...
-                    'SUNDAY', 'MONDAY'...
-                    
-        5. ROUND()
-            ==> 날짜를 지정한 부분에서 반올림하는 함수
-            이때 지정부분은 년, 월, 일, ...
-            
-            형식 ]
-                ROUND(날짜, 기준단위)
-            
+/*
+  날짜데이터 처리함수
+
+      1. ADD_MONTHS()
+          ==> 날짜에 지정한 달수를 더하거나 뺀 날짜를 알려준다.
+
+          형식 ]
+              ADD_MONTHS(날짜, 더할개월수)
+
+          참고 ]
+              더할개월수에 음수를 입력하면
+              해당 개월수를 뺀 날짜를 알려준다.
+
+      3. LAST_DAY
+          ==> 지정한 날짜가 포함된 월의 마지막 날짜를 알려주는 함수
+
+          형식  ]
+              LAST_DAY(날짜)
+
+      4. NEXT_DAY
+          ==> 지정한 날짜 이후에 가장 처음 오는 지정한 요일에 해당하는 날짜를 알려주는 함수
+
+          형식  ]
+              NEXT_DAY(지정날짜, 지정요일)
+
+          참고  ]
+              요일 정하는 방법
+                  1. 우리는 한글 세티이 된 오라클이므로
+                      '월' '화' '수',...
+                      '월요일', '화요일'...
+                  2. 영문권에서는
+                  'SUN', 'MON'...
+                  'SUNDAY', 'MONDAY'...
+
+      5. ROUND()
+          ==> 날짜를 지정한 부분에서 반올림하는 함수
+          이때 지정부분은 년, 월, 일, ...
+
+          형식 ]
+              ROUND(날짜, 기준단위)
+
 
 */
 
-SELECT
-    ADD_MONTHS(SYSDATE, 4) "4개월후",
-    ADD_MONTHS(SYSDATE, -3) "3개월전"
-FROM
-    dual
+SELECT ADD_MONTHS(SYSDATE, 4)  "4개월후",
+       ADD_MONTHS(SYSDATE, -3) "3개월전"
+FROM dual
 ;
 
 -- 사원들의 근무개월수를 조회하세요.
-SELECT
-    ename 사원이름,
-    hiredate 입사일,
-    TRUNC(MONTHS_BETWEEN(SYSDATE, hiredate)) "근무개월수"
-FROM
-    emp
+SELECT ename                                    사원이름,
+       hiredate                                 입사일,
+       TRUNC(MONTHS_BETWEEN(SYSDATE, hiredate)) "근무개월수"
+FROM emp
 ;
 
 
-
 -- 이번달 마지막 날자를 조회하세요.
-SELECT LAST_DAY(SYSDATE) FROM dual;
+SELECT LAST_DAY(SYSDATE)
+FROM dual;
 
 -- 사원들의 첫번째 월급을 조회하세요. 급여지금은 매월 말일로 한다.
-SELECT ename 이름, sal 급여, hiredate 입사일, LAST_DAY(hiredate) 첫급여일 FROM emp;
+SELECT ename 이름, sal 급여, hiredate 입사일, LAST_DAY(hiredate) 첫급여일
+FROM emp;
 
 
 -- 사원들의 첫번째 월급을 조회하세요. 급여지금은 매월 1일로 한다.
-SELECT ename 이름, sal 급여, hiredate 입사일, (LAST_DAY(hiredate) + 1) 첫급여일 FROM emp;
+SELECT ename 이름, sal 급여, hiredate 입사일, (LAST_DAY(hiredate) + 1) 첫급여일
+FROM emp;
 
 -- 이번주 일요일이 몇일인지 조회하세요
-SELECT NEXT_DAY(SYSDATE, '일요일') FROM dual;
+SELECT NEXT_DAY(SYSDATE, '일요일')
+FROM dual;
 
 -- 올해 성탄절 이후 첫 토요일 조회
-SELECT NEXT_DAY(TO_DATE('2022/12/25', 'YYYY//MM//DD'), '토요일') FROM dual;  
+SELECT NEXT_DAY(TO_DATE('2022/12/25', 'YYYY//MM//DD'), '토요일')
+FROM dual;
 /*  이 경우는 날짜데이터를 입력해야 하지만 
     문자로 입력해도 실행되는 이유는 문자데이터를 날짜데이터로 변환해주는
     함수가 자동호출되어서 날짜데이터로 변환해주기 때문에 그렇다.
 */
 
 -- 현재시간을 년도를 기준으로 반올림하세요
-SELECT TO_CHAR(SYSDATE, 'YYYY/MM/DD HH24:mi:ss') 현재시간,TO_CHAR(ROUND(SYSDATE, 'YEAR'), 'YYYY/MM/DD HH24:mi:ss') 반올림 FROM dual;
+SELECT TO_CHAR(SYSDATE, 'YYYY/MM/DD HH24:mi:ss')                현재시간,
+       TO_CHAR(ROUND(SYSDATE, 'YEAR'), 'YYYY/MM/DD HH24:mi:ss') 반올림
+FROM dual;
 
 -- 현재시간을 월을 기준으로 반올림하세요
-SELECT TO_CHAR(SYSDATE, 'YYYY/MM/DD HH24:mi:ss') 현재시간,TO_CHAR(ROUND(SYSDATE, 'MONTH'), 'YYYY/MM/DD HH24:mi:ss') 반올림 FROM dual;
+SELECT TO_CHAR(SYSDATE, 'YYYY/MM/DD HH24:mi:ss')                 현재시간,
+       TO_CHAR(ROUND(SYSDATE, 'MONTH'), 'YYYY/MM/DD HH24:mi:ss') 반올림
+FROM dual;
 
 -- 현재시간을 일을 기준으로 반올림
-SELECT TO_CHAR(SYSDATE, 'YYYY/MM/DD HH24:mi:ss') 현재시간, TO_CHAR(ROUND(SYSDATE, 'DAY'), 'YYYY/MM/DD HH24:mi:ss') 반올림 FROM dual;
+SELECT TO_CHAR(SYSDATE, 'YYYY/MM/DD HH24:mi:ss') 현재시간, TO_CHAR(ROUND(SYSDATE, 'DAY'), 'YYYY/MM/DD HH24:mi:ss') 반올림
+FROM dual;
 
 
 -----------------------------------------------------------------------------------
@@ -311,37 +300,51 @@ SELECT TO_CHAR(SYSDATE, 'YYYY/MM/DD HH24:mi:ss') 현재시간, TO_CHAR(ROUND(SYS
 -- TO_CHAR()
 -- 사원이름, 입사일, 부서번호를 조회하세요
 -- 단, 입사일은 '0000년 00월 00일'의 형식으로 조회되게 하세요.
-SELECT
-    ename 이름, TO_CHAR(hiredate, 'YYYY"년" MM"월" DD"일"') 입사일, deptno 부서번호
+SELECT ename                                    이름,
+       TO_CHAR(hiredate, 'YYYY"년" MM"월" DD"일"') 입사일,
+       deptno                                   부서번호
 FROM emp;
 
 -- 급여가 100~999 사이인 사원의 정보를 조회하세요.
-SELECT ename 이름, sal 급여 FROM emp WHERE sal BETWEEN 100 AND 999;
-SELECT ename 이름, sal 급여 FROM emp WHERE TO_CHAR(sal) LIKE '___';
-SELECT ename 이름, sal 급여 FROM emp WHERE LENGTH(TO_CHAR(sal)) =3 ;
+SELECT ename 이름, sal 급여
+FROM emp
+WHERE sal BETWEEN 100 AND 999;
+SELECT ename 이름, sal 급여
+FROM emp
+WHERE TO_CHAR(sal) LIKE '___';
+SELECT ename 이름, sal 급여
+FROM emp
+WHERE LENGTH(TO_CHAR(sal)) = 3;
 
 -- 사원급여를 조회하는데 앞에는 $를 붙이고 3자리마다 ,로 구분해서 조회하세요.
-SELECT ename 이름, sal 급여, TO_CHAR(sal, '$9,999,999') 문자급여, TO_CHAR(sal, '$0,000,000') 문자급여2 FROM emp;
+SELECT ename 이름, sal 급여, TO_CHAR(sal, '$9,999,999') 문자급여, TO_CHAR(sal, '$0,000,000') 문자급여2
+FROM emp;
 
 
 -- TO_DATE()
 -- 자신이 지금까지 몇일동안 살고 있는지를 알아보자.
 -- 힌트   ] 현재시간 - 생년월일
-SELECT FLOOR(sysdate - TO_DATE('93/12/19')) 일, FLOOR(sysdate - TO_DATE('93/12/19'))*3 밥그릇수,
-FLOOR(sysdate - TO_DATE('93-12-19')) 일
+SELECT FLOOR(SYSDATE - TO_DATE('93/12/19'))     일,
+       FLOOR(SYSDATE - TO_DATE('93/12/19')) * 3 밥그릇수,
+       FLOOR(SYSDATE - TO_DATE('93-12-19'))     일
 FROM dual;
 
-SELECT sysdate - TO_DATE('12/26/1994', 'MM/DD/YYYY') from dual;
-SELECT SYSDATE - TO_DATE('12161994', 'MMDDYYYY') FROM dual;
+SELECT SYSDATE - TO_DATE('12/26/1994', 'MM/DD/YYYY')
+FROM dual;
+SELECT SYSDATE - TO_DATE('12161994', 'MMDDYYYY')
+FROM dual;
 
 
 -- TO_NUMBER
 -- '123'과 '456'를 더한 결과를 조회하세요
-SELECT '123' + '456' 결과 FROM dual;      -- ㅣ 경우는 형변환 함수가 자동 호출이 되서 계산이 된다..
+SELECT '123' + '456' 결과
+FROM dual; -- ㅣ 경우는 형변환 함수가 자동 호출이 되서 계산이 된다..
 
-SELECT TO_NUMBER('123') + TO_NUMBER('456') 결과 FROM dual;
+SELECT TO_NUMBER('123') + TO_NUMBER('456') 결과
+FROM dual;
 
-SELECT TO_NUMBER('1,234', '9,999') + TO_NUMBER('5,678', '9,999') 결과 FROM dual;
+SELECT TO_NUMBER('1,234', '9,999') + TO_NUMBER('5,678', '9,999') 결과
+FROM dual;
 
 
 ---------------------------------------------------------------------------------
@@ -391,26 +394,15 @@ SELECT TO_NUMBER('1,234', '9,999') + TO_NUMBER('5,678', '9,999') 결과 FROM dua
 
 
 
-SELECT ename 이름,
+SELECT ename                      이름,
 -- NVL(comm, 'NONE') 커미션        -- 대체할 데이터가 형태가 달라서 에러가 발생한다..
-NVL(TO_CHAR(comm), 'NONE') 커미션      -- 반드시 데이터와 대체할 데이터의 형태는 일치시켜줘야 한다..
+       NVL(TO_CHAR(comm), 'NONE') 커미션 -- 반드시 데이터와 대체할 데이터의 형태는 일치시켜줘야 한다..
 FROM emp;
 
 -- 커미션이 있으면 급여를 급여+커미션으로 출력하고
 -- 커미션이 없으면 큽여를 급여만 출력하세요..
-SELECT ename 이름, NVL2(comm,sal+comm,sal) 급여
+SELECT ename 이름, NVL2(comm, sal + comm, sal) 급여
 FROM emp;
-
-
-
-
-
-
-
-
-
-
-
 
 
 /*
@@ -425,8 +417,10 @@ FROM emp;
 
 */
 
-SELECT
-ename 이름, sal 급여, comm 커미션, NVL2(comm, sal*1.1 + comm, sal*1.05+100) 지급급여
+SELECT ename                                          이름,
+       sal                                            급여,
+       comm                                           커미션,
+       NVL2(comm, sal * 1.1 + comm, sal * 1.05 + 100) 지급급여
 FROM emp;
 
 
@@ -439,8 +433,10 @@ FROM emp;
     
 */
 
-SELECT
-ename 이름, sal 급여, comm 커미션, NVL2(comm, comm*1.5, sal*1.1) 지급커미션
+SELECT ename                             이름,
+       sal                               급여,
+       comm                              커미션,
+       NVL2(comm, comm * 1.5, sal * 1.1) 지급커미션
 FROM emp;
 
 
@@ -504,7 +500,6 @@ FROM emp;
 */
 
 
-
 /*
     사원이름, 직급, 부서번호,, 부서이름
     부서이름은
@@ -515,11 +510,11 @@ FROM emp;
         로 처리
 */
 
-SELECT
-ename 이름, job 직급, deptno 부서번호,
-DECODE(deptno, 10, '회계부', 20, '연구부' , 30, '영업부', '관리부') 부서이름
-FROM
-emp;
+SELECT ename                                                  이름,
+       job                                                    직급,
+       deptno                                                 부서번호,
+       DECODE(deptno, 10, '회계부', 20, '연구부', 30, '영업부', '관리부') 부서이름
+FROM emp;
 
 
 
@@ -529,12 +524,14 @@ emp;
 --  사원이름 직급 급여 인상급여를 조회하세요
 
 
-SELECT
-ename 이름, job 직급, sal 급여,
-CASE WHEN sal < 1000 THEN sal*1.20
-    WHEN sal < 3000 THEN sal*1.15
-    ELSE sal*1.1
-    END 인상급여
+SELECT ename   이름,
+       job     직급,
+       sal     급여,
+       CASE
+           WHEN sal < 1000 THEN sal * 1.20
+           WHEN sal < 3000 THEN sal * 1.15
+           ELSE sal * 1.1
+           END 인상급여
 FROM emp;
 
 --------------------------------------------------------------------------
@@ -591,7 +588,8 @@ SELECT SUM(sal) 총급여, MAX(sal) 최대급여, MIN(sal) 최소급여, AVG(sal
 FROM emp;
 
 
-SELECT AVG(comm) FROM emp;
+SELECT AVG(comm)
+FROM emp;
 
 
 -----------------------------------------------------------------------------------
@@ -630,8 +628,8 @@ SELECT AVG(comm) FROM emp;
 
 --직급별 급여평균을 직급명과 함께 조회하세요
 
-SELECT
-    job 부서이름, AVG(sal) 평균급여
+SELECT job      부서이름,
+       AVG(sal) 평균급여
 FROM emp
 GROUP BY job;
 
@@ -647,20 +645,18 @@ GROUP BY job;
 */
 
 
-SELECT
-deptno 부서번호,
-DECODE(deptno, 10, '회계부', 20, '연구부', 30, '영업부', '관리부') 부서이름,
-MAX(sal) 부서최대급여
+SELECT deptno                                                 부서번호,
+       DECODE(deptno, 10, '회계부', 20, '연구부', 30, '영업부', '관리부') 부서이름,
+       MAX(sal)                                               부서최대급여
 FROM emp
 GROUP BY deptno;
 
 
 -- 부서별 평균 급여를 조회하세요.. 단, 부서평균 급여가 2000 이상인 부서만 조회되게 하세요..
 
-SELECT
-deptno 부서번호,
-DECODE(deptno, 10, '회계부', 20, '연구부', 30, '영업부', '관리부') 부서이름,
-AVG(sal) 부서최대급여
+SELECT deptno                                                 부서번호,
+       DECODE(deptno, 10, '회계부', 20, '연구부', 30, '영업부', '관리부') 부서이름,
+       AVG(sal)                                               부서최대급여
 FROM emp
 GROUP BY deptno
 HAVING AVG(sal) >= 2000;
@@ -670,14 +666,11 @@ HAVING AVG(sal) >= 2000;
 -- 직급별 사원수를 조회하세요
 -- 단 사원수가 1명인 직급은 조회되지 않게 하세요..
 
-SELECT
-job 직급, COUNT(*) 사원수
-FROM
-emp
-GROUP BY
-job
-HAVING
-COUNT(*) > 1;
+SELECT job      직급,
+       COUNT(*) 사원수
+FROM emp
+GROUP BY job
+HAVING COUNT(*) > 1;
 
 
 
