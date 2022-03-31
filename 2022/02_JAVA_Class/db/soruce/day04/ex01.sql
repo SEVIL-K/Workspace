@@ -34,7 +34,8 @@ FROM EMP,
      DEPT,
      SALGRADE
 WHERE SAL BETWEEN LOSAL AND HISAL
-  AND to_char('yy') = 
+  AND TO_CHAR(HIREDATE, 'yy') = '81'
+  AND JOB = 'MANAGER'
   AND EMP.DEPTNO = DEPT.DEPTNO;
 
 
@@ -92,7 +93,74 @@ FROM EMP;
 --
 
 
-/*
-    문제6 ]
+-- 위 문제들을 ANSI JOIN 을 사용한 질의명령으로 작성하세요.
 
+/*
+    문제1 ]
+        직급이 MANAGER 인 사원들의
+        사원이름, 직급, 입사일, 급여, 부서이름을 조회하세요
  */
+
+SELECT ENAME 사원이름, JOB 직급, HIREDATE 입사일, SAL 급여, DNAME 부서이름
+FROM EMP
+         JOIN DEPT
+              ON EMP.DEPTNO = DEPT.DEPTNO
+WHERE JOB = 'MANAGER';
+
+
+/*
+    문제2 ]
+        사원이름이 5글자인 사원들의
+        사원이름, 직급, 입사일, 급여, 급여등급을 조회하세요.
+ */
+
+SELECT ENAME 사원이름, JOB 직급, HIREDATE 입사일, SAL 급여, GRADE 급여등급
+FROM EMP
+         JOIN SALGRADE
+              ON SAL BETWEEN LOSAL AND HISAL
+WHERE LENGTH(ENAME) = 5;
+
+/*
+   문제3 ]
+       입사일이 81년이고 직급이 MANAGER 인 사원들의
+       사원이름, 직급, 입사일, 급여, 급여등급, 부서이름, 부서위치를 조회하세요.
+ */
+
+SELECT ENAME 사원이름, JOB 직급, HIREDATE 입사일, SAL 급여, GRADE 급여등급, DNAME 부서이름, LOC 부서위치
+FROM EMP
+         JOIN DEPT
+              ON EMP.DEPTNO = DEPT.DEPTNO
+         JOIN SALGRADE
+              ON SAL BETWEEN LOSAL AND HISAL
+
+WHERE TO_CHAR(HIREDATE, 'yy') = '81'
+  AND JOB = 'MANAGER';
+
+
+/*
+    문제4 ]
+        사원들의
+        사원이름, 직급, 급여, 급여등급, 상사이름 을 조회하세요.
+ */
+
+SELECT e.ENAME 사원이름, e.JOB 직급, e.SAL 급여, GRADE 급여등급, s.ENAME 상사이름
+FROM EMP E
+         LEFT OUTER JOIN EMP S
+                         ON e.MGR = s.EMPNO
+         JOIN SALGRADE
+              ON e.SAL BETWEEN LOSAL AND HISAL;
+
+/*
+    문제5 ]
+        사원들의
+        사원이름, 직급, 급여, 상사이름, 부서이름, 급여등급을 조회하세요.
+ */
+
+SELECT e.ENAME 사원이름, e.JOB 직급, e.SAL 급여, s.ENAME 상사이름, DNAME 부서이름, GRADE 급여등급
+FROM EMP E
+         LEFT OUTER JOIN EMP S
+                         ON e.MGR = s.EMPNO
+         JOIN SALGRADE
+              ON e.SAL BETWEEN LOSAL AND HISAL
+         JOIN DEPT
+              ON e.DEPTNO = DEPT.DEPTNO;

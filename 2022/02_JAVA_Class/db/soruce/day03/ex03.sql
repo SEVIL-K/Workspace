@@ -71,6 +71,16 @@
         를 조회하세요.
 */
 
+SELECT ENAME                           이름,
+       SAL                             급여,
+       TO_CHAR(HIREDATE, 'yyyy/mm/dd') 입사일,
+       TO_CHAR(HIREDATE, 'dy')         요일,
+       DECODE(TO_CHAR(hiredate, 'DY'), '토', sal * 1.2,
+              '일', sal * 1.2,
+              sal * 1.1
+           )                           지급급여
+FROM EMP;
+
 /*
     문제 7 ]
         근무개월수가 490개월 이상인 사원은
@@ -93,13 +103,10 @@
         을 조회하세요.
 */
 
-SELECT
-DECODE(FLOOR(LENGTH(ename) / 5),0 , ename, RPAD(SUBSTR(ename,1,3),LENGTH(ename),'*' )) 이름,
-LENGTH(ename) 이름글자수,
-ename 조회이름
+SELECT DECODE(FLOOR(LENGTH(ename) / 5), 0, ename, RPAD(SUBSTR(ename, 1, 3), LENGTH(ename), '*')) 이름,
+       LENGTH(ename)                                                                             이름글자수,
+       ename                                                                                     조회이름
 FROM emp;
-
-
 
 
 
