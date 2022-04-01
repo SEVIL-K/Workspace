@@ -40,6 +40,75 @@
 
 */
 
+-- 급여의 합이 제일 높은 부서
+SELECT
+    deptno
+FROM
+    emp
+GROUP BY
+    deptno
+HAVING
+    SUM(sal) =
+                 (
+                        SELECT
+                            max(SUM(sal))
+                        FROM
+                            EMP
+                        GROUP BY
+                            DEPTNO
+                    )
+;
+
+SELECT
+    ename 사원이름, job 직급, dno 부서번호, dname 부서이름,
+    sum 부서급여합계, cnt 부서원수
+FROM
+    emp e,
+    dept d,
+    (
+        SELECT
+            deptno dno, COUNT(*) cnt, SUM(sal) sum
+        FROM
+            emp
+        GROUP BY
+            deptno
+    )
+WHERE
+    e.deptno = dno
+    AND e.deptno = d.deptno
+    AND e.deptno = (
+                        SELECT
+                            deptno
+                        FROM
+                            emp
+                        GROUP BY
+                            deptno
+                        HAVING
+                            SUM(sal) >= ALL
+                                         (
+                                                SELECT
+                                                    SUM(sal)
+                                                FROM
+                                                    EMP
+                                                GROUP BY
+                                                    DEPTNO
+                                            )
+                                            --  >=  ALL(10, 20, 30)
+                        /*
+                            SUM(sal) =
+                                         (
+                                                SELECT
+                                                    MAX(SUM(sal))
+                                                FROM
+                                                    EMP
+                                                GROUP BY
+                                                    DEPTNO
+                                            )
+                        */
+                    )
+;
+
+
 /*
     문제 7 ]
         커미션을 받는 사원이 한명이라도 있는 부서의 사원들의
