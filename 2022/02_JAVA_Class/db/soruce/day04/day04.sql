@@ -308,7 +308,7 @@ SELECT e.*,
        dname
 FROM emp e,
      dept d
-WHERE e.deptno = d.deptno
+WHERE e.deptno = d.deptno;
 
 -- TMP 테이블과  부서정보테이블을 이용해서
 -- 사원들의 사원이름, 부서위치를 조회하세요.
