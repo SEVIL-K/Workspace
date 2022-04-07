@@ -1,0 +1,279 @@
+문제 1 ]
+	byte, short, int, long, float, double, char, boolean
+
+문제 2 ]
+	int num = 75000;
+
+문제 3 ]
+	1) a = 12, b = 23
+	2) a = 12, b = 22
+	3) a = 12, b = 21
+
+문제 4 ]
+	1) private		=> 자신 클래스 내에서만 사용 가능
+	2) default		=> 같은 패키지 내의 클래스에서 사용 가능 
+	3) protected	=> 상속받은 클래스 + 같은 패키지내의 클래스
+	4) public		=> 모든 범위에서 사용 가능
+
+문제 5 ]
+	정상적이지 않음.
+	클래스명 시작으로 #과 같은 특수문자가 올 수 없음 (_, $ 제외).
+	
+문제 6 ]
+	public static void main(String[] args) {
+        int i = 0;
+        int dan = 5;
+
+        do {
+            i++;
+            System.out.println(dan + " X " + i + " = " + dan * i);
+        } while (i < 9);
+    }
+
+문제 7 ]
+public class Member {
+    private int mno;
+    private String name;
+    private String id;
+
+    public int getMno() {
+        return mno;
+    }
+
+    public void setMno(int mno) {
+        this.mno = mno;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+}
+	
+
+
+문제 8 ]
+	HashMap map = new HashMap();
+
+	map.put("이름", "홍길동");
+	map.put("나이", "24");
+	map.put("성별", "남자");
+
+	Set keys = map.keySet();
+	for(Object key : keys) {
+		Object value = map.get(key);
+		System.out.println(key + " - " + value);
+	}
+
+
+문제 9 ]
+	?
+	?
+	?
+
+
+
+
+
+
+
+
+
+
+
+
+문제 10 ]
+	
+public class Semo extends Figure {
+
+	private int width, height;
+	private double result;
+	
+	public Semo() {}
+
+	public Semo(int width, int height) {
+		this.width = width;
+		this.height = height;
+		area();
+	}
+	
+	@Override
+	public void area() {
+		result = width * height / 2.0;
+		System.out.println("넓이는 " + result + " 입니다.");
+	}
+
+	public int getWidth() {
+		return width;
+	}
+	public void setWidth(int width) {
+		this.width = width;
+	}
+	public int getHeight() {
+		return height;
+	}
+	public void setHeight(int height) {
+		this.height = height;
+	}
+	public double getArea() {
+		return result;
+	}
+	public void setArea(double area) {
+		this.result = area;
+	}
+}
+
+public class Nemo extends Figure {
+
+	private int width, height;
+	private double result;
+	
+	public Nemo() {}
+
+	public Nemo(int width, int height) {
+		this.width = width;
+		this.height = height;
+		area();
+	}
+	
+	@Override
+	public void area() {
+		result = width * height;
+		System.out.println("넓이는 " + result + " 입니다.");
+	}
+
+	public int getWidth() {
+		return width;
+	}
+	public void setWidth(int width) {
+		this.width = width;
+	}
+	public int getHeight() {
+		return height;
+	}
+	public void setHeight(int height) {
+		this.height = height;
+	}
+	public double getArea() {
+		return result;
+	}
+	public void setArea(double area) {
+		this.result = area;
+	}
+}
+
+
+문제 11 ]
+	
+
+
+
+
+
+
+
+
+
+
+
+
+문제 1 ]
+	long, int, short, byte 
+
+문제 2 ]
+	double val = 3.14;
+
+문제 3 ]
+	10
+
+문제 4 ]
+	char[] ch = new char[10];
+
+        for(int i = 0 ; i < ch.length ; i++ ) {
+            char mj = (char)('A' + i);
+            ch[i] = mj;
+        }
+
+문제 5 ]
+	B, C, D, Z,
+
+문제 6 ]
+	클래스명의 제일 첫 특수문자 제거.
+	private class Class02 {
+		String name;
+		int no;
+	}
+
+문제 7 ]
+public class Album {
+    private int cdno;
+    private String cdname;
+    private  String singer;
+    
+    public int getCdno() {
+        return cdno;
+    }
+
+    public void setCdno(int cdno) {
+        this.cdno = cdno;
+    }
+
+    public String getCdname() {
+        return cdname;
+    }
+
+    public void setCdname(String cdname) {
+        this.cdname = cdname;
+    }
+
+    public String getSinger() {
+        return singer;
+    }
+
+    public void setSinger(String singer) {
+        this.singer = singer;
+    }
+}
+
+문제 8 ]
+	
+
+
+문제 9 ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
