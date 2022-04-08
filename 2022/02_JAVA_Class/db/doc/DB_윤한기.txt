@@ -1,0 +1,61 @@
+문제 1 ]
+	CREATE TABLE  MEMBER (
+		no NUMBER(4),
+		name VARCHER2(6),
+		id VARCHER2(8),
+		pw VARCHER2(8),
+		isshow CHAR(1) CONSTRAINT MEMB_ISSHOW_CK CHECK (isshow IN ('Y', 'N')
+	)
+
+
+문제 2 ]
+	ALTER TABLE borad
+		MODIFY body CONSTRAINT BOARD_BODY_NN NOT NULL;
+
+
+문제 3 ]
+	SELECT DISTINCT
+		deptno 사원번호, ename 사원이름
+	FROM scott.emp;
+
+
+문제 4 ] 
+	SELECT empno 사원번호, ename 사원이름, comm 이전커미션, NVL2(comm, comm+100, 50) 지급커미션
+	FROM emp;
+
+문제 5 ]
+	SELECT 
+		empno 사원번호, RPAD(SUBSTR(ename, 1, 2), length(ename), '*')  사원이름, job 직급, TRUNC(MONTHS_BETWEEN(SYSDATE, hiredate)) 근무개월수
+	FROM emp;
+
+
+문제 6 ]
+	SELECT COUNT(*) "comm 받는 사람"
+	FROM emp
+	WHERE comm IS NOT NULL;
+
+
+
+문제 7 ]
+	SELECT empno 사원번호, ename 사원이름, sal 급여, MAX(sal)-sal 부서최대급여와차이, MAX(sal) 부서최대급여, AVG(sal) 부서평균급여
+	FROM emp
+	GROUP BY deptno;
+
+
+
+문제 8 ]
+	
+
+
+
+문제 9 ]
+
+
+
+
+문제 10 ]
+	CREATE SEQUENCE memb_seq
+    		START WITH 1000
+    		INCREMENT BY 1
+		NOCACHE;
+	
