@@ -1,0 +1,63 @@
+WEB
+	HTML			-	문서의 구조
+	CSS			-	구조에 모양을 더한다.	
+	JavaScript		-	구조바꾸거나 데이터를 추가하거나 태그를 제어...
+		jQuery	
+
+
+---------------------------------------------------------------------------------------------
+
+1. IDE	: Eclipse Java-ee
+	
+	eclipse site 의 packages 창에서 
+	오른쪽 하단의 
+		Eclipse 2020-06 (4.16) 클릭
+	Eclipse IDE for Enterprise Java Developers 의
+		Windows x86_64 클릭
+	과목 폴더를 만들고
+		app, git, source 폴더를 만든다.
+	app 폴더안에 다운로드받을 파일을 압축해제한다.
+	
+	eclipse를 실행시킨다.
+		워크스페이스는 위에서 만든 source폴더로 지정한다.
+		예 ] D:\class\html\source
+
+	프로젝트를 static web project 를 만든다.
+
+
+		프로젝트 이름 : black
+
+		참고 ]	
+			static web project	: 이미 만들어진 문서를 서버가 제공하는 프로젝트
+			dynamic web project	: 요청 내용에 따라서 그때그때 서버가 문서를 만들어서 제공하는 프로젝트
+
+	
+	%NODE_HOME%\
+
+참고 ]
+	
+	프로그램의 버젼
+		
+		major.minor.micro
+
+
+C:\app\apache-tomcat-8.5.78\conf\server.xml
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

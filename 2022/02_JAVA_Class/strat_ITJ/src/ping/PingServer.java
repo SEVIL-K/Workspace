@@ -1,58 +1,52 @@
 package ping;
-/*
-    Created by HG on 2022-04-01
-    
-*/
 
-
-import java.util.Scanner;
+import java.util.*;
 
 public class PingServer {
-    private boolean bool = true;
-    private PingThread ping;
-    private Scanner sc;
+	private PingThread ping;
+	private Scanner sc;
+	
+	public PingServer() {
+		sc = new Scanner(System.in);
+		ping = new PingThread();
+		
+		loop:
+		while(true) {
+			// 메세지 출력
+			System.out.println();
+			ping.execMsg();
+			String str = sc.nextLine();
+			System.out.println("◻︎◻︎◻︎◻︎◻︎◻︎◻︎◻︎◻︎◻︎◻︎◻︎◻︎◻︎◻︎◻︎◻︎◻︎◻︎");
+			
+			switch(str) {
+			case "start":
+				if(!ping.isAlive()) {
+					ping.start();
+					try {
+						Thread.sleep(200);
+					} catch(Exception e) {}
+					break;
+				}
+				System.out.println("\n*** 이미 서버가 실행중입니다! ***");
+				break;
+			case "quit":
+				ping.setStart(false);
+				ping.close(ping.getServer());
+				break loop;
+			}
+		}
 
-    // 2-1
-    public PingServer() {
-        ping = new PingThread();
+		System.out.println();
+		System.out.println("◼◼◼◼◼◼◼◼◼◼◼◼◼◼◼◼◼◼◼◼◼◼◼");
+		if(ping.getServer() != null) {
+			System.out.println("***** Server Stop *****");
+		}
+		System.out.println("**** Program  Exit ****");
+		System.out.println("◼◼◼◼◼◼◼◼◼◼◼◼◼◼◼◼◼◼◼◼◼◼◼");
+	}
 
-        sc = new Scanner(System.in);
-
-        loop:
-        while (true) {
-            // 메세지 출력
-            System.out.println();
-            System.out.println("@@ 핑서버프로그램 @@\n서버시작 : start\n서버중단 : quit\n명령을 입력하세요.");
-            String str = sc.nextLine();
-
-            switch (str) {
-                case "start":
-                    // 2-2
-                    if (bool) {
-                        ping.start();
-                        bool = false;
-                        try {
-                            Thread.sleep(200);
-                        } catch (Exception e) {
-                        }
-                        break;
-                    }
-                    System.out.println("\n @@이미 서버가 실행중입니다@@ ");
-                    break;
-                case "quit":
-                    ping.setStart(false);
-                    ping.allClose();
-/*                    ping.close(ping.getOut());
-                    ping.close(ping.getIn());
-                    ping.close(ping.getSocket());
-                    ping.close(ping.getServer());*/
-                    break loop;
-            }
-        }
-    }
-
-    public static void main(String[] args) {
-        new PingServer();
-    }
+	public static void main(String[] args) {
+		new PingServer();
+	}
 
 }
