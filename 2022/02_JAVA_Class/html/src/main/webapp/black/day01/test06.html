@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!--
+	태그의 속성
+		
+		class		-	스타일을 일괄적으로 적용시킬 용도로 만들어진 속성
+		id			- 	자바스크립트에 이 속성에 부여된 태그 하나만 선택한 목적으로 사용되어진다.
+		name		- 	데이터 전달 목적으로 사용되어지는 속성
+-->
+<!-- 
+
+	<img> 태그
+	==> 문서에 이미지를 추가할 때 사용하는 태그
+	
+		형식 ]
+			<img src="이미지파일경로" width="???" height="???">
+			
+		주의 ]
+			사이즈를 지정할 때 임의로 가로와 세로를 정의하면
+			이미지의 비율이 깨질 수 있다.
+			
+			해결방법 ]
+				먼저 가로 또는 세로로 기준을 정해서 사이즈를 주고
+				나머지는 속성값으로 "auto" 를 지정하면
+				가로세로비율을 유지할 수 있게된다.
+				
+		사이즈 지정방법 ]
+			
+			px	- 픽셀단위
+			%	- 상위태그의 사이즈 기준으로 지정하는 방법
+			
+			예 ]
+				<img src="/black/image/img/jennie.jpg" width="450px" height="auto">
+ -->
+<center>
+	<img src="/black/image/img/jennie.jpg" 
+		style="display: inline-block; width: 450px; height: auto;"><br>
+	<img src="jennie02.jpg" 
+		style="display: inline-block; width: 450px; height: auto;">
+		<!-- 
+			파일 경로에 파일이름만 기술하는 경우
+			작업하고있는 이 문서기준 같은 폴더의 해당 파일을 찾게 된다.
+		 -->
+</center>
+</body>
+</html>
