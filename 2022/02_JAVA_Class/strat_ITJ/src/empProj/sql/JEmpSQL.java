@@ -9,9 +9,12 @@ package empProj.sql;
 
 public class JEmpSQL {
     public final int SEL_TNAME = 1001;
+    public final int SEL_LAST = 1002;
 
     public final int INSERT_JEMP = 3001;
-    public final int CHECKINSERT_JEMP = 3002;
+    public final int INSERT_JEMP_D30 = 3002;
+
+    public final int DEL_JEMP_D30 = 4001;
 
     public final int ADD_TABLE = 5001;
 
@@ -28,6 +31,14 @@ public class JEmpSQL {
                 buff.append("   tab ");
                 buff.append("WHERE ");
                 buff.append("   tname = 'JEMP' ");
+                break;
+            case SEL_LAST:
+                buff.append("SELECT ");
+                buff.append("   empno eno, ename name, job, hiredate hdate, deptno dno ");
+                buff.append("FROM ");
+                buff.append("   JEMP ");
+                buff.append("WHERE ");
+                buff.append("   hiredate = (SELECT MAX(hiredate) FROM JEMP) ");     // hiredate 대신 empno 도 가능
                 break;
             case ADD_TABLE:
                 buff.append("CREATE TABLE jemp ");
@@ -47,14 +58,18 @@ public class JEmpSQL {
                 buff.append("   ?, ?, sysdate, ? ");
                 buff.append(") ");
                 break;
-            case CHECKINSERT_JEMP:
-                buff.append("SELECT ");
-                buff.append("   empno, ename, job, hiredate, deptno ");
-                buff.append("FROM ");
-                buff.append("   JEMP ");
-                buff.append("WHERE ");
-                buff.append("   (SELECT MAX(EMPNO) FROM JEMP) = EMPNO ");
+            case INSERT_JEMP_D30:
+                buff.append("INSERT INTO jbackup ");
+                buff.append("SELECT e.*, sysdate ");
+                buff.append("FROM JEMP e ");
+                buff.append("WHERE DEPTNO = 30 ");
                 break;
+            case DEL_JEMP_D30:
+                buff.append("DELETE " );
+                buff.append("FROM JEMP " );
+                buff.append("WHERE DEPTNO = 30 " );
+                break;
+
         }
 
 

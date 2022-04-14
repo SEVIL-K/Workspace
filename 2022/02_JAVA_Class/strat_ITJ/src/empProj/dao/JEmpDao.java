@@ -10,10 +10,7 @@ import empProj.db.ScottJDBC;
 import empProj.sql.JEmpSQL;
 import empProj.vo.EmpVO;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 
 public class JEmpDao {
     private ScottJDBC db;
@@ -140,28 +137,116 @@ public class JEmpDao {
 
 
     // 마지막에 추가된 데이터 조회 -- empno 를 이용함
-    public void checkInsertJemp() {
+    public EmpVO getLast() {
         // 할 일
+
+        // 반환값 변수
+        EmpVO eVO = new EmpVO();
 
         // 1. 커넥션 꺼내기
         con = db.getCON();
 
         // 2. 질의명령 꺼내오기
-        String sql = jSQL.getSQL(jSQL.CHECKINSERT_JEMP);
+        String sql = jSQL.getSQL(jSQL.SEL_LAST);
 
         // 3. 명령전달도구 꺼내오기
         stmt = db.getSTMT(con);
 
         // 4. 질의명령 보내기
         try {
-            stmt.execute(sql);
+            rs = stmt.executeQuery(sql);
 
-            System.out.println("### 마지막에 추가된 데이터 조회 성공 ###");
+            // 5. 꺼내서 VO에 넣어주기
+            // 가상 레코드포인터 한줄 내리기
+            rs.next();
+
+            // 데이터 꺼내기
+            int eno = rs.getInt("eno");
+            String name = rs.getString("name");
+            String job = rs.getString("job");
+            Date hdate = rs.getDate("hdate");
+            Time htime = rs.getTime("hdate");
+            int dno = rs.getInt("dno");
+
+            // 데이터 VO에 넣어주기
+            eVO.setEno(eno);
+            eVO.setEname(name);
+            eVO.setJob(job);
+            eVO.setHdate(hdate);
+            eVO.setHtime(htime);
+            eVO.setSdate();
+            eVO.setDno(dno);
+
+            System.out.println("### 마지막에 입사한 사원 데이터 조회 성공 ###");
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            db.close(rs);
+            db.close(stmt);
+            db.close(con);
+        }
+
+        return eVO;
+    }
+
+
+    // 30번 사원들 백업 전담 처리함수
+    public int backupDno30() {
+        // 반환값 변수
+        int cnt = 0;
+
+        // 1. 커넥션 꺼내기
+        con = db.getCON();
+
+        // 2. 질의명령 꺼내오기
+        String sql = jSQL.getSQL(jSQL.INSERT_JEMP_D30);
+
+        // 3. 명령전달도구 꺼내오기
+        stmt = db.getSTMT(con);
+
+
+        try {
+            // 4. 질의명령 보내고 결과 받기
+            cnt = stmt.executeUpdate(sql);
+
+            System.out.println("### 30번부서 사원정보 백업 성공 ###");
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
             db.close(stmt);
             db.close(con);
         }
+
+        return cnt;
     }
+
+    public int delDno30() {
+        // 반환값 변수
+        int cnt = 0;
+
+        // 1. 커넥션 꺼내기
+        con = db.getCON();
+
+        // 2. 질의명령 꺼내오기
+        String sql = jSQL.getSQL(jSQL.DEL_JEMP_D30);
+
+        // 3. 명령전달도구 꺼내오기
+        stmt = db.getSTMT(con);
+
+
+        try {
+            // 4. 질의명령 보내고 결과 받기
+            cnt = stmt.executeUpdate(sql);
+
+            System.out.println("### 30번부서 사원정보 삭제 성공 ###");
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            db.close(stmt);
+            db.close(con);
+        }
+
+        return cnt;
+    }
+
 }
