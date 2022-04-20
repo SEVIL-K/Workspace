@@ -1,0 +1,32 @@
+.box {
+    display: block;
+    float: right;
+    width: 50%;
+    height: 70px;
+}
+/*
+.blind {
+		position: absolute;
+		clip: rect(0 0 0 0);
+		width: 1px;
+		height: 1px;
+		margin: -1px;
+		overflow: hidden
+}
+#u_skip {
+		position: relative;
+		z-index: 3000
+}
+#u_skip a {
+		position: absolute;
+		top: -30px;
+		left: 0;
+		width: 138px;
+		border: 1px solid #4ec53d;
+		background: #333;
+		text-align: center
+}
+#u_skip a:active,#u_skip a:focus{top:0;text-decoration:none;z-index:1000}
+#u_skip span{display:inline-block;padding:2px 6px 0 0;font-size:13px;line-height:26px;color:#fff;letter-spacing:-1px;white-space:nowrap}
+body,button,dd,dl,dt,fieldset,form,h1,h2,h3,h4,h5,h6,input,legend,li,ol,p,select,table,td,textarea,th,ul{margin:0;padding:0}
+*/

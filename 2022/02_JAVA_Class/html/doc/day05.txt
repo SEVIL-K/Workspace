@@ -1,0 +1,19 @@
+# input tag
+
+type
+	text		- 단일행 입력
+	password	- 단일행 입력
+	
+	
+	
+	button
+	submit
+	reset
+	
+textarea
+	==> 여러행으로 입력받는 태그
+		name 속성값을 사용할 수 있다. 
+		
+	예 ]
+		게시글 본문입력에 사용되어진다.
+		<textarea id="body" name="body"></textarea>

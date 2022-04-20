@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>FieldSet</title>
+</head>
+<body>
+	<div style="text-align: center;">
+		<div style="display: inline-block; width: 650px;">
+			<form method="GET" action="test01.html"
+					style="padding: 20px; border: 1px solid gray; text-align: left;" name="frm" id="frm">
+				<!-- <fieldset> -->
+					<div style="margin-bottom: 10px;">
+						<label for="id" 
+								style="display: inline-block; width: 20%; text-align: right; font-size: 14pt;">아이디 : </label>
+						<input type="text" name="user" id="id" placeholder="아이디입력"
+								style="display: inline-block; width: 65%; margin-left: 5px; padding: 5px; text-align: center;">
+					</div>
+					<div style="margin-bottom: 10px;">
+						<label for="name" 
+								style="display: inline-block; width: 20%; text-align: right; font-size: 14pt;">이  름 : </label>
+						<input type="text" name="name" id="name" placeholder="이름입력"
+								style="display: inline-block; width: 65%; margin-left: 5px; padding: 5px; text-align: center;">
+					</div>
+				<!-- </fieldset> -->
+				<div style="margin-bottom: 10px;">
+					<label for="mail" 
+							style="display: inline-block; width: 20%; text-align: right; font-size: 14pt;">이메일 : </label>
+					<input type="text" name="mail" id="mail" placeholder="메일입력"
+							style="display: inline-block; width: 65%; margin-left: 5px; padding: 5px; text-align: center;">
+				</div>
+				<div style="margin-bottom: 10px;">
+					<label for="gen" 
+							style="display: inline-block; width: 20%; text-align: right; font-size: 14pt;">성별 : </label>
+					<div style="display: inline-block; width: 65%; margin-left: 5px; text-align: center;">
+						<span>남자 </span><input type="radio" name="gen" id="mgen" value="M">
+						<p style="display: inline-block; width: 20px;"></p>
+						<span>여자 </span><input type="radio" name="gen" id="fgen" value="F">
+					</div>
+				</div>
+				<div style="margin-bottom: 10px;">
+					<label for="subj" 
+							style="display: inline-block; width: 20%; text-align: right; font-size: 14pt;">선택과목 : </label>
+					<div style="display: inline-block; width: 65%; margin-left: 5px; text-align: center;">
+						<span>자바 </span><input type="checkbox" name="subj" id="jsubj" value="java" checked>
+						<p style="display: inline-block; width: 20px;"></p>
+						<span>데이터베이스 </span><input type="checkbox" name="subj" id="dsubj" value="db">
+						<p style="display: inline-block; width: 20px;"></p>
+						<span>웹표준 </span><input type="checkbox" name="subj" id="wsubj" value="web">
+						<p style="display: inline-block; width: 20px;"></p><br>
+						<span>JSP </span><input type="checkbox" name="subj" id="jspsubj" value="jsp">
+						<p style="display: inline-block; width: 20px;"></p>
+						<span>spring </span><input type="checkbox" name="subj" id="ssubj" value="spring">
+					</div>
+				</div>
+				<div style="margin-bottom: 10px;">
+					<label for="subj" 
+							style="display: inline-block; width: 20%; text-align: right; font-size: 14pt;">선택과목 : </label>
+					<select name="avt">
+						<option id="0" >### 아바타 선택 ###
+						<option id="1" value="1">1
+						<option id="2" value="2">2
+						<option id="3" value="3">3
+						<option id="4" value="4" selected>4
+						<option id="5" value="5">5
+						<option id="6" value="6">6
+					</select>
+				</div>
+				<div style="text-align: center;">
+					<button type="button" id="hbtn" onclick="location.href='../index.html';"
+							style="display: inline-block; width: 30%; height: 30px; cursor: pointer;">HOME</button>
+					<button type="submit" id="lbtn" 
+							style="display: inline-block; width: 30%; height: 30px; cursor: pointer;">Login</button>
+					<input type="reset" id="cbtn" 
+							style="display: inline-block; width: 30%; height: 30px; cursor: pointer;" value="Cancel">
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

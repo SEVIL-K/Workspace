@@ -1,0 +1,108 @@
+span {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+}
+
+p {
+    background-color: yellow;
+    color: green;
+    text-align: right!important;
+}
+
+.content {
+    text-align: center;
+}
+.box65 {
+    display: inline-block;
+    width: 650px;
+}
+
+.h2 {
+    /* 클래스가 h2인 태그 */
+    background-color: #2196F3;
+}
+.h3 {
+    background-color: #4CAF50;
+}
+
+.ttl1 {
+    background-color: #e91e63;
+    color: white;
+    padding: 10px;
+    box-shadow: 3px 3px 10px 3px rgba(170, 170, 170, 0.7);
+}
+#h2 {
+    /* 아이디가 h2인 태그 */
+    background-color: #2196F3;
+}
+#h3 {
+    background-color: #4CAF50;
+}
+#h4 {
+    background-color: #ff5722;
+}
+[type="text"] {
+    display: block;
+    width: 610px;
+    height: 300px;
+    font-size: 24pt;
+    text-align: right;
+    color: #3f51b5;
+    padding: 20px;
+    border: 1px solid #2196F3;
+}
+h2.ttl1 {
+    /* h2태그중 클래스가 ttl1인 태그를 선택 */
+    background-color: #2196F3;
+}
+.box65 h1 {
+    /* 클래스가 box65인태그의 모든 하위 h1태그를 선택 */
+    border: 3px solid #3f51b5;
+}
+
+[href="test02.html"], [href="test00.html"] {
+    /* 속성이 href="test02.html" 인 태그와 href="test00.html" 인 태그를 선택 */
+    display: block;
+    border: 1px solid gray;
+}
+
+:link {
+    text-decoration: none;
+    font-size: 12pt;
+    font-weight: bold;
+    color: #3f51b5;
+}
+
+:visited {
+    color: #ff5722;
+}
+
+a:active {
+    background-color: #e91e63;
+    color: #3f51b5;
+}
+
+[href="test01.html"]:hover {
+    display: block;
+    background-color: #e91e63;
+    color: snow;
+}
+
+#inTxt {
+
+    display: block;
+    height: 20px;
+    margin-top: 30px;
+    text-align: center;
+    font-size: 16pt;
+
+}
+
+#inTxt:focus {
+    background-color: yellow;
+    border: 5px solid orange!important;
+    border-collapse: collapse;
+    outline: none;
+}
