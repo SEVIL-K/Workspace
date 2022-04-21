@@ -1,0 +1,68 @@
+ul > li {
+	display: inline-block;
+	width: 120px;
+	border: 1px solid gray;
+	list-style: none;
+	padding: 15px;
+	margin-bottom: 10px;
+}
+li:first-child {
+	border-radius: 10px;
+}
+li:last-child {
+	border-radius: 50%;
+}
+/*  
+li:nth-child(2n) {
+	background-color: aqua;
+}
+li:nth-child(2n+1) {
+	background-color: pink;
+}
+*/
+li:nth-child(even) {
+	background-color: aqua;
+}
+li:nth-child(odd) {
+	background-color: pink;
+}
+
+li:nth-child(3), li:nth-child(4) {
+	border-color: red;
+}
+
+ul * {
+	font-size: 14pt;
+}
+
+ul > span {
+	display: inline-block;
+	width: 120px;
+	padding: 15px;
+	font-size: 10pt;
+}
+
+li:nth-child(2) + li {
+/* 형제들중 두번째 li 태그를 선택하고 그 바로뒤에 오는 li 태그를 선택 */
+	background-color: orange;
+}
+/* 제니태그뒤에 바로 span 태그가 오지 않기 때문에 선택되는 태그가 없다.
+li:nth-child(2) + span {
+	background-color: orange;
+}
+*/
+
+
+li:nth-child(2) ~ span {
+	/* 형제들중 두번째 li 태그를 선택하고 
+		그 이후에 오는 모든 span 형제 태그를 선택 
+	*/
+	border: 2px solid #4CAF50;
+}
+
+li:first-child {
+	color: #e91e63;
+}
+#l1:hover {
+	background-color: blue;
+}

@@ -564,6 +564,15 @@ FROM emp e,
 WHERE e.deptno = d.deptno
 ;
 
+
+CREATE OR REPLACE VIEW emp_dept
+AS
+SELECT empno, ename, e.deptno, dname
+FROM emp e,
+     dept d
+WHERE e.deptno = d.deptno;
+
+
 -- 데이터 추가( 두테이블을 조인해서 만든 복합뷰이므로 DML 명령을 사용할 수 없다.)
 INSERT INTO emp_dno
 VALUES (8000, 'JENNIE', 40, 'OPERATIONS', 'BOSTON');

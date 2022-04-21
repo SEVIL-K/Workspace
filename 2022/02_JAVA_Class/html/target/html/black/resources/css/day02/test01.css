@@ -1,0 +1,21 @@
+.d1 > *:first-child {
+	background-color: red;
+}
+.d1 > *:last-child {
+	font-size: 10pt;
+	font-style: italic;
+	font-weight: normal;
+	background-color: aqua;
+}
+.d1 > *:nth-child(2) {
+	padding: 30px;
+	text-align: center;
+	border-bottom: 1px solid gray;
+}
+.d1 > *:nth-child(2n) {
+	background-color: pink;
+}
+.d1 > *:nth-child(2n-1) {
+	padding: 50px;
+	text-align: right;
+}

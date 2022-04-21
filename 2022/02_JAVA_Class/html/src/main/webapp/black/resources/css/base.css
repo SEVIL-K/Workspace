@@ -1,35 +1,45 @@
 .content {
-    text-align: center;
+	text-align: center;
 }
 .box {
-    display: inline-block;
+	display: inline-block;
 }
 .box65 {
-    display: inline-block;
-    width: 650px;
+	display: inline-block;
+	width: 650px;
 }
 
-/* COLOR */
+/* 너비 */
+.p50 {
+	width: 50%;
+}
+.mx650 {
+	max-width: 650px;
+}
+.mn600 {
+	min-width: 600px;
+}
+
+/* 칼라 */
 .blue {
-    background-color: #2196F3;
+	background-color: #2196F3;
 }
 .green {
-    background-color:#4CAF50;
+	background-color: #4CAF50;
 }
 .pink {
-    background-color: #e91e63;
+	background-color: #e91e63;
 }
 .deeporange {
-    background-color: #ff5722;
+	background-color: #ff5722;
 }
 .indigo {
-    background-color: #3f51b5;
+	background-color: #3f51b5;
 }
-
-/* WIDTH */
+/* 가로사이즈 */
 .w50 {
-    width: 50px;
+	width: 50px;
 }
 .w100 {
-    width: 100px;
+	width: 100px;
 }

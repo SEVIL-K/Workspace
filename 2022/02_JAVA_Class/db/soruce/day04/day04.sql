@@ -143,6 +143,13 @@ FROM EMP e,
      EMP s
 WHERE e.MGR = s.EMPNO(+);
 
+SELECT e.EMPNO 사원번호, e.ENAME 사원이름, s.GRADE 급여등급, d.DNAME 부서이름, d.LOC 부서위치
+FROM emp e, dept d, SALGRADE s
+WHERE e.DEPTNO = d.DEPTNO
+AND e.SAL BETWEEN s.LOSAL AND s.HISAL;
+
+
+
 -- Non equi join
 -- 사원이름, 직급, 급여, 급여등급을 조회하세요
 SELECT ENAME 이름, JOB 직급, SAL 급여, GRADE 급여등급

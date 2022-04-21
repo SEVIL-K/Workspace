@@ -201,8 +201,7 @@ CREATE TABLE guestboard
 -- 캐쉬는 사용하지 않는 것으로 한다.
 CREATE SEQUENCE gbrdseq
     START WITH 1001
-    MAXVALUE 9999
-    NOCYCLE
+    MAXVALUE 9999 NOCYCLE
     NOCACHE
 ;
 
@@ -425,3 +424,8 @@ FROM (SELECT ROWNUM rno,
             WHERE USER_AVT = AVT_NO
             ORDER BY USER_NAME))
 WHERE rno BETWEEN 4 AND 6;
+
+
+SELECT empno 사원번호, ename 사원이름, deptno 부서번호, dname 부서이름
+FROM (SELECT empno, ename, deptno, d.dname
+      FROM emp, dept d);

@@ -1,0 +1,42 @@
+a:link {
+	height: 30px;
+	border: 1px solid gray;
+	text-decoration: none;
+}
+
+[href="test01.html"]:hover {
+	background-color: aqua;
+}
+[href="test01.html"]:active {
+	background-color: orange;
+}
+[type="text"] {
+	display: inline-block;
+	width: 400px;
+	height: 25px;
+}
+:focus {
+	color: #ff5722;
+	font-weight: bold;
+	text-align: center;
+}
+:enabled {
+	margin-bottom: 10px;
+}
+:disabled {
+	margin-top: 50px;
+}
+:checked {
+	width: 30px;
+	height: 30px;
+	/* background-color: red; *//* 적용안되는 속성 */
+}
+
+[type="button"] {
+	border: none;
+	width: 200px;
+	height: 30px;
+	background-color: #2196F3;
+	box-shadow: 2px 2px 10px 5px rgba(120, 120, 120, 0.5);
+	cursor: pointer;
+}

@@ -1,11 +1,17 @@
 문제 1 ]
 	CREATE TABLE  MEMBER (
-		no NUMBER(4),
-		name VARCHER2(6),
-		id VARCHER2(8),
-		pw VARCHER2(8),
-		isshow CHAR(1) CONSTRAINT MEMB_ISSHOW_CK CHECK (isshow IN ('Y', 'N')
-	)
+		no NUMBER(4)
+			CONSTRAINT MEMB_NO_PK PRIMARY KEY,
+		name VARCHER2(6)
+			CONSTRAINT MEMB_NAME_NN NOT NULL,
+		id VARCHER2(8)
+			CONSTRAINT MEMB_ID_UK UNIQUE,
+		pw VARCHER2(8)
+			CONSTRAINT MEMB_PW_NN NOT NULL,
+		isshow CHAR(1)
+			CONSTRAINT MEMB_ISSHOW_CK CHECK (isshow IN ('Y', 'N'))
+        		CONSTRAINT MEMB_ISSHOW_NN NOT NULL
+	);
 
 
 문제 2 ]
@@ -15,8 +21,8 @@
 
 문제 3 ]
 	SELECT DISTINCT
-		deptno 사원번호, ename 사원이름
-	FROM scott.emp;
+       	DEPTNO
+	FROM emp;
 
 
 문제 4 ] 
@@ -30,9 +36,8 @@
 
 
 문제 6 ]
-	SELECT COUNT(*) "comm 받는 사람"
-	FROM emp
-	WHERE comm IS NOT NULL;
+	SELECT COUNT(COMM) "comm 받는 사람"
+	FROM emp;
 
 
 
@@ -44,11 +49,20 @@
 
 
 문제 8 ]
-	
+	SELECT e.EMPNO 사원번호, e.ENAME 사원이름, s.GRADE 급여등급, d.DNAME 부서이름, d.LOC 부서위치
+	FROM emp e, dept d, SALGRADE s
+	WHERE e.DEPTNO = d.DEPTNO
+		AND e.SAL BETWEEN s.LOSAL AND s.HISAL;
 
 
 
 문제 9 ]
+
+	CREATE OR REPLACE VIEW emp_dept
+	AS
+	SELECT empno, ename, e.deptno, dname
+	FROM emp e, dept d
+	WHERE e.deptno = d.deptno;
 
 
 

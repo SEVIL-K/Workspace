@@ -1,10 +1,10 @@
 .box {
-    display: block;
-    float: right;
-    width: 50%;
-    height: 70px;
+	display: block; 
+	float: right; 
+	width: 50%; 
+	height: 70px;
 }
-/*
+/*  
 .blind {
 		position: absolute;
 		clip: rect(0 0 0 0);

@@ -73,6 +73,19 @@ SELECT DISTINCT
     ename
 FROM
     emp;
+
+SELECT DISTINCT
+       DEPTNO
+FROM emp;
+
+SELECT COUNT(COMM) "comm 받는 사람"
+	FROM emp;
+
+
+
+
+
+
     
 -- 사원들의 직급, 부서번호를 조회하는데 중복된 데이터는 한번만 출력되도록 하세요.
 
