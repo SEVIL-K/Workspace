@@ -13,14 +13,14 @@ span {
 
 li:nth-child(2) + li {
     /*
-        형제들 중 두번째인 li 태그를 찾아서
+        형제들중 두째인 li 태그를 찾아서
         그 태그의 바로 뒤에 있는 li 태그를 선택
-     */
+    */
     background-color: orange;
 }
 
 #a1 {
-    background-color: blue ;
+    background-color: #2196F3;
 }
 
 a:nth-child(2) {

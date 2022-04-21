@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/black/resources/css/base.css">
+<!--    <link rel="stylesheet" href="/black/resources/css/w3.css">-->
+    <style>
+        .box65 div:not(.d5) {
+            /*
+                선택자:not(??)
+                ==> 선택자 중 ?? 가 아닌 태그
+
+                선택자:is(??)
+                ==> 선택자 중 ?? 인 태그
+             */
+            display: inline-block;
+            width: 150px;
+            height: 150px;
+            border: 1px solid gray;
+        }
+        .d1, .d2, .d3, .d4 {
+            float: left;
+        }
+        .d5 {
+            clear: both;
+            /*float: left;*/
+            width: 100%;
+            height: 50px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="box65 mx650">
+            <div class="d1">div1</div>
+            <div class="d2">div2</div>
+            <div class="d3">div3</div>
+            <div class="d4">div4</div>
+            <div class="d5">div5</div>
+        </div>
+    </div>
+</body>
+</html>
