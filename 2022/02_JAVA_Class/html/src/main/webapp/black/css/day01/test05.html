@@ -1,58 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="../../resources/css/base.css">
-    <link rel="stylesheet" href="../../resources/css/test05.css">
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../../resources/css/base.css">
+<link rel="stylesheet" type="text/css" href="../../resources/css/day01/test05.css">
 </head>
 <body>
-<div class="content">
-    <div class="box65" style="height: 300px">
-        <a class="box w100" href="test00.html">test00.html</a>
-        <a class="box w100" href="test01.html">test01.html</a>
-        <a class="box w100" href="test02.html">test02.html</a>
-        <a class="box w100" href="test03.html">test03.html</a>
-        <a class="box w100" href="test04.html">test04.html</a>
-    </div>
-    <form class="box65">
-        <div>
-            <label>입력 1 : </label>
-            <input type="text" name="in01">
-        </div>
-        <div>
-            <label>입력 2 : </label>
-            <input type="text" name="in02" value="아이유" readonly>
-            <!--
-                readonly
-                    ==> 입력은 못하도록 하고 데이터전달은 가능하도록 하는 속성
-                    -->
-        </div>
-        <div>
-            <label>입력 3 : </label>
-            <input type="text" name="in03" value="로제" disabled>
-            <!--
-                disabled
-                    ==> 입력태그가 화면에는 보이지만 입력도 데이터 전송도 불가능한 상태
-                    -->
-        </div>
-        <div>
-            <div class="box w100">
-                <label>라디오1</label>
-                <input type="radio" name="rad">
-            </div>
-            <div class="box" style="margin-left: 10px;">
-                <label>라디오2</label>
-                <input type="radio" name="rad">
-            </div>
-        </div>
-        <div>
-            <button type="button">click</button>
-            <input type="reset" value="reset" >
-        </div>
-    </form>
-</div>
-
-
+	<div class="content">
+		<div class="box65" style="height: 300px;">
+			<a class="box w100" href="test00.html">test00.html</a>
+			<a class="box w100" href="test01.html">test01.html</a>
+			<a class="box w100" href="test02.html">test02.html</a>
+			<a class="box w100" href="test03.html">test03.html</a>
+			<a class="box w100" href="test04.html">test04.html</a>
+		</div>
+		<form class="box65" name="frm">
+			<div>
+				<label>입력1 : </label>
+				<input type="text" name="in01">
+			</div>
+			<div>
+				<label>입력2 : </label>
+				<input type="text" name="in02" value="제니" readonly>
+				<!--  
+					readonly
+					==> 입력은 못하도록 하고
+						데이터전달을 가능하도록 하는 속성
+				-->
+			</div>
+			<div>
+				<label id="lbl3">입력3 : </label>
+				<input type="text" name="in03" value="로제" disabled>
+				<!--  
+					disabled
+					==> 입력태그가 화면에는 보이지만
+						입력을 할 수도
+						데이터 전달도 못하는 태그가 된다.
+				-->
+			</div>
+			<div>
+				<div class="box w100">
+					<label>라디오1 </label>
+					<input type="radio" name="rad">
+				</div>
+				<div class="box w100" style="margin-left: 10px;">
+					<label>라디오2 </label>
+					<input type="radio" name="rad">
+				</div>
+			</div>
+			<div>
+				<button type="button">click</button>
+				<input type="reset" value="reset" id="rbtn">
+			</div>
+		</form>
+	</div>
+<script type="text/javascript">
+	document.getElementById('lbl3').onclick = function(){
+		var status = document.frm.in03.disabled;
+		alert('### ' + status);
+		if(status){
+			document.frm.in03.disabled = false;
+		} else {
+			document.frm.in03.disabled = true;
+		}
+	};
+</script>
 </body>
 </html>

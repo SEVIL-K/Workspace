@@ -7,8 +7,19 @@
 <body>
 	<div style="text-align: center;">
 		<div style="display: inline-block; width: 600px;">
-			<h1>음악파일 재생 태그</h1>
-			<audio src="../resources/audio/babyshark.m4a" controls loop autoplay></audio>
+			<div>
+				<h1>음악파일 재생 태그</h1>
+				<audio src="../resources/audio/babyshark.m4a" controls loop autoplay></audio>
+			</div>
+			<div>
+				<audio controls>
+				<!-- 아래 소스태그에서 준비된 리소스로 재생할 수 있게 만드는 방법 -->
+					<source src="../resources/audio/babyshark.wav">
+					<source src="../resources/audio/babyshark.ogg">
+					<source src="../resources/audio/babyshark.m4a">
+					오디오파일을 재생할 수 없습니다.
+				</audio>
+			</div>
 			
 		</div>
 	</div>

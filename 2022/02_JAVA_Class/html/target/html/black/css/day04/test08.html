@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="/black/resources/css/w3.css">
+<style type="text/css">
+	.mx600 {
+		max-width: 600px;
+	}
+	h1 ~ div {
+		width: 150px!important;
+		height: 30px;
+	}
+	
+	/* div2 태그를 선택하세요. */
+/* 	div > div:nth-child(3) { */
+/* 	} */
+	div > h1 ~ div:nth-child(3) {
+		visibility: hidden;
+	}
+	.mx600 > .w3-khaki {
+		display: none;
+	}
+	#menu1 {
+		position: relative;
+		left: -150px;
+		top: 0px;
+		/* opacity: 0; */
+		visibility: hidden;
+	}
+
+</style>
+
+</head>
+<body>
+<!--  
+	태그를 숨기는 방법
+		
+		1. display 속성을 이용해서 숨기는 방법
+		
+		2. visibility 속성을 이용해서 숨기는 방법
+		
+-->
+	<div class="w3-content w3-center mx600">
+		<h1 class="w3-purple w3-padding">태그 숨기기</h1>
+		<div class="w3-col w3-orange w3-border" id="d1">div1</div>
+		<div class="w3-col w3-amber w3-border">div2</div>
+		<div class="w3-col w3-yellow w3-border">div3</div>
+		<div class="w3-col w3-khaki w3-border">div4</div>
+		<div class="w3-col w3-lime w3-border">div5</div>
+		<div class="w3-col w3-green w3-border">div6</div>
+		<div class="w3-col" id="menu1">
+			<div class="w3-col w3-blue">
+				<ul>
+					<li>메뉴1</li>
+					<li>메뉴2</li>
+					<li>메뉴3</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+<script type="text/javascript">
+	var menu = document.getElementById('menu1');
+	
+	document.getElementById('d1').onmouseover = function(){
+		menu.style.visibility = 'visible';
+	};
+	document.getElementById('d1').onmouseout = function(){
+		menu.style.visibility = 'hidden';
+	};
+</script>
+<!--  
+	할일 ]
+		
+		1. 로그인 페이지
+		
+		2. 회원 정보 페이지
+			(아바타도 보이게 하세요...)
+			
+		3. 회원 정보 수정 페이지
+			==> 회원 정보중 수정할 수 있는 데이터는
+				아바타, 전화번호, 메일, 비밀번호
+
+-->
+</body>
+</html>

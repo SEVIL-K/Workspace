@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css"  href="/black/resources/css/w3.css">
+<style type="text/css">
+	.box {
+		display: inline-block;
+		width: 300px;
+		height: 300px;
+		border: 1px solid gray;
+	}
+	.box:first-child {
+		display: block;
+		width: 630px;
+		position: relative;
+		left: 70px;
+		margin-bottom: 50px;
+		background: linear-gradient(90deg, red 20%, yellow 75%, blue);
+	}
+	.box:nth-child(2) {
+		background: radial-gradient(circle, red, blue);
+	}
+	.box:nth-child(3) {
+		background: radial-gradient(ellipse 150px 50px, yellow, green);
+	}
+	.box:nth-child(4) {
+		background: radial-gradient(circle 150px at 100px 50px, red, blue);
+	}
+	.box:nth-child(5) {
+		background: radial-gradient(ellipse 70px 150px at 150px -50px, yellow, green);
+	}
+	.box:nth-child(6) {
+		background: radial-gradient(circle farthest-corner at 100px 50px, yellow, blue);
+	}
+	.box:nth-child(7) {
+		background: radial-gradient(ellipse closest-side at 150px 100px, pink, purple);
+	}
+</style>
+</head>
+<body>
+	<div class="w3-content w3-center">
+		<div class="box"><p></p></div>
+		<div class="box"><p></p></div>
+		<div class="box"><p></p></div>
+		<div class="box"><p></p></div>
+		<div class="box"><p></p></div>
+		<div class="box"><p></p></div>
+		<div class="box"><p></p></div>
+	</div>
+</body>
+</html>

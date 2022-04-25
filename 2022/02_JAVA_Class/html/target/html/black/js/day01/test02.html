@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript 02</title>
+    <script !src="">
+        /*
+            자바스크립트의 변수 특징
+         */
+        var no = 10;    // no가 number 타입으로 결정되었다.
+        let no1 = 100;
+        const no2 = 1000;
+
+        alert('no : ' + no + ' / no1 : ' + no1 + ' / no2 : ' + no2);
+
+        no = '10';  // no가 문자열 타입으로 변경되었다.
+        alert('문자열 no : ' + no);
+    </script>
+    <script src="../../resources/js/day01/test01.js"></script>
+</head>
+<body>
+<h1 id="h1">aaa</h1>
+<div id="d1">
+
+</div>
+<script !src="">
+    alert('아래쪽에서 호출 no : ' + no);
+    alert('************************');
+    alert('외부변수 num : ' + num);
+    console.log('외부변수 num : ' + num);
+
+    /*
+        자바스크립트 코드 실행을 확인하는 방법
+            1. alert() 경고창을 이용해서 확인하는 방법
+            2. console.log() 사용해서 확인하는 방법
+                ==> 서버에서 실행되는 스크립트의 경우 이 방법으로 사용해야 한다.
+                    브라우저로 확인 할 수 없기 때문에
+
+            3. document.getElementById(아이디).innerHTML = '내용';
+            4. document.write('내용');
+     */
+    document.getElementById('h1').innerHTML = 'innerHTML 로 확인';
+    /*
+        ==> 일반태그에서만 사용하는 방법
+            원래 있던 문자열 'aaa' 대신 'innerHTML 로 확인' 으로 교체된다.
+
+            입력태그에서는
+            innerHTML 대신 value 라는 속성을 사용해서 처리한다.
+    */
+    document.write('<h1>외부파일 변수 num : ' + num + '</h1>')
+
+    var stag = '<img src="/black/resources/img/pic/iu.jpg" width="200px" height="auto" alt=""/>';
+    for (var i = 0; i < 4; i++) {
+        stag += '<img src="/black/resources/img/pic/iu.jpg" width="200px" height="auto" alt=""/>';
+    }
+    document.getElementById('d1').innerHTML = stag;
+</script>
+</body>
+</html>
