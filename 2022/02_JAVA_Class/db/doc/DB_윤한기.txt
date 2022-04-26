@@ -5,7 +5,8 @@
 		name VARCHER2(6)
 			CONSTRAINT MEMB_NAME_NN NOT NULL,
 		id VARCHER2(8)
-			CONSTRAINT MEMB_ID_UK UNIQUE,
+			CONSTRAINT MEMB_ID_UK UNIQUE
+			CONSTRAINT MEMB_ID_NN NOT NULL,
 		pw VARCHER2(8)
 			CONSTRAINT MEMB_PW_NN NOT NULL,
 		isshow CHAR(1)
@@ -42,9 +43,11 @@
 
 
 문제 7 ]
-	SELECT empno 사원번호, ename 사원이름, sal 급여, MAX(sal)-sal 부서최대급여와차이, MAX(sal) 부서최대급여, AVG(sal) 부서평균급여
-	FROM emp
-	GROUP BY deptno;
+	SELECT EMPNO 사원번호, ENAME 사원이름, sal 급여, msal-SAL 부서최대와차이, msal 부서최대급여, asal 부서평균급여
+	FROM (SELECT DEPTNO dno, MAX(SAL) msal, AVG(SAL) asal
+      	FROM EMP
+      	GROUP BY DEPTNO) e1, EMP
+	WHERE dno = DEPTNO;
 
 
 

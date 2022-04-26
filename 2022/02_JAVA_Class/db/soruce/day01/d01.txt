@@ -1,0 +1,58 @@
+docker pull iatebes/oracle_11g
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+c:\app\db\
+
+
+jennie
+
+설치가 완료되면 cmd 창을 열어서
+
+
+ALTER USER system IDENTIFIED BY jennie ACCOUNT UNLOCK;
+
+* 1.
+sqlplus system/jennie
+
+입력해준다.
+
+* 2.
+alter user hr identified by hr account unlock;
+
+
+alter user system identified by jennie account unlock; <== 최현정씨 전용...
+
+*  3.
+conn hr/hr
+
+==> 
+SELECT * FROM employees;
+
+하림씨 전용...
+docker run -it --restart=always --name oralce11g -p 1521:1521 iatebes/oracle_11g 
+
+
+
+
+
+
+
+
+

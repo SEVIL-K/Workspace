@@ -37,7 +37,7 @@
         부서별 급여의 합이 제일 높은 부서 사원들의
         사원이름, 직급, 부서번호, 부서이름, 부서급여합계, 부서원수
         를 조회하세요.
-
+        
 */
 
 -- 급여의 합이 제일 높은 부서
@@ -49,7 +49,7 @@ GROUP BY
     deptno
 HAVING
     SUM(sal) =
-                 (
+                 (       
                         SELECT
                             max(SUM(sal))
                         FROM
@@ -60,7 +60,7 @@ HAVING
 ;
 
 SELECT
-    ename 사원이름, job 직급, dno 부서번호, dname 부서이름,
+    ename 사원이름, job 직급, dno 부서번호, dname 부서이름, 
     sum 부서급여합계, cnt 부서원수
 FROM
     emp e,
@@ -71,7 +71,7 @@ FROM
         FROM
             emp
         GROUP BY
-            deptno
+            deptno        
     )
 WHERE
     e.deptno = dno
@@ -85,7 +85,7 @@ WHERE
                             deptno
                         HAVING
                             SUM(sal) >= ALL
-                                         (
+                                         (       
                                                 SELECT
                                                     SUM(sal)
                                                 FROM
@@ -96,7 +96,7 @@ WHERE
                                             --  >=  ALL(10, 20, 30)
                         /*
                             SUM(sal) =
-                                         (
+                                         (       
                                                 SELECT
                                                     MAX(SUM(sal))
                                                 FROM
@@ -118,7 +118,7 @@ WHERE
 
 /*
     문제 8 ]
-        회사 평균급여보다 높고
+        회사 평균급여보다 높고 
         이름이 4, 5글자인 사원들의
         사원이름, 급여, 이름글자길이[, 회사평균급여]
         를 조회하세요.

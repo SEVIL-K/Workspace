@@ -20,6 +20,16 @@
 	min-width: 600px;
 }
 
+/* margin */
+.ml10 {
+	margin-left: 10px;
+}
+
+/* padding */
+.pdl10 {
+	padding-left: 10px;
+}
+
 /* 칼라 */
 .blue {
 	background-color: #2196F3;

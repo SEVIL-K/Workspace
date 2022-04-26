@@ -367,9 +367,7 @@ document.children[0].innerHTML = `<!DOCTYPE html>
 <html lang="ko">
 <head><title>충전한 캐시는 어디로 갔을까? </title></head>
 <body><h1> 2019.04.23 ~ 2020.04.22 <br> 충전한 캐시는 어디로 갔을까? (총 ${numberFormat(
-
     purchaseSum + marketSum,
-
 )}원)</h1>
 <ul>${itemsHTML}</ul>
 <br>
