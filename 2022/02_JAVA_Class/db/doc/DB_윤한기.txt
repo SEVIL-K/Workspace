@@ -44,7 +44,7 @@
 
 문제 7 ]
 	SELECT EMPNO 사원번호, ENAME 사원이름, sal 급여, msal-SAL 부서최대와차이, msal 부서최대급여, asal 부서평균급여
-	FROM (SELECT DEPTNO dno, MAX(SAL) msal, AVG(SAL) asal
+	FROM (SELECT DEPTNO dno, MAX(SAL) msal, FLOOR(AVG(SAL)) asal
       	FROM EMP
       	GROUP BY DEPTNO) e1, EMP
 	WHERE dno = DEPTNO;
@@ -73,6 +73,7 @@
 문제 10 ]
 	CREATE SEQUENCE memb_seq
     		START WITH 1000
+		MAXVALUE 9999
     		INCREMENT BY 1
 		NOCACHE;
 	

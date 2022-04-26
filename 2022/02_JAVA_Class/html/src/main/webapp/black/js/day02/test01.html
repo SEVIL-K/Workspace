@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="/black/resources/css/w3.css">
+<link rel="stylesheet" type="text/css" href="/black/resources/css/base.css">
+<style type="text/css">
+	[name="subj"] {
+		position: relative;
+		top: 20px;
+		right: 50px;
+	}
+</style>
+
+</head>
+<body>
+	<form method="GET" action="../day01/test01.html" name="frm" id="frm"
+			class="w3-content mx650">
+		<h1 class="w3-orange w3-padding w3-center">좋아하는 과목</h1>
+		<div>
+			<label class="w3-col m2 w3-right-align">과목 : </label>
+			<div class="w3-col m10 w3-center">
+				<div class="box w200 w3-border">
+					<h3 class="w3-col m10" id="tjava" onclick="func01(this)">자바</h3>
+					<input type="radio" name="subj" id="java" value="java">
+				</div>
+				<div class="box w200 w3-border">
+					<h3 class="w3-col m10" id="tdb" onclick="func01(this)">DB</h3>
+					<input type="radio" name="subj" id="db" value="db">
+				</div>
+				<div class="box w200 w3-border">
+					<h3 class="w3-col m10" onclick="func01(this)">HTML</h3>
+					<input type="radio" name="subj" id="html" value="html">
+				</div>
+				<div class="box w200 w3-border">
+					<h3 class="w3-col m10" onclick="func01(this)">js</h3>
+					<input type="radio" name="subj" id="js" value="js">
+				</div>
+				<div class="box w200 w3-border w3-margin-bottom">
+					<h3 class="w3-col m10" onclick="func01(this)">JSP</h3>
+					<input type="radio" name="subj" id="jsp" value="jsp">
+				</div>
+			</div>
+		</div>
+	</form>
+	<div class="w3-content mx650 w3-border w3-center" style="clear: left;">
+		<h4 id="msg"></h4>
+	</div>
+<script type="text/javascript">
+/*  
+ 	***
+ 	자바스크립트에서는 
+ 	먼저 태그가 만들어진 후에 태그를 선택해야 에러가 발생하지 않는다.
+ */
+ 
+ 	// 태그이름으로 h3 태그를 선택해서 첫번째 태그의 내용을 
+ 	// 아이디가 msg인 태그에 입력해보자.
+ 	var elm = document.getElementsByTagName('h3');
+ 	var title = elm[0].innerHTML;
+ 	//document.getElementById('msg').innerHTML = title;
+ 	
+ 	// 아이디로 선택해서 크릭이벤트 추가
+ 	/*
+ 	document.getElementById('tjava').onclick = function(){
+ 		var title = this.innerHTML;
+	 	document.getElementById('msg').innerHTML = title;
+ 	};
+ 	document.getElementById('tdb').onclick = function(){
+ 		var title = this.innerHTML;
+	 	document.getElementById('msg').innerHTML = title;
+ 	};
+ 	*/
+ 	
+ 	/*
+ 	// 반복문으로 처리하는 방법
+ 	for(var i = 0 ; i < elm.length ; i++ ){
+ 		var tmp = elm[i]; // 여러개의 태그를 모아놓은 배열에서 하나를 꺼냈다.
+ 		
+ 		// 꺼낸 태그하나에 이벤트 추가
+ 		tmp.onclick = function(){
+ 			var jaemok = this.innerHTML;
+ 			document.getElementById('msg').innerHTML = jaemok;
+ 		};
+ 	}
+ 	*/
+ 	
+ 	// 함수로 처리하는 방법
+ 	function func01(el){
+ 		// 이함수를 호출하는 객체를 입력받는다.
+ 		var title = el.innerHTML;
+ 		document.getElementById('msg').innerHTML = title;
+ 	}
+ 	
+ 	// 레디오버튼 중에 아이디가 java인 태그를 선택해서 입력된 값을 읽어서 창으로 띄워보자.
+ 	var tmp = document.querySelectorAll('input#java');
+ 	var txt = tmp[0].value;
+ 	alert(txt);
+</script>
+</body>
+</html>

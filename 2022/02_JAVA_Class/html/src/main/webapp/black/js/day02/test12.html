@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="/black/resources/css/w3.css">
+<link rel="stylesheet" type="text/css" href="/black/resources/css/base.css">
+</head>
+<body>
+	<div class="w3-content w3-center">
+		<input type="hidden" id="tag1" name="data1"><!-- 데이터 전송용 입력태그 -->
+		<input type="hidden" id="tag2" name="data2"><!-- 데이터 전송용 입력태그 -->
+		<h1 class="w3-blue" id="h1">여기는 타이틀..</h1>
+		<input type="text" name="txt" id="txt" value="텍스트"
+				class="w3-input w3-border">
+		<div class="w3-col">
+			<div class="w3-half w3-button w3-red" id="btn1">btn1</div>
+			<div class="w3-half w3-button w3-blue" id="btn2">btn2</div>
+		</div>
+	</div>
+
+<script type="text/javascript">
+	document.getElementById('h1').innerHTML = '변경된 타이틀';
+	document.getElementById('txt').value = '변경된 내용';
+	
+	// btn1을 클릭하면 아이디가 h1 태그의 내용을 아이디가 txt인 태그에 입력해보자.
+	
+	document.getElementById('btn1').onclick = function(){
+		var data1 = document.getElementById('h1').innerHTML;
+		document.getElementById('tag1').value = data1;
+	};
+	document.getElementById('btn2').onclick = function(){
+		var data1 = document.getElementById('txt').value;
+		// *** 추가
+		/* data1 = '*** ' + data1 + ' ***'; */
+		/* document.getElementById('h1').innerHTML = data1; */
+		document.getElementById('tag2').value = data1;
+	};
+</script>
+</body>
+</html>

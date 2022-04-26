@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	/*
+		자바의 경우 배열 만드는 방법
+			
+			int[] num = new int[10];
+				또는
+			int[] num = new int[]{1,2,3,4,5,6,7,8,9};
+				
+		자바스크립트의 경우
+			형식 1 ]
+				var 변수이름 = [데이터1, 데이터2, 데이터3, ...];
+			형식 2 ]
+				var 변수이름 = new Array(데이터1, 데이터2, 데이터3, ...);
+	*/
+	
+/* 	var member = new Array('제니', '리사', '로제', '지수'); */
+ 	var member = ['제니', '리사', '로제', '지수'];
+	
+//	console.log('첫번째 멤버 : ' + member[0]);
+	
+	// 배열 길이
+	var len = member.length;
+	// 모든 회원을 꺼내서 화면에 출력하세요.
+	for(var i = 0 ; i < len ; i++ ){
+		document.write('<h1>member 의 [ ' + i + ' ] 번째 멤버 : ' + member[i] + '</h1>');
+	}
+	
+	alert('isArray() : ' + Array.isArray(member));
+	alert('instanceof : ' + (member instanceof Array));
+/* 	alert(typeof member); */
+</script>
+</head>
+<body>
+
+</body>
+</html>

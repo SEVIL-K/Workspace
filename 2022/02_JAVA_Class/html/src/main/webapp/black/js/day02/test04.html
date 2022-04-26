@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="/black/resources/css/w3.css">
+<link rel="stylesheet" type="text/css" href="/black/resources/css/base.css">
+<script type="text/javascript">
+	document.write('<div class="w3-content mx650 w3-center">');
+	for(var i = 2; i <= 9 ; i++ ){
+		document.write('<div class="box" style="width: 150px;">');
+		document.write('<h1 class="w3-pink">' + i + ' 단</h1>');		
+		for(var j = 1 ; j <= 9 ; j++ ){
+			document.write('<p>' + i + ' x ' + j + ' = ' + (i * j) + '</p>');		
+		}
+		document.write('</div>');
+	}
+	document.write('</div>');
+</script>
+</head>
+<body>
+
+</body>
+</html>

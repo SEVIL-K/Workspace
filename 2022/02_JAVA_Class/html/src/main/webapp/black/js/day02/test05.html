@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	// 이름과 숫자를 입력받아 그이름의 학생이 덧셈을 해서 반환해주는 기능의 함수
+	function addNum(name, no){
+		// 학생이름으로 작업 메세지를 출력...
+		document.write('<h1>' + name + ' 학생이 ' + no + 
+						' 까지의 숫자를 더하는 작업을 합니다.</h1>');
+		// 덧셈의 결과값을 만든다.
+		var sum = 0;
+		for(var i = 0; i <= no ; i++ ){
+			sum += i;
+		}
+		return sum;
+	}
+	
+	/*
+		함수 작성형식 2 ]
+		
+			var 변수이름 = function(매개변수리스트){
+				실행내용....
+			};
+			==> 이때 대입된 변수이름은 자동으로 함수이름이 된다.
+	*/
+	
+	// 함수 호출
+/* 	var result = addNum('제니', 10); */
+	var func01 = addNum; 
+	/*
+		자바스크립트에서는 함수자체를 변수에 입력할 수 있다.
+		주의 ]
+			 이때 함수를 호출해서 대입하지 않도록 해야한다.
+			 
+		이때 변수에 대입한 함수는
+		변수를 이용한 형태로 호출할 수 있다.
+	*/
+	
+	var name = '홍길동';
+	var soo = 100;
+	var result = func01(name, soo);
+	document.write('<h1>' + name + ' 이(가) 0부터 ' + soo + 
+					' 까지 더한 값은 ' + result + ' 입니다.</h1>');
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

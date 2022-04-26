@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var arr = ['서울', '인천', '부산'];
+	
+	var city = arr.concat('대전', '대구');
+	
+	document.write('<h3>city type : ' + (city instanceof Array)?'배열':'배열아님' + '</h3>');
+	document.write('<h3>' + city + '</h3>');
+	
+	// arr과 city 를 결합해보자.
+	var dosi = arr.concat(city);
+	document.write('<h3>' + dosi + '</h3>');
+</script>
+</head>
+<body>
+
+</body>
+</html>

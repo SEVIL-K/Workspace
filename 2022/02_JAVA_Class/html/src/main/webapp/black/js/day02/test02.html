@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="/black/resources/css/w3.css">
+<link rel="stylesheet" type="text/css" href="/black/resources/css/base.css">
+</head>
+<body>
+	<div class="w3-content mx650 w3-center">
+		<h1 class="w3-pink w3-padding w3-card-4 w3-margin-bottom">평년/윤년 판독기</h1>
+		<div class="w3-border w3-card-4 w3-padding">
+			<div class="box w3-border-bottom" style="width: 80%; padding: 20px 5px;">
+				<label for="year" class="w3-col m2 w3-right-align w3-text-purple" style="position: relative; right: 10px; font-size: 20pt;">년도 : </label>
+				<input type="text" name="year" id="year"
+						class="w3-col m8 w3-input w3-border">
+				<div class="w3-col m2 w3-button w3-blue" id="btn" style="position: relative; left: 5px;">check</div>
+			</div>
+			<div class="box">
+				<h2 class="w3-text-indigo" id="msg">* 입력된 해 <span id="m1"></span> 는 <span id="m2"></span> 입니다. *</h2>
+			</div>
+		</div>
+	</div>
+<script type="text/javascript">
+	// 버튼 이벤트
+	document.getElementById('btn').onclick = function(){
+		// 할일
+		// 1. 입력된 값을 읽고
+		var syear = document.getElementById('year').value; // 입력태그의 입력된 값은 value 속성으로 꺼낸다.
+		// 2. 입력된 값 판별하고
+		var msg = '';
+		if(syear % 400 == 0){
+			msg = '윤년';
+		} else if(syear % 100 == 0){
+			msg = '평년';
+		} else if(syear % 4 == 0){
+			msg = '윤년';
+		} else {
+			msg = '평년';
+		}
+		// 3. 출력태그 찾아서 입력하고
+		//document.getElementById('msg').innerHTML = '* 입력된 해 ' + syear + ' 는 ' + msg + ' 입니다. *';
+		document.getElementById('m1').innerHTML = syear;
+		document.getElementById('m2').innerHTML = msg;
+	};
+</script>
+</body>
+</html>
