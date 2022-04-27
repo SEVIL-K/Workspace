@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // Black Pink 연관배열
+
+        /*
+            형식
+                var 변수 = {'키값1 : 데이터1, '키값2':데이터2, .... }
+         */
+
+        var blackpink = {'b1':'제니', 'b2':'리사', 'b3': '로제'}
+
+        // 데이터 꺼내기
+        document.write('<h3 class="w3-center w3-text-pink">' + blackpink.b1 + '</h3>)');
+        document.write('<h3 class="w3-center w3-text-purple">' + blackpink['b2'] + '</h3>)<hr>');
+
+        // 데이터 추가
+        blackpink.b1 = 'jennie';
+        blackpink['b4'] = '지수';
+
+        // 출력
+        document.write('<h3 class="w3-center w3-text-indigo">' + blackpink.b1 + '</h3>)');
+        document.write('<h3 class="w3-center w3-text-indigo">' + blackpink.b2 + '</h3>)');
+        document.write('<h3 class="w3-center w3-text-indigo">' + blackpink.b3 + '</h3>)');
+        document.write('<h3 class="w3-center w3-text-blue">' + blackpink['b4'] + '</h3>)');
+
+    </script>
+    <link rel="stylesheet" href="../../resources/css/base.css">
+    <link rel="stylesheet" href="../../resources/css/w3.css">
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var kdata = ['서울', '부산', '구포', '대구', '인천', '대전', '세종'];
+        // index        0       1       2       3       4       5       6
+        // index       -7      -6      -5      -4      -3      -2      -1
+
+        var str1 = kdata.slice(1, 4);
+        document.write(kdata + '<br>');
+        document.write('<br>');
+        document.write(str1);
+
+        var str2 = kdata.slice(2, -1);
+        var str3 = kdata.slice(-4, -2);
+
+        document.write('<br>');
+        document.write('<h4>str2 : ' + str2 + '</h4>');
+        document.write('<h4>str3 : ' + str3 + '</h4>');
+
+        // ------
+        document.write('<br>');
+        document.write('<hr>');
+        // ------
+
+        document.write('<h3>splice</h3>');
+        document.write('이전 kdata :' + kdata + '<br>');
+        var str4 = kdata.splice(1, 2);  // 인덱스 1에서부터 2개를 잘라내세요
+        document.write('<h4>str4 :' + str4 + '</h4>');
+        document.write('이후 kdata :' + kdata + '<br>');
+
+        // ------
+        document.write('<br>');
+        document.write('<hr>');
+        // ------
+
+
+        var str5 = kdata.splice(1, 1, '강릉', '세종');
+        document.write('<h4>str5 :' + str5 + '</h4>');
+        document.write('이후 kdata :' + kdata + '<br>');
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
