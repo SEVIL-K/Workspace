@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript Study</title>
+<link rel="stylesheet" type="text/css" href="/black/resources/css/w3.css">
+<link rel="stylesheet" type="text/css" href="/black/resources/css/base.css">
+<style type="text/css">
+</style>
+<script type="text/javascript">
+	var arr = {
+		'키값1': '데이터1',	
+		'키값2': '데이터2',	
+		'키값3': '데이터3'
+	};
+	
+	var obj = {
+		var1: '데이터1',
+		var2: '데이터2',
+		var3: '데이터3',
+		func01: function(){
+			
+		},
+		func02: function(){
+			
+		}
+	};
+</script>
+</head>
+<body>
+	<form method="GET" action="test01.html" 
+		class="w3-content mx650 w3-center" id="frm" name="frm">
+		<select name="sel" class="w3-col m3 w3-input w3-border">
+			<option>######</option>
+			<option value="1">java</option>
+			<option value="2">db</option>
+			<option value="3" selected>html</option>
+			<option value="4">javascript</option>
+			<option value="5">jQuery</option>
+		</select>
+		<input type="file" name="file" id="file" class="w3-col m9 w3-input w3-border">
+	</form>
+<script type="text/javascript">
+//	document.getElementById('frm').submit();
+	/*
+		==> http://localhost/black/js/day03/test01.html?sel=3
+	*/
+	
+	document.getElementById('file').onchange = function(){
+		
+		var sfile = this.value;
+		alert(sfile);
+		document.getElementById('frm').submit();
+		// C:\fakepath\20220406_001753213_02.png
+	};
+</script>
+</body>
+</html>
+
+
+
+
+
+
+

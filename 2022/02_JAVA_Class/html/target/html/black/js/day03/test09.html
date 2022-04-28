@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript Study</title>
+<link rel="stylesheet" type="text/css" href="/black/resources/css/w3.css">
+<link rel="stylesheet" type="text/css" href="/black/resources/css/base.css">
+<style type="text/css">
+</style>
+<script type="text/javascript">
+	function getData(){
+/*
+		var str = document.getElementById('txt').value;
+		document.getElementById('intxt').innerHTML = str;
+*/		
+		var str = '<div class="box" style="width: 100%;" id="box2">' + 
+					'<label for="txt" class="w3-col m3 w3-right-align" style="font-size: 20pt;">입 력 n :</label>' +
+					'<input type="text" name="txt1" class="w3-col m8 w3-input w3-border">' +
+					'</div>';
+			
+		var ostr = document.getElementById('fr').innerHTML;
+		document.getElementById('fr').innerHTML = ostr + str;
+	}
+	
+	
+	function func01(){
+		//alert('####################');
+		document.getElementById('txt').onblur = function(){
+			document.getElementById('h1').setAttribute('class', 'w3-blue w3-padding w3-card-4');
+			var str = this.value;
+			
+			if(!str){
+			/*
+				조건식에 데이터변수만 기술하는 경우는
+				변수에 데이터가 채워져있으면 true로 처리하고
+				변수가 비어있으면(undefined 또는 null) false 로 처리한다.
+			*/
+				alert('데이터를 입력하세요.');
+			} else {
+				document.getElementById('box2').style.display = 'inline-block';
+			}
+		};
+		
+		document.getElementById('txt').onfocus = function(){
+			document.getElementById('h1').setAttribute('class', 'w3-pink w3-padding w3-card-4');
+		};
+		
+		document.getElementById('txt').onchange = function(){
+			// 입력된 내용을 경고창에 띄워보자.
+			var str = this.value;
+			alert('입력 내용 : ' + str);
+		};
+		
+		document.getElementById('txt').onkeyup = function(){
+			var str = this.value;
+//			document.write('<h2 class="w3-center w3-text-red">' + str + '</h2>');
+			//document.getElementById('intxt').textContent = str;
+		};
+		
+		document.getElementById('txt1').onkeydown = function(){
+			var str = this.value;
+//			document.write('<h2 class="w3-center w3-text-red">' + str + '</h2>');
+			document.getElementById('intxt').textContent = str;
+		};
+		
+		document.getElementById('btn2').onmouseover = function(){
+			this.setAttribute('class', 'w3-half w3-btn w3-lime');
+		};
+		document.getElementById('btn2').onmouseout = function(){
+			this.setAttribute('class', 'w3-half w3-btn w3-green');
+		};
+		
+		var el = document.getElementsByTagName('input');
+		// 이벤트 추가
+		for(var i = 0 ; i < el.length ; i++ ){
+			el[i].onclick = function(){
+				this.setAttribute('class', 'w3-col m8 w3-input w3-border w3-pale-blue');
+			}
+		}
+		
+		
+	}
+</script>
+</head>
+<body onload="func01()">
+	<div class="w3-content w3-center mx650">
+		<h1 class="w3-lime w3-padding w3-card-4" id="h1">JavaScript Event 01</h1>
+		<div class="w3-padding w3-card-4" id="fr">
+			<div class="box" style="width: 100%;">
+				<label for="txt" class="w3-col m3 w3-right-align" style="font-size: 20pt;">입 력 1 :</label>
+				<input type="text" name="txt" id="txt" class="w3-col m8 w3-input w3-border">
+			</div>
+			<div class="box" style="display: none; width: 100%;" id="box2">
+				<label for="txt" class="w3-col m3 w3-right-align" style="font-size: 20pt;">입 력 2 :</label>
+				<input type="text" name="txt1" id="txt1" class="w3-col m8 w3-input w3-border">
+			</div>
+		</div>
+		<div class="w3-margin-top">
+			<div class="w3-half w3-btn w3-orange" id="btn1" onClick="getData()">btn1</div>
+			<div class="w3-half w3-btn w3-green" id="btn2">btn2</div>
+		</div>
+		<div class="w3-margin-top">
+			<h1 class="w3-text-red" id="intxt"></h1>
+		</div>
+	</div>
+<script type="text/javascript">
+</script>
+</body>
+</html>

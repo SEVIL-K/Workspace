@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript Study</title>
+<link rel="stylesheet" type="text/css" href="/black/resources/css/w3.css">
+<link rel="stylesheet" type="text/css" href="/black/resources/css/base.css">
+<style type="text/css">
+</style>
+<script type="text/javascript">
+	var arr = [10, '20', 30, '50', '70', 90];
+	
+//	alert(typeof arr[0] + ' : ' + (typeof (typeof arr[0])));
+	// arr 배열에서 숫자 데이터만 골라서 배열을 만들고 싶다.
+	
+	// 숫자타입인지 판별해주는 함수
+	function func01(value){
+		return 'number' == (typeof value);
+	}
+	
+	var numArr = arr.filter(func01);
+	
+	document.write('<h3 class="w3-text-blue">arr : ' + arr + '</h3>');
+	document.write('<h3 class="w3-text-red">numArr : ' + numArr + '</h3>');
+	
+</script>
+</head>
+<body>
+
+<script type="text/javascript">
+
+</script>
+</body>
+</html>

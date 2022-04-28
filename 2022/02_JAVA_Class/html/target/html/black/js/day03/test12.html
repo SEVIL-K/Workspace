@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript Study</title>
+<link rel="stylesheet" type="text/css" href="/black/resources/css/w3.css">
+<link rel="stylesheet" type="text/css" href="/black/resources/css/base.css">
+<style type="text/css">
+</style>
+<script type="text/javascript">
+/*
+	var day = new Date();
+	alert(day);
+*/
+
+	function wday(num){
+		var result = '';
+		switch(num){
+		case 0:
+			result = '일요일';
+			break;
+		case 1:
+			result = '월요일';
+			break;
+		case 2:
+			result = '화요일';
+			break;
+		case 3:
+			result = '수요일';
+			break;
+		case 4:
+			result = '목요일';
+			break;
+		case 5:
+			result = '금요일';
+			break;
+		case 6:
+			result = '토요일';
+			break;
+		}
+		return result;
+	}
+</script>
+</head>
+<body>
+	<h3 class="w3-center w3-blue" id="d1"></h3>
+	<h3 class="w3-center w3-blue" id="d2"></h3>
+	<h3 class="w3-center w3-blue" id="d3"></h3>
+	<h3 class="w3-center w3-blue" id="d4"></h3>
+<script type="text/javascript">
+	document.getElementById("d2").innerHTML = new Date(1491803527400);
+	
+	var day = new Date();
+	
+	var msg = day.getFullYear() + '년 ' + (day.getMonth() + 1) + '월 ' + 
+				day.getDate() + '일 ' + wday(day.getDay())+ ' ' + day.getHours() + '시 ' + 
+				day.getMinutes() + '분 ' + day.getSeconds() + '초';
+	document.getElementById('d3').innerHTML = msg;
+
+</script>
+</body>
+</html>

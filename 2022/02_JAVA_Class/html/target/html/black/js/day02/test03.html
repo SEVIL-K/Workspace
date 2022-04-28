@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="/black/resources/css/w3.css">
+<link rel="stylesheet" type="text/css" href="/black/resources/css/base.css">
+<style type="text/css">
+	.gugubox {
+		width: 150px;
+	}
+</style>
+</head>
+<body>
+	<div class="w3-content mx650 w3-center" id="gugu">
+		<!--  
+		<div class="box gugubox w3-border w3-card-4 w3-margin-top" 
+				style="padding-bottom: 5px;">
+			<h2 class="w3-pink" style="margin-top: 0px;">2 단</h2>
+			<p>2 x 1 = 2</p>
+			<p>2 x 2 = 4</p>
+			<p>2 x 3 = 6</p>
+			<p>2 x 4 = 8</p>
+			<p>2 x 5 = 10</p>
+			<p>2 x 6 = 12</p>
+			<p>2 x 7 = 14</p>
+			<p>2 x 8 = 16</p>
+			<p>2 x 9 = 18</p>
+		</div>
+		-->
+	</div>
+<script type="text/javascript">
+	var clr = ['w3-pink', 'w3-purple', 'w3-deep-purple', 'w3-indigo', 
+			'w3-blue', 'w3-aqua', 'w3-teal', 'w3-green'];
+	
+	var base = '';
+		
+	for(var i = 2 ; i <= 9 ; i++ ){
+		var str = '<div class="box gugubox w3-border w3-card-4 w3-margin-top" style="padding-bottom: 5px;">'+
+					'<h2 class="' + clr[i-2] + '" style="margin-top: 0px;">' + i + ' 단</h2>';
+		for(var j = 1 ; j <= 9 ; j++ ){
+			str += '<p>' + i + ' x ' + j + ' = ' + (i * j) + '</p>';
+		}
+		str += '</div>';
+		base += str;
+	}
+	
+/* 	document.getElementById('gugu').innerText = base; */
+ 	document.getElementById('gugu').innerHTML = base;
+		
+</script>
+</body>
+</html>

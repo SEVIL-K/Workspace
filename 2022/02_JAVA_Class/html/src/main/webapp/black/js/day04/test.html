@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript Study</title>
+<link rel="stylesheet" type="text/css" href="/black/resources/css/w3.css">
+<link rel="stylesheet" type="text/css" href="/black/resources/css/base.css">
+<style type="text/css">
+	body {
+		padding: 30px;
+		text-align: center;
+		font-size: 0pt;
+	}
+	.box {
+		width: 100px;
+		height: 100px;
+		border: thin solid gray;
+		font-size: 14pt;
+		margin-left: 10px;
+		padding-top: 30px;
+	}
+	
+</style>
+<script type="text/javascript">
+	var clrList = [
+		'w3-pink', 'w3-purple', 'w3-deep-purple', 'w3-indigo', 
+		'w3-blue', 'w3-aqua', 'w3-green'
+	];
+</script>
+</head>
+<body>
+	<div class="box">div1</div>
+	<div class="box">div2</div>
+	<div class="box">div3</div>
+	<div class="box">div4</div>
+	<div class="box">div5</div>
+	<div class="box">div6</div>
+	<div class="box">div7</div>
+<script type="text/javascript">
+	var el = document.getElementsByClassName('box');
+	// 클래스가 box 인 태그를 모두 선택해서 배열로 반환해준다.
+	/* alert(el.length); */
+	
+	for(var i = 0; i < el.length ; i++ ){
+		el[i].setAttribute('class', 'box ' + clrList[i] );
+	}
+</script>
+</body>
+</html>

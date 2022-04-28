@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	alert(Number.MAX_VALUE);
+	var kdata = ['서울', '부산', '구포', '대구', '인천', '대전', '세종']; 
+	//	index	0		1		2		3		4		5		6
+	//	index	-7		-6		-5		-4		-3		-2		-1
+	var str1 = kdata.slice(1, 4);
+	document.write(kdata + '<br>');
+	document.write(str1);
+	
+	var str2=kdata.slice(2, -1);
+    var str3=kdata.slice(-4, -2);
+	document.write('<h4>str2 : ' + str2 + '</h4>' );
+	document.write('<h4>str3 : ' + str3 + '</h4>' );
+	document.write('<hr>');
+	document.write('<h3>splice</h3>');
+	document.write('이전 kdata : ' + kdata + '<br>');
+	var str4 = kdata.splice(3, 3); // 인덱스 3에서부터 3개를 잘라내세요.
+	document.write('<h4>str4 : ' + str4 + '</h4>');
+	document.write('이후 kdata : ' + kdata + '<br>');
+	
+	var str5 = kdata.splice(2, 2, '강릉', '아산'); 
+	document.write('<h4>str5 : ' + str5 + '</h4>');
+	document.write('이후 kdata : ' + kdata + '<br><br>');
+	
+	var str6 = kdata.splice(2, Number.MAX_VALUE);
+	document.write("삭제 데이터 : " + str6 + "<br>");
+	document.write('이후 kdata : ' + kdata + '<br>');
+</script>
+</head>
+<body>
+
+</body>
+</html>

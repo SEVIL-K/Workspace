@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript Study</title>
+<link rel="stylesheet" type="text/css" href="/black/resources/css/w3.css">
+<link rel="stylesheet" type="text/css" href="/black/resources/css/base.css">
+<style type="text/css">
+</style>
+<script type="text/javascript">
+	var data=[]; 
+	for(var i = 0; i < 10 ; i++ ){
+		data[i] = i * 10 + 10;
+		
+		/*
+		if(i == 0){
+			data[0] = 10;
+		}
+		data[i] = data[i-1] + 10;
+		*/
+	}
+	document.write('<h3 class="w3-text-indigo">배열 데이터 : [ ' + data + ' ]</h3>');
+	document.write('<h3 class="w3-text-blue">처음부터 검색한 30의 인덱스 : ' + data.indexOf(30) + '</h3>');
+	document.write('<h3 class="w3-text-green">마지막에서 검색한 30의 인덱스 : ' + data.lastIndexOf(30, -2) + '</h3>');
+	document.write('<h3 class="w3-text-purple">세 번째부터 검색한 30의 인덱스 : ' + data.indexOf(30, 3) + '</h3>');
+	/*
+		indexOf(찾을데이터, 검색시작위치)
+		==> 데이터를 찾을 수 없는 경우 -1을 반환해준다.
+	*/
+</script>
+</head>
+<body>
+
+<script type="text/javascript">
+
+</script>
+</body>
+</html>

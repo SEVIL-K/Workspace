@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var nums = [1,2,5,3,7,4, 6, 9, 8];
+	
+	function print1(num){
+		document.write('<h1 style="text-align: center;">');
+		document.write('| ');
+		for(var i = 0 ; i < num.length ; i++ ){
+			document.write(num[i] + ' | ');
+		}
+		document.write('</h1>');
+	}
+	
+	print1(nums);
+	
+	// 순서를 뒤집어보자.
+	var arr1 = nums.reverse();
+	document.write('<center>nums.reverse() : </center>');
+	print1(nums);
+	print1(arr1);
+	
+	// 오름차순 정렬
+	arr1 = nums.sort();
+	document.write('<center>nums.sort() : </center>');
+	print1(nums);
+	print1(arr1);
+	
+	// 역정렬
+	arr1 = arr1.reverse();
+	
+	document.write('<center>nums.reverse() : </center>');
+	print1(arr1);
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript Study</title>
+<link rel="stylesheet" type="text/css" href="/black/resources/css/w3.css">
+<link rel="stylesheet" type="text/css" href="/black/resources/css/base.css">
+<style type="text/css">
+</style>
+<script type="text/javascript">
+	var data=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+	
+	function mapArr(value) {
+	    return value*value;              
+	}
+	
+	var mapdata = data.map(mapArr);    
+	document.write('<h3 class="w3-col m3 w3-right-align">원래 배열 : </h3><h2 class="w3-col m8 w3-right-align">' + data + '</h2>');
+	document.write('<h3 class="w3-col m3 w3-right-align">map 메소드 적용 배열 : </h3><h2 class="w3-col m8 w3-right-align">' + mapdata + '</h2>');
+</script>
+</head>
+<body>
+
+<script type="text/javascript">
+
+</script>
+</body>
+</html>
