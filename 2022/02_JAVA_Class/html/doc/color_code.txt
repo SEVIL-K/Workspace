@@ -1,0 +1,7 @@
+pink - #e91e63
+
+blue - #2196F3
+
+green - #4CAF50
+
+deep-orange - #ff5722

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>메인 로그인 페이지</title>
+    <link rel="stylesheet" href="resources/css/base.css">
+    <link rel="stylesheet" href="resources/css/w3.css">
+</head>
+<body>
+<div class="w3-content mx650">
+    <h1 class="w3-blue w3-center w3-margin-bottom w3-padding">Login</h1>
+    <div class="w3-col w3-padding w3-card-4">
+        <div class="w3-col">
+            <label class="w3-col m2 w3-right-align" for="lid" style="padding-top: 10px;">아이디 : </label>
+            <input type="text" class="w3-col m9 w3-input w3-border" style="margin-left: 10px;" id="lid" name="lid"
+                   placeholder="아이디를 입력하세요">
+        </div>
+        <div class="w3-col w3-margin-top">
+            <label class="w3-col m2 w3-right-align" for="lpw" style="padding-top: 10px;">아이디 : </label>
+            <input type="password" class="w3-col m9 w3-input w3-border" style="margin-left: 10px;" id="lpw" name="lpw"
+                   placeholder="비밀번호를 입력하세요">
+        </div>
+        <div class="w3-col w3-margin-top w3-card-4">
+            <div class="w3-half w3-button w3-orange" id="jbtn">Join</div>
+            <div class="w3-half w3-button w3-blue" id="lbtn">Login</div>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    document.getElementById('jbtn').onclick = function () {
+        open('join.html');
+    };
+</script>
+</html>
