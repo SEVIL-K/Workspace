@@ -1,42 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <script>
-        document.write("<p>문서의 URL 주소 : " + location.href + "</p>");
-        document.write("<p>호스트 이름과 포트 : " + location.host + "</p>");
-        document.write("<p>호스트 컴퓨터 이름 : " + location.hostname + "</p>");
-        document.write("<p>앵커이름 : " location.hash + "</p>");
-        document.write("<p>디렉토리 이하 경로 : " location.pathname + "</p>");
-        document.write("<p>포트번호 부분 : " location.port +"</p>");
-        document.write("<p>프로토콜 부분 : " location.protocol + "</p>");
-        document.write("<p>URL 조회부분 : " location.search + "</p>");
-    </script>
+<meta charset="UTF-8">
+<title>JavaScript Study</title>
+<link rel="stylesheet" type="text/css" href="/black/resources/css/w3.css">
+<link rel="stylesheet" type="text/css" href="/black/resources/css/base.css">
+<style type="text/css">
+</style>
+<script type="text/javascript">
+	document.write("<p>문서의 URL주소: " + location.href + "</p>");
+	document.write("<p>호스트 이름과 포트: " + location.host + "</p>");
+	document.write("<p>호스트 컴퓨터 이름: " + location.hostname + "</p>");
+	document.write("<p>앵커이름: " + location.hash + "</p>");
+	document.write("<p>디렉토리 이하 경로: " + location.pathname + "</p>");
+	document.write("<p>포트번호 부분: " + location.port + "</p>");
+	document.write("<p>프로토콜 종류: " + location.protocol + "</p>");
+	document.write("<p>URL 조회부분: " + location.search + "</p>");
+</script>
 </head>
 <body>
-<a href="test04.html?a=1&b=2#top">이 링크로 다시 실행하세요.</a>
-<script !src="">
-    var param = location.search;
-    param = param.substring(1);
-    // alert(param);
-
-    var data = {};
-    var key = [];
-
-    for (var i = 0; i < arr1.length; i++) {
-        var tmp = arr1[i].split('=');
-        // alert(tmp);
-        // 키 값과 데이터가 분리되었으니 쌍으로 data에 채워준다.
-        key[i] = tmp[0];
-        data[tmp[0]] = tmp[1];
-    }
-
-    for (var i = 0; i < arr1.length; i++) {
-        var tmp = document.getElementById('d1').innerHTML;
-        document.getElementById('d1').innerHTML = tmp + '<h1 class="w3-center">' + key[i] + ' : ' + data[key[i]] + '</h1>';
-    }
+	<a href="test04.html?a=1&b=2#top">이 링크로 다시 실행하세요.</a>
+	<div>
+		남자 <input type="radio" name="gen" id="mgen" value="M">
+		여자 <input type="radio" name="gen" id="fgen" value="F" checked>
+	</div>
+	<div class="w3-center" id="d1"></div>
+<script type="text/javascript">
+	var param = location.search;
+	param = param.substring(1);
+//	alert(param);
+	
+	var arr1= param.split('&');
+	
+	var data = {}; // 연관배열
+	var key = [];
+	
+	for(var i = 0 ; i < arr1.length ; i++ ){
+		// a=1
+		var tmp = arr1[i].split('=');
+//		alert(tmp);
+		// 키값과 데이터가 분리되었으니 쌍으로 data에 채워준다.
+		key[i] = tmp[0];
+		
+		data[tmp[0]] = tmp[1];
+	}
+	
+	for(var i = 0 ; i < arr1.length ; i++ ){
+		var tmp = document.getElementById('d1').innerHTML;
+		document.getElementById('d1').innerHTML = tmp + '<h1 class="w3-center">' + 
+													key[i] + ' : ' + data[key[i]] + '</h1>'; 
+	}
+	
+	var sgen = document.querySelectorAll('[type="radio"]:checked')[0].value;
+	alert(sgen);
 </script>
-
 </body>
 </html>
+
+
+
+
+
+
+
+
+

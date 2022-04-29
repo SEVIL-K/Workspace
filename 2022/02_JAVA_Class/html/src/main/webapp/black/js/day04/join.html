@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript Study</title>
+<link rel="stylesheet" type="text/css" href="/black/resources/css/w3.css">
+<link rel="stylesheet" type="text/css" href="/black/resources/css/base.css">
+<style type="text/css">
+	input {
+		position: relative;
+		left: 10px;
+	}
+	label {
+		padding-top: 10px;
+	}
+</style>
+</head>
+<body>
+	<div class="w3-content mx650">
+		<h1 class="w3-pink w3-center w3-margin-top w3-margin-bottom w3-card-4">Pink 회원가입</h1>
+		<form method="GET" action="joinProc.html" 
+				name="frm" id="frm" class="w3-col w3-padding w3-card-4">
+			<div class="w3-col w3-margin-top">
+				<label for="name" class="w3-col m2 w3-right-align">이 름 :</label>
+				<input type="text" name="name" id="name" class="w3-col m9 w3-input w3-border ck"> 
+			</div>
+			<div class="w3-col w3-margin-top">
+				<label for="id" class="w3-col m2 w3-right-align">아이디 :</label>
+				<div class="w3-col m9">
+					<input type="text" name="id" id="id" class="w3-col w3-input w3-border ck"> 
+				</div>
+			</div>
+			<div class="w3-col w3-margin-top">
+				<label for="pw" class="w3-col m2 w3-right-align">비밀번호 :</label>
+				<input type="text" name="pw" id="pw" class="w3-col m9 w3-input w3-border w3-margin-bottom ck"> 
+			</div>
+		</form>
+		<div class="w3-col w3-card-4 w3-margin-top">
+			<div class="w3-third w3-button w3-green" id="hbtn">Home</div>
+			<div class="w3-third w3-button w3-orange" id="rbtn">Reset</div>
+			<div class="w3-third w3-button w3-blue" id="jbtn">Join</div>
+		</div>
+	</div>
+<script type="text/javascript" src="/black/resources/js/day04/join.js"></script>
+</body>
+</html>

@@ -1,41 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="../../resources/css/w3.css">
-    <link rel="stylesheet" href="../../resources/css/base.css">
-    <style>
-        label {
-            font-size: 14pt;
-        }
-    </style>
+<meta charset="UTF-8">
+<title>JavaScript Study</title>
+<link rel="stylesheet" type="text/css" href="/black/resources/css/w3.css">
+<link rel="stylesheet" type="text/css" href="/black/resources/css/base.css">
+<style type="text/css">
+	label {
+		font-size: 14pt;
+		
+	}
+</style>
+<script type="text/javascript">
+
+</script>
 </head>
 <body>
-<!--데이터 전송용 폼 태그-->
-<form action="test.html" method="post" id="frm" name="frm">
-    <input type="hidden" name="id" id="id">
-    <input type="hidden" name="pw" id="pw">
-</form>
-<div class="w3-content mx650">
-    <h1 class="w3-blue w3-center w3-margin-bottom w3-padding">Login</h1>
-    <div class="w3-col w3-padding w3-card-4">
-        <div class="w3-col">
-            <label class="w3-col m2 w3-right-align" for="tid" style="padding-top: 10px;">아이디 : </label>
-            <input type="text" class="w3-col m9 w3-input w3-border" style="margin-left: 10px;" id="tid" name="tid"
-                   placeholder="아이디를 입력하세요">
-        </div>
-        <div class="w3-col w3-margin-top">
-            <label class="w3-col m2 w3-right-align" for="tpw" style="padding-top: 10px;">아이디 : </label>
-            <input type="password" class="w3-col m9 w3-input w3-border" style="margin-left: 10px;" id="tpw" name="tpw"
-                   placeholder="비밀번호를 입력하세요">
-        </div>
-        <div class="w3-col w3-margin-top w3-card-4">
-            <div class="w3-half w3-button w3-orange" id="rbtn">reset</div>
-            <div class="w3-half w3-button w3-blue" id="lbtn">Login</div>
-        </div>
-    </div>
-</div>
-<script src="../../resources/js/day04/test02.js"></script>
+	<!-- 데이터 전송용 폼태그 -->
+	<form method="GET" action="test.html" id="frm" name="frm">
+		<input type="hidden" id="id" name="id">
+		<input type="hidden" id="pw" name="pw">
+	</form>
+	
+	<div class="w3-content mx650">
+		<h1 class="w3-blue w3-center w3-margin-bottom w3-padding">Login</h1>
+		<div class="w3-col w3-padding w3-card-4">
+			<div class="w3-col">
+				<label for="id" class="w3-col m2 w3-right-align" 
+						style="padding-top: 10px;">아이디 : </label>
+				<input type="text" class="w3-col m9 w3-input w3-border" style="margin-left: 10px;"
+						id="tid" name="id" placeholder="아이디를 입력하세요!">
+			</div>
+			<div class="w3-col w3-margin-top">
+				<label for="pw" class="w3-col m2 w3-right-align" 
+						style="padding-top: 10px;">비밀번호 : </label>
+				<input type="password" class="w3-col m9 w3-input w3-border" style="margin-left: 10px;"
+						id="tpw" name="pw" placeholder="비밀번호를 입력하세요!">
+			</div>
+		</div>
+		<div class="w3-col w3-margin-top w3-card-4">
+			<div class="w3-half w3-button w3-orange" id="rbtn">reset</div>
+			<div class="w3-half w3-button w3-blue" id="lbtn">Login</div>
+		</div>
+	</div>
+<script type="text/javascript" src="/black/resources/js/day04/test02.js"></script>
 </body>
 </html>

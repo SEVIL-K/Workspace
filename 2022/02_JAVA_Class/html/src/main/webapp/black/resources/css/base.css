@@ -26,7 +26,7 @@
 }
 
 /* padding */
-.pdl10 {
+.pdl10  {
 	padding-left: 10px;
 }
 
@@ -86,4 +86,7 @@
 }
 .w100 {
 	width: 100px;
+}
+.w200 {
+	width: 200px;
 }

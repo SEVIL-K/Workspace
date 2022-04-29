@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript Study</title>
+<link rel="stylesheet" type="text/css" href="/black/resources/css/w3.css">
+<link rel="stylesheet" type="text/css" href="/black/resources/css/base.css">
+<style type="text/css">
+</style>
+<script type="text/javascript">
+	var bool = confirm('태그를 추가할까요?');
+	
+	if(bool){
+		document.write('<h1 class="w3-blue w3-padding w3-center">추가된 태그</h1>');
+	} else {
+		document.write('<h1 class="w3-red w3-padding w3-center">취소버튼 클릭됨!!!</h1>');
+	}
+</script>
+</head>
+<body>
+	<div class="w3-col m3 w3-blue w3-button" id="rlbtn" onclick="location.reload()">reload</div>
+<script type="text/javascript">
+	/*
+	document.getElementById('rlbtn').onclick = function(){
+		location.reload();
+	};
+	*/
+</script>
+</body>
+</html>
