@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../resources/css/base.css">
+    <link rel="stylesheet" href="../../resources/css/w3.css">
+    <style>
+        label {
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+<form action="" method="get" name="frm" id="frm" class="w3-content mx650 w3-center">
+    <div class="w3-col">
+        <label for="" class="w3-col m3 w3-right-align w3-text-gray">과목선택 : </label>
+        <select name="subj" id="subj" class="w3-col m8 w3-input w3-border">
+            <option id="0" value=""># 과목선택 #</option>
+            <option id="1" value="java">java</option>
+            <option id="2" value="db">oracle</option>
+            <option id="3" value="html">html5</option>
+            <option id="4" value="javascript">js</option>
+            <option id="5" value="jsp">JSP</option>
+            <option id="6" value="spring">SPRING</option>
+        </select>
+    </div>
+</form>
+<script>
+    document.frm.subj.onchange = function () {
+        var tag = document.frm.subj;
+        var idx = tag.selectedIndex;
+        if (idx < 1) {
+            alert('과목선택은 필수입니다..');
+        } else {
+            alert('선택과목의 인덱스 : ' + idx + ' - 과목이름 : ' + tag[idx].value);
+        }
+    };
+
+</script>
+
+</body>
+</html>
