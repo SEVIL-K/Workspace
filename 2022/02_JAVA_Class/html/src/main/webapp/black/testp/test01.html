@@ -1,5 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+<body>
+<!--1번-->
+<pre> </pre>
+
+
+<!--2번-->
+<div></div>
+<span></span>
+
+
+<!--3번-->
+<div style="width: 250px; background-color: red"></div>
+
+
+<!--4번-->
+<a>tag1</a>
+<div class="inBlock tCenter w-200 h-100 cRed tCenter">tag2</div>
+<!--10번자료와 겹쳐서 주석처리 -->
+<!--<div id="d1">div1</div>-->
+
+
+
+<!--9번자료-->
+<input type="text" id="in01">
+<button type="button" id="btn">btn</button>
+
+<!--10번 자료-->
+<h1>입력값 출력</h1>
+<h3 id="h3"></h3>
+<div id="d1"></div>
+</body>
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -30,44 +61,40 @@
         background-color: yellow;
     }
 </style>
-<body>
-<!--1번-->
-<pre> </pre>
-<!--2번-->
-<div></div>
-<span></span>
-<!--3번-->
-<div style="width: 250px; background-color: red"></div>
-<!--4번-->
-<a>tag1</a>
-<div class="inBlock tCenter w-200 h-100 cRed tCenter">tag2</div>
-<div id="d1">div1</div>
-
-<input type="text" id="in01">
-<button type="button" id="btn">btn</button>
-</body>
 <script>
+
 <!--    6번-->
     var el = document.getElementById("d1");
     el.textContent = "increpas";
 
+
+
+//    7번
 function func01() {
     document.write('함수 func01 호출');
 }
 //    7번
 // setTimeout(func01, 1000);
 
+
+
 // 8번
 var el = document.getElementById("d1");
 el.style="display: inline-block; width:250px"
 
-// 9번
-var str = document.getElementById("in01").value;
 
+
+// 9번
 document.getElementById("btn").onclick = function () {
-    str.submit();
+    var str = document.getElementById("in01").value
+    location.href = "test.html?str=" + str;
 };
 
+
+
+// 10번
+var str = prompt("여기에 입력하세요");
+document.getElementById("h3").innerHTML = str;
 
 
 
