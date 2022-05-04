@@ -1,0 +1,14 @@
+1. 프로젝트 생성
+	ㄴ Maven -> archetype생성 체크 -> org.apache.maven.archetypes:maven-archetype-webapp 선택
+		-> 프로젝트 이름 설정 -> 완료
+
+2. Tomcat 생성
+	ㄴ 상단 구성편집 -> 좌측 + 클릭 후 Tomcat 서버-로컬 선택 -> 애플리케이션 서버 구성 클릭
+		-> 디렉토리 눌러서 Tomcat 버전 폴더 선택 후 확인 -> VM 옵션 : -Dfile.encording=UTF-8
+		-> 하단 포트번호 중복되지 않게 수정 -> 우측하단 수정 또는 상단 배포메뉴 클릭
+		-> 프로젝트명:war exploded 선택 -> 하단 컨텍스트 / <로 수정
+		-> 프로젝트명:war exploded 선택 후 수정하기(연필) 눌러서 출력 디렉터리 알맞게 수정
+		-> 다시 서버로 와서 Update 액션시, 프레임 비활성화 시 -> 클래스 및 리로스 업데이트 변경 후 완료
+
+3. 톰캣 실행
+
