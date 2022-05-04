@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript Study</title>
+<link rel="stylesheet" type="text/css" href="/black/resources/css/w3.css">
+<link rel="stylesheet" type="text/css" href="/black/resources/css/base.css">
+<style type="text/css">
+</style>
+<script type="text/javascript">
+	
+	var my_div = null;
+	var newDiv = null;
+	function addElement(){
+		// 새로운 div 생성
+		newDiv = document.createElement('div');
+		// ==> 메모리상에 div 태그 하나를 생성
+		
+		// 생성된 태그에 내용을 추가
+		newDiv.innerHTML = '<h1>안녕! 반가워~~!</h1>';
+		
+		// 생성된 태그를 문서에 추가
+		my_div = document.getElementById('d1');
+		document.body.insertBefore(newDiv, my_div);
+	}
+</script>
+</head>
+<body onload="addElement()">
+	<div id="d1">위 문장은 동적으로 만들어진 것입니다.</div>
+</body>
+</html>

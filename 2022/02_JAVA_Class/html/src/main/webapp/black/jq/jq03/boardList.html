@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript Study</title>
+<link rel="stylesheet" type="text/css" href="/black/resources/css/w3.css">
+<link rel="stylesheet" type="text/css" href="/black/resources/css/base.css">
+<script type="text/javascript" src="/black/resources/js/jquery-3.6.0.min.js"></script>
+<style type="text/css">
+</style>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#cbtn, #lbtn').click(function(){
+			$('#detail').css('display', 'none');
+		});
+		
+		$.ajax({
+			url: '/black/jq/jq03/board.json',
+			type: 'POST',
+			dataType: 'json',
+			success: function(arr){
+				$.each(arr, function(idx, data){
+					$('#brd').append(
+						'<div class="w3-col w3-border-bottom" id="' + data.bno + '">' +
+							'<div class="w3-col m2 w3-border-right">' + data.bno + '</div>' +
+							'<div class="w3-col m2 w3-border-right">' + data.id + '</div>' +
+							'<div class="w3-col m5 w3-border-right">' + data.title + '</div>' +
+							'<div class="w3-col m3">' + data.wdate + '</div>' +
+						'</div>'
+					);
+					
+					// 클릭에벤트 추가
+					$('#' + data.bno).click(function(){
+						$('#mbno').html(data.bno);
+						$('#mid').html(data.id);
+						$('#avtimg').attr('src', '/black/resources/img/avatar/'+ data.savename);
+						$('#mdate').html(data.wdate);
+						$('#mtitle').html(data.title);
+						$('#mbody').html(data.body.replace(/\r\n/g, '<br>'));
+						
+						// 데이터가 채워졌으면 모달창을 보이게 한다.
+						$('#detail').css('display', 'block');
+					});
+				});
+			},
+			error: function(){
+				alert('### 통신 에러 ###');
+			}
+		});
+	});
+</script>
+</head>
+<body>
+	<div class="w3-content mx650 w3-center">
+		<h1 class="w3-blue w3-padding w3-card-4">Black Board</h1>
+		<div class="w3-col w3-card-4 w3-margin-top" id="brd">
+			<div class="w3-col w3-pale-blue w3-border">
+				<div class="w3-col m2 w3-border-right">글번호</div>
+				<div class="w3-col m2 w3-border-right">작성자</div>
+				<div class="w3-col m5 w3-border-right">타이틀</div>
+				<div class="w3-col m3">작성일</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- modal -->
+	<div id="detail" class="w3-modal">
+	    <div class="w3-modal-content w3-animate-top w3-card-4" style="max-width: 700px;">
+	      <header class="w3-container w3-blue"> 
+	        <span id="cbtn" class="w3-button w3-display-topright">&times;</span>
+	        <h2 class="w3-center">게시글 상세보기</h2>
+	      </header>
+	      <div class="w3-container w3-margin-top">
+	      	<div class="w3-col" style="width: 170px; padding-right: 20px;">
+	      		<div class="box avtbox overhidden w3-circle w3-margin-bottom">
+	      			<img class="avtimg" src="/black/resources/img/avatar/img_avatar4.png" id="avtimg">
+	      		</div>
+	      	</div>
+	      	<div class="w3-rest" style="position: relative; top: 15px;">
+	      		<h5>글번호 : <span id="mbno"></span></h5>
+	      		<h5>작성자 : <span id="mid"></span></h5>
+	      		<h5>작성일 : <span id="mdate"></span></h5>
+	      	</div>
+	      	<hr class="leftclear">
+	        <div class="w3-col w3-margin-bottom">
+	        	<h4 class="w3-col m2">글제목 : </h4>
+	        	<h4 class="w3-col m10" id="mtitle">여기는 제목이 들어가는 부분...</h4>
+	        	<div class="w3-col m2"><p></p></div>
+	        	<p class="w3-col m9 w3-round-large w3-border w3-padding" id="mbody">여기는 <br>본문이<br> 들어가는<br> 부분...</p>
+	        </div>
+	      </div>
+	      <footer class="w3-content w3-margin-top">
+	      		<div class="w3-third w3-blue w3-button" id="lbtn">List</div>
+	      		<div class="w3-third w3-orange w3-button" id="ebtn">Edit</div>
+	      		<div class="w3-third w3-red w3-button" id="dbtn">Delete</div>
+	      </footer>
+	    </div>
+	</div>
+</body>
+</html>

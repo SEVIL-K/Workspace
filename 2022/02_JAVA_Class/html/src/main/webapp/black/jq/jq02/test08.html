@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript Study</title>
+<link rel="stylesheet" type="text/css" href="/black/resources/css/w3.css">
+<link rel="stylesheet" type="text/css" href="/black/resources/css/base.css">
+<script type="text/javascript" src="/black/resources/js/jquery-3.6.0.min.js"></script>
+<style type="text/css">
+</style>
+<script type="text/javascript">
+	$(document).ready(function(){
+		// w3-button 태그에 클릭이벤트 추가
+		$('.w3-button').click(function(){
+			// 할일
+			// 1. 어떤 버튼이 클릭이 되었는지 알아낸다.
+			var txt = $(this).html();
+
+			var el = document.createElement('div');
+			$(el).css({'display': 'inline-block', 'width': '100px', 
+						'height': '100px', 'background-color': 'orange', 'margin-left': '10px'});
+			$(el).html('<p></p>');
+			if(txt == 'append'){
+			/*
+				$(el).css('background-color', 'orange');
+				$('#box').append($(el));
+			*/
+			
+			/*
+				$('#box').append('<div style="display: inline-block; ' +
+									'width: 100px; height: 100px; margin-left: 10px;' +
+									' background-color: orange;"><p></p></div>');
+			*/
+			$('#box').append('<h1>h1</h1>');
+			} else {
+				$(el).css('background-color', 'blue');
+				$('#box').prepend($(el));
+			}
+		});
+	});
+</script>
+</head>
+<body>
+	<div class="w3-content mx650 w3-center" id="box">
+		<div class="w3-margin-top w3-margin-bottom">
+			<div class="w3-half w3-orange w3-hover-lime w3-button">prepend</div>
+			<div class="w3-half w3-blue w3-hover-pink w3-button">append</div>
+		</div>
+	</div>
+</body>
+</html>

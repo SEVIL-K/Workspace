@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript Study</title>
+<link rel="stylesheet" type="text/css" href="/black/resources/css/w3.css">
+<link rel="stylesheet" type="text/css" href="/black/resources/css/base.css">
+<script type="text/javascript" src="/black/resources/js/jquery-3.6.0.min.js"></script>
+<style type="text/css">
+</style>
+<script type="text/javascript">
+	/*
+	// 방법 1
+	function func01(el){
+		var sid = $(el).attr('id');
+		alert(sid);
+	}
+	*/
+	$(document).ready(function(){
+		/*
+		// 방법 3 : 동적으로 이벤트 처리하는 방법
+		$(document).on('click', $('#brd > div'), function(){
+			var sid = $(this).attr('id');
+		});
+		*/
+		$('#btn').click(function(){
+			$.ajax({
+				url: '/black/jq/jq03/board.json',
+				type: 'post',
+				dataType: 'json',
+				data: {},
+				success: function(arr){
+					if(arr.length == 0){
+						return;
+					}
+					
+					// 버튼 태그 감추고
+					$('#btn').remove();
+					
+					for(var i = 0 ; i < arr.length ; i++ ){
+						var data = arr[i];
+						
+						$('#brd').append(
+/* 								'<div class="w3-col w3-margin-top w3-card-4 pd10" id="' + data.bno + '" onclick="func01(this)"><!-- 게시글 한개 박스 -->' + */
+								'<div class="w3-col w3-margin-top w3-card-4 pd10" id="' + data.bno + '"><!-- 게시글 한개 박스 -->' +
+									'<div class="w3-col pdr10 w3-border-right" style="width: 160px;"><!-- 아바타쪽 박스 -->' +
+										'<div class="box avtbox overhidden"><!-- 아바타 박스 -->' +
+											'<img src="/black/resources/img/avatar/' + data.savename + '" class="avtimg">' +
+										'</div>' +
+										'<h4 class="w3-center">' + data.id + '</h4>' +
+									'</div>' +
+									'<div class="w3-rest pdl10"><!-- 게시글 박스 -->' +
+										'<div class="w3-col">' +
+											'<h3 class="w3-half w3-left-align overhidden"><span>' + data.title + '</span></h3>' +
+											'<h6 class="w3-half w3-right-align">' + data.wdate + '</h6>' +
+										'</div>' +
+										'<hr class="leftclear">' +
+										'<div class="w3-col w3-padding"><!-- 글 본문 박스 -->' +
+											'<p style="margin: 0px;">' + data.body.replace(/\r\n/g, '<br>') + '</p>' +
+										'</div>' +
+									'</div>' +
+								'</div>'
+						);
+						
+						
+						// 방법 2
+						/* $('.pd10').click(function(){ *//* 클래스로 선택해서 이벤트를 등록하는 경우 이벤트가 중복되어서 추가될 수 있다. */
+						$('#' + data.bno).click(function(){
+							var sid = $(this).attr('id');
+							alert(sid);
+						});
+						
+					}
+					
+					
+					$('#brd').removeClass('hidden');
+				},
+				error: function(){
+					alert('### 통신 에러 ###');
+				}
+			});
+		});
+	});
+</script>
+</head>
+<body>
+	<div class="w3-content mx650">
+		<h1 class="w3-pink w3-padding w3-card-4 w3-center">Black Board</h1>
+		<div class="w3-col hidden" id="brd">
+		</div>
+		<div class="w3-col w3-margin-top">
+			<div class="w3-col w3-button w3-blue w3-hover-aqua" id="btn">click</div>
+		</div>
+	</div>
+</body>
+</html>

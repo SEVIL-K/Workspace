@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript Study</title>
+<link rel="stylesheet" type="text/css" href="/black/resources/css/w3.css">
+<link rel="stylesheet" type="text/css" href="/black/resources/css/base.css">
+<style type="text/css">
+	.img {
+		width: 150px;
+		height: auto;
+	}
+	.imgbox {
+		display: inline-block;
+		width: 150px;
+		height: 150px;
+		overflow: hidden;
+		border: 1px solid gray;
+	}
+</style>
+<script type="text/javascript">
+
+</script>
+</head>
+<body>
+	<div class="w3-content mx650 w3-center">
+		<h1 class="w3-blue w3-padding w3-card-4 w3-margin-bottom w3-round-large">Login</h1>
+		<form method="GET" action="#" name="frm" id="frm" 
+				class="w3-col w3-card-4 w3-padding w3-margin-top w3-round-large">
+			<div class="w3-col w3-margin-top">
+				<label for="file" class="w3-col m3 w3-right-align w3-text-grey">파일선택 : </label>
+				<input type="file" id="file" name="file" style="margin-left: 10px;"
+						class="w3-col m7 w3-input w3-border" placeholder="파일을 선택하세요!">
+			</div>
+			<div class="w3-col w3-margin-top w3-margin-bottom">
+				<label for="pw" class="w3-col m3 w3-right-align w3-text-grey">선택파일 : </label>
+				<div class="w3-col m7 w3-padding">
+					<div class="imgbox">
+						<img class="img" id="img" src="/black/resources/img/avatar/noimage.jpg" >
+					</div>
+				</div>
+			</div>
+		</form>
+		<div class="w3-col w3-margin-top w3-card-4">
+			<div class="w3-third w3-button w3-green w3-hover-lime" id="hbtn">Home</div>
+			<div class="w3-third w3-button w3-blue w3-hover-aqua" id="lbtn">Login</div>
+			<div class="w3-third w3-button w3-pink w3-hover-orange" id="rbtn">Reset</div>
+		</div>
+	</div>
+<script type="text/javascript">
+	document.getElementById('file').onchange = function(e){
+		var sfile = this.value;
+		
+		if(sfile){
+			var tmp = URL.createObjectURL(e.target.files[0]);
+			document.getElementById('img').src = tmp;
+		}
+	};
+</script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+# 인터페이스 구현
+
+- 회원번호를 입력하면 
+	회원아이디, 회원이름, 이메일을 
+	데이터베이스에서 조회해서
+	콘솔 화면에 출력하는 프로그램을 제작할 예정이다.
+	
+다음 요구사항에 맞도록 프로그램을 제작하세요.
+
+요구사항 ]
+	
+	데이터베이스 
+		
+		RDBMS 	:	ORACLE
+		ADDRESS	: 	localhost
+		PORT	: 	1521
+		SID		: 	xe
+		USER	: 	githrd
+		PASSWORD:	12345
+		
+	테이블 : MEMBER
+	테이블 컬럼 :
+			회원번호	: MNO(NUMBER)
+			회원이름	: NAME(VARCHAR2)
+			아이디		: ID(VARCHAR2)
+			이메일		: MAIL(VARCHAR2)
+			활동여부	: ISSHOW(CHAR)
+		
+	사용 라이브러리 : ojdbc6.jar
+	
+	VO Class
+		클래스이름 : MemberVO
+		변수명
+			회원번호	: mno
+			회원이름	: name
+			아이디		: id
+			이메일		: mail
+			
+	MemberSQL class
+		멤버함수	: getSQL(int code)
+		필드		: SEL_MEMBER_INFO = 1001
+		
+		* 질의명령을 조립할 때 StringBuffer 클래스를 이용해서
+			조립해서 문자열로 반환해주도록 해야 한다.
+			
+	데이터베이스 작업 전담 클래스
+		MemberDao
+		
+	전체 프로그램 흐름을 컨트롤할 컨트롤러 클래스
+		MemberInfo
+		
+	데이터베이스 작업에 필요한 도구를 준비해주는 클래스
+		GitJDBC
+		
+-- 위 내용에 적합한 프로그램을 제작해서
+	GitJDBC, MemberVO, MemberSQL, MemberDao, MemberInfo 
+	클래스를 작성해서 제출하세요.
+	실행 콘솔 화면도 캡쳐해서 jpg 파일로 제출하세요.
+	
+	

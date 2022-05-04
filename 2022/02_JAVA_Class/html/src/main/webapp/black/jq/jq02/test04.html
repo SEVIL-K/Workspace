@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript Study</title>
+<link rel="stylesheet" type="text/css" href="/black/resources/css/w3.css">
+<link rel="stylesheet" type="text/css" href="/black/resources/css/base.css">
+<script type="text/javascript" src="/black/resources/js/jquery-3.6.0.min.js"></script>
+<style type="text/css">
+</style>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var el = $('.h1');
+		$(el).html('head line tag')
+		$(el).get(0).innerHTML = '자바스크립트에서 바꾼 타이틀';
+		$(el).eq(1).attr('class', 'w3-blue');
+/* 		$(el).eq(1).setAttribute('class', 'w3-blue'); 
+ 		$(el).eq(1) 은 jquery 객체이므로
+ 		자바스크립트 함수를 사용할 수 없다.
+ */
+	});
+</script>
+</head>
+<body>
+	<div class="w3-content mx650 w3-center">
+		<h1 class="w3-pink h1">여기는 타이틀</h1>
+		<h2 class="w3-pink h1">여기는 타이틀</h2>
+		<h3 class="w3-pink h1">여기는 타이틀</h3>
+		<h4 class="w3-pink h1">여기는 타이틀</h4>
+		<h5 class="w3-pink h1">여기는 타이틀</h5>
+		<h6 class="w3-pink h1">여기는 타이틀</h6>
+		<h1 class="w3-pink h1">여기는 타이틀</h1>
+		<h1 class="w3-pink h1">여기는 타이틀</h1>
+		<h1 class="w3-pink h1">여기는 타이틀</h1>
+		<h1 class="w3-pink h1">여기는 타이틀</h1>
+		<h1 class="w3-pink h1">여기는 타이틀</h1>
+		<div class="w3-col w3-button w3-blue">click</div>
+	</div>
+</body>
+</html>

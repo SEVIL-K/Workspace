@@ -1,0 +1,34 @@
+[
+	{
+		"bno": "10001",
+		"id": "jennie",
+		"savename": "img_avatar5.png",
+		"title": "hello",
+		"body": "모두 안녕하세요~!",
+		"wdate": "2022년 05월 03일"
+	},
+	{
+		"bno": "10002",
+		"id": "lisa",
+		"savename": "img_avatar4.png",
+		"title": "Long-Legged Fly",
+		"body": "That civilisation may not sink,\r\nIts great battle lost,\r\nQuiet the dog, tether the pony\r\nTo a distant post;",
+		"wdate": "2022년 05월 02일"
+	},
+	{
+		"bno": "10003",
+		"id": "rose",
+		"savename": "img_avatar6.png",
+		"title": "꽃비가 내리던 날에",
+		"body": "하늘을 가리고\r\n다 젖어 보고 싶었다.\r\n깨끗하게 몸을 씻듯이\r\n내 몸의 대지를 봄비로 씻고 싶었다.",
+		"wdate": "2022년 05월 02일"
+	},
+	{
+		"bno": "10004",
+		"id": "jisoo",
+		"savename": "img_avatar4.png",
+		"title": "별 하나",
+		"body": "창문에 비추는\r\n별 하나 멀리도 보인다.\r\n눈을 조금 감고 보니\r\n눈앞에 다가와서 비추네.",
+		"wdate": "2022년 05월 01일"
+	}
+]

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript Study</title>
+<link rel="stylesheet" type="text/css" href="/black/resources/css/w3.css">
+<link rel="stylesheet" type="text/css" href="/black/resources/css/base.css">
+<script type="text/javascript" src="/black/resources/js/jquery-3.6.0.min.js"></script>
+<style type="text/css">
+</style>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#list1 span:contains("세번째")').css('color', 'red');
+//		$('#list1').contents().css('font-size', '24pt');
+		
+		$('#list1 > li').eq(0).next().css('color', 'blue').end().css('font-size', '16pt');
+		$('li').eq(4).css('display', 'inline-block').css('color', 'green').css('font-weight', 'bold');
+		
+		$('li').filter('#l4').html('4th 목록');
+		$('li').filter('.l5').css('font-size', '20pt');
+	});
+</script>
+</head>
+<body>
+	<div class="w3-content mx650 w3-center">
+		<ul id="list1">무순서목록태그
+			<li>첫번째 목록</li>
+			<li>두번째 목록</li>
+			<li><span>세번째</span> 목록</li>
+			<li id="l4">네번째 목록</li>
+			<li class="l5">다섯번째 목록</li>
+		</ul>
+	</div>
+</body>
+</html>

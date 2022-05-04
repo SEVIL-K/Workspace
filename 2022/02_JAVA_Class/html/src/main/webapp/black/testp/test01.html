@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<!--    5번-->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<style type="text/css">
+    .inBlock {
+        display: inline-block;
+    }
+    .cRed {
+        background-color: red;
+    }
+    .w-200 {
+        width: 200px;
+    }
+    .h-100 {
+        height: 100px;
+    }
+    .tCenter {
+        text-align: center;
+    }
+    a {
+        display: inline-block;
+        width: 200px;
+        height: 100px;
+        text-align: center;
+        background-color: yellow;
+    }
+</style>
+<body>
+<!--1번-->
+<pre> </pre>
+<!--2번-->
+<div></div>
+<span></span>
+<!--3번-->
+<div style="width: 250px; background-color: red"></div>
+<!--4번-->
+<a>tag1</a>
+<div class="inBlock tCenter w-200 h-100 cRed tCenter">tag2</div>
+<div id="d1">div1</div>
+
+<input type="text" id="in01">
+<button type="button" id="btn">btn</button>
+</body>
+<script>
+<!--    6번-->
+    var el = document.getElementById("d1");
+    el.textContent = "increpas";
+
+function func01() {
+    document.write('함수 func01 호출');
+}
+//    7번
+// setTimeout(func01, 1000);
+
+// 8번
+var el = document.getElementById("d1");
+el.style="display: inline-block; width:250px"
+
+// 9번
+var str = document.getElementById("in01").value;
+
+document.getElementById("btn").onclick = function () {
+    str.submit();
+};
+
+
+
+
+</script>
+</html>

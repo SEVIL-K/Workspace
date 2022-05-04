@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript Study</title>
+<link rel="stylesheet" type="text/css" href="/black/resources/css/w3.css">
+<link rel="stylesheet" type="text/css" href="/black/resources/css/base.css">
+<script type="text/javascript" src="/black/resources/js/jquery-3.6.0.min.js"></script>
+<style type="text/css">
+	.bbody {
+		display: none;
+	}
+</style>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.brd').click(function(){
+			/*
+			var st = $(this).find('.bbody').css('display');
+			alert(st);
+			if(st == 'none'){
+				$(this).find('.bbody').show(1000);
+			} else {
+				$(this).find('.bbody').hide(1000);
+			}
+			*/
+
+			$(this).find('.bbody').slideToggle(2000);
+//			$(this).find('.bbody').fadeToggle(2000);
+/* 			$(this).find('.bbody').toggle(1000); */
+		});
+		
+		$('.brd').on({
+			mouseenter: function(){
+				$(this).find('.bbody').stop().slideDown(3000);
+			},
+			mouseleave: function(){
+				$(this).find('.bbody').stop().slideUp(3000);
+			}
+		});
+	});
+</script>
+</head>
+<body>
+	<div class="w3-content mx650 w3-center">
+		<h1 class="w3-green w3-card-4">방명록</h1>
+		<div class="w3-col w3-margin-top w3-padding">
+			<div class="w3-col w3-card-4 w3-margin-top brd" id="10001">
+				<h4 class="w3-col m6 w3-left-align">제니</h4>
+				<h6 class="w3-third w3-right-align w3-right">2022년 05월 02일</h6>
+				<div class="w3-col bbody">
+					<hr style="clear: left">
+					<p>제니 왔다감</p>
+				</div>
+			</div>
+			<div class="w3-col w3-card-4 w3-margin-top brd" id="10002">
+				<h4 class="w3-col m6 w3-left-align">리사</h4>
+				<h6 class="w3-third w3-right-align w3-right">2022년 05월 02일</h6>
+				<div class="w3-col bbody">
+					<hr style="clear: left">
+					<p>리사도 왔다감</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

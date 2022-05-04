@@ -1,27 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+<meta charset="UTF-8">
+<title>Insert title here</title>
 </head>
 <body>
-<div id="d1" onclick="func01(this)">div1</div>
-<div id="d2" onclick="func01(this)">div2</div>
-<div id="d3" onclick="func01(this)">div3</div>
-<div id="d4" onclick="func01(this)">div4</div>
-
-<script !src="">
-    function func01(a) {
-        var str = a.innerHTML;
-        alert(str);
-        a.innerHTML = str + ' --- ' + str;
-        a.style.width = '300px';
-        a.style.height = '50px';
-        a.style.backgroundColor='pink';
-        a.style.color = 'white';
-        a.style.marginTop='20px';
-    }
+	<div id="d1" onclick="func01(this)">div1</div>
+	<div id="d2" onclick="func01(this)">div2</div>
+	<div id="d3" onclick="func01(this)">div3</div>
+	<div id="d4" onclick="func01(this)">div4</div>
+<script type="text/javascript">
+	function func01(a){
+		var str = a.innerHTML;
+		alert(str);
+		a.innerHTML = str + ' --- ' + str;
+		a.style.width='300px';
+		a.style.height='50px';
+		a.style.backgroundColor='#e91e63';
+		a.style.color = 'white';
+		a.style.marginTop = '20px';
+	}
 </script>
-
 </body>
 </html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript Study</title>
+<link rel="stylesheet" type="text/css" href="/black/resources/css/w3.css">
+<link rel="stylesheet" type="text/css" href="/black/resources/css/base.css">
+<script type="text/javascript" src="/black/resources/js/jquery-3.6.0.min.js"></script>
+<style type="text/css">
+</style>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var el = $('#d1').contents(); // 모든 자식 노드를 선택...
+		$('body').append('<h1 class="w3-center">자식 노드 갯수 : ' + el.length + '</h1>');
+		
+		$(el).eq(0).css('color', 'red');
+		
+		$('#sp1').css('color', 'red');
+		
+		alert($(el).get(0).nodeValue);
+		var el1 = $('#d1').children();
+		$('body').append('<h1 class="w3-center">자식 태그 갯수 : ' + el1.length + '</h1>');
+		
+//		alert($('h1').next().html()); // h1태그를 선택하고 바로 다음에오는 태그를 선택
+		$('h1').next().append('<h4>추가된 h4 태그</h4>');
+		$('<h4>appendTo()로 추가된 h4 태그</h4>').appendTo($('h1').next());
+	});
+</script>
+</head>
+<body>
+	<div class="w3-content mx650 w3-center" id="d1">
+		여기는 <span id="sp1">div</span> 태그
+		<h1 class="w3-blue">여기는 타이틀</h1>
+		<div class="w3-border">
+			<p>여기는 p태그</p>
+		</div>
+		문자열
+		<div class="w3-border w3-border-red"> 
+			<div class="w3-border box wh100 ml10">div</div>
+			<div class="w3-border box wh100 ml10">div</div>
+			<div class="w3-border box wh100 ml10">div</div>
+		</div>
+	</div>
+</body>
+</html>

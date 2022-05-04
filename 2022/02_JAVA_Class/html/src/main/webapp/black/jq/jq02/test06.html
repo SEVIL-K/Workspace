@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript Study</title>
+<link rel="stylesheet" type="text/css" href="/black/resources/css/w3.css">
+<link rel="stylesheet" type="text/css" href="/black/resources/css/base.css">
+<script type="text/javascript" src="/black/resources/js/jquery-3.6.0.min.js"></script>
+<style type="text/css">
+	.hddn {
+		display: none;
+	}
+</style>
+<script type="text/javascript">
+	$(document).ready(function(){
+		/*
+		var did = $('#d1').attr('id');
+		alert(did);
+		
+		==> 아이디가 d1인 태그를 선택해서 그 태그의 아이디값을 읽은 후
+			경고창으로 출력... 
+		
+		*/
+		$('#d1').attr('class', 'w3-content mx650 w3-center');
+		$('#h1').html('속성 다루는 함수 연습용 페이지');
+		$('#h1').attr('class', 'w3-pink w3-card-4');
+		$('#h1').attr('id', 'head1');
+		var txt = $('#head1').html();
+		alert(txt);
+		$('#d1').removeAttr('class');
+		
+		$('#head1').removeClass('w3-pink');
+		$('#head1').addClass('w3-blue');
+		
+		$('#btn').click(function(){
+			$('#head1').toggleClass('hddn');
+		});
+		
+		$('#d2').attr('style', 'display: inline-block; width: 200px; height: 200px; border: 1px solid gray;');
+		$('#d2').css('width', '300px');
+		
+		$(':checked').prop('checked', false);
+		$('[value="M"]').prop('checked', true);
+		
+		var txt1 = $('input').eq(0).html();
+		alert(txt1);
+		txt1 = $('input').eq(0).val();
+		alert(txt1);
+		
+		$('#body').change(function(){
+			var txt = $(this).val();
+			alert(txt);
+			$(this).val('re ]' + txt);
+		});
+	});
+</script>
+</head>
+<body>
+	<div id="d1">
+		<h1 id="h1"></h1>
+		<div class="w3-col w3-button w3-margin-top w3-indigo" id="btn">click</div>
+		<div id="d2">
+			<div>남자 <input type="radio" name="gen" value="M"></div>
+			<div style="margin-bottom: 10px;">여자 <input type="radio" name="gen" value="F" checked></div>
+		</div>
+		<textarea id="body" class="w3-col" rows="10" style="margin-top: 10px; resize: none;"></textarea>
+	</div>
+</body>
+</html>

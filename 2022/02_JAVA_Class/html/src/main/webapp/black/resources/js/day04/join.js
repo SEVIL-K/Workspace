@@ -32,7 +32,7 @@ document.getElementById('jbtn').onclick = function(){
 	
 	// 제출...
 	
-	
+	document.frm.submit();
 };
 
 // reset 버튼 이벤트 처리

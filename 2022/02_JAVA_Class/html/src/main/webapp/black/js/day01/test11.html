@@ -1,80 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="../../resources/css/base.css">
-    <link rel="stylesheet" href="../../resources/css/w3.css">
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css"
+		href="/black/resources/css/w3.css">
+<link rel="stylesheet" type="text/css"
+		href="/black/resources/css/base.css">
 </head>
 <body>
-<div class="w3-content mx650 w3-margin-top">
-    <form action="test01.html" method="get" name="frm" id="frm">
-        <div>
-            <label for="id" class="w3-col m2 w3-right-align" id="lid"> I D : </label>
-            <div class="w3-col m9 pdl10">
-                <input type="text" name="id" id="id" class="w3-input w3-border w3-margin-bottom">
-            </div>
-        </div>
-        <div>
-            <label for="pw" class="w3-col m2 w3-right-align" id="lpw"> P W : </label>
-            <div class="w3-col m9 pdl10">
-                <input type="password" name="pw" id="pw" class="w3-input w3-border">
-            </div>
-        </div>
-        <div id="d1"></div>
-        <input type="text" id="in01">
-        <input type="text" id="in02">
-    </form>
-    <div>
-        <div class="w3-quarter w3-button w3-purple" id="btn1">아이디읽기</div>
-        <div class="w3-quarter w3-button w3-indigo" id="btn2">비번읽기</div>
-        <div class="w3-quarter w3-button w3-blue" id="btn3">아이디라벨읽기</div>
-        <div class="w3-quarter w3-button w3-pink" id="btn4">비번라벨읽기</div>
-    </div>
-</div>
-<script !src="">
-
-    // d1 태그에 입력된 id 값 넣기
-    document.getElementById('btn1').onclick = function(){
-        // btn1 버튼이 클릭되면 아이디가 d1 태그에 아이디가 id 인 태그에 입력된 값을 채워넣어보자.
-        // 1. 입력된 내용 읽기
-        var sid = document.getElementById('id').value;
-
-        // 2. d1 태그에 채워넣는다.
-        document.getElementById('d1').innerHTML = '<h1 style="color: blue;">' + sid + '</h1>';
-    };
-
-    // id 라벨 읽기
-    document.getElementById('btn3').onclick = function(){
-        // 1. 라벨을 읽고
-        var str = document.getElementById('lid').innerHTML;
-
-        // 2. 읽은 값을 in01 에 채워준다.
-        document.getElementById('in01').value = str;
-    };
-
-    // d2 태그에 입력된 pw 값 넣기
-    document.getElementById('btn2').onclick = function(){
-        // btn1 버튼이 클릭되면 아이디가 d1 태그에 아이디가 id 인 태그에 입력된 값을 채워넣어보자.
-        // 1. 입력된 내용 읽기
-        var spw = document.getElementById('pw').value;
-
-        // 2. d1 태그에 채워넣는다.
-        document.getElementById('d1').innerHTML = '<h1 style="color: blue;">' + spw + '</h1>';
-    };
-
-    // pw 라벨 읽기
-    document.getElementById('btn4').onclick = function(){
-        // 1. 라벨을 읽고
-        var str = document.getElementById('lpw').innerHTML;
-
-        // 2. 읽은 값을 in01 에 채워준다.
-        document.getElementById('in02').value = str;
-    };
-
-
-
+	<div class="w3-content mx650 w3-margin-top">
+		<form method="get" action="test01.html" name="frm" id="frm">
+			<div>
+				<label for="id" class="w3-col m2 w3-right-align" id="lid">I D : </label>
+				<div class="w3-col m9 pdl10">
+					<input type="text" name="id" id="id"
+						class="w3-input w3-border w3-margin-bottom">
+				</div>
+			</div>
+			<div>
+				<label for="pw" class="w3-col m2 w3-right-align" id="lpw">P W : </label>
+				<div class="w3-col m9 pdl10">
+					<input type="password" name="pw" id="pw" 
+							class="w3-input w3-border">
+				</div>
+			</div>
+			<div id="d1"></div>
+			
+			<input type="text" id="in01">
+			<input type="text" id="in02">
+		</form>
+		<div>
+			<div class="w3-quarter w3-button w3-purple" id="btn1">아이디읽기</div>
+			<div class="w3-quarter w3-button w3-indigo" id="btn2">비번읽기</div>
+			<div class="w3-quarter w3-button w3-blue" id="btn3">아이디라벨읽기</div>
+			<div class="w3-quarter w3-button w3-pink" id="btn4">비번라벨읽기</div>
+		</div>
+	</div>
+<script type="text/javascript">
+	
+	document.getElementById('btn1').onclick = function(){
+		/* btn1 버튼이 클릭되면 아이디가 d1 태그에
+			아이디가 id 인태그에 입력된 값을 채워넣어보자.
+		*/
+		// 1. 입력된 내용읽기
+		var sid = document.getElementById('id').value;
+		// 2. d1 태그에 채워넣는다.
+		document.getElementById('d1').innerHTML = '<h1 style="color: blue;">' + sid + '</h1>';
+	};
+	
+	document.getElementById('btn3').onclick = function(){
+		// 1. 라벨을 읽고
+		var str = document.getElementById('lid').innerHTML;
+		// 2. 읽은값을  in01에 채워주고...
+		document.getElementById('in01').value = str;
+	};
 </script>
-
 </body>
 </html>

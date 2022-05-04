@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript Study</title>
+<link rel="stylesheet" type="text/css" href="/black/resources/css/w3.css">
+<link rel="stylesheet" type="text/css" href="/black/resources/css/base.css">
+<script type="text/javascript" src="/black/resources/js/jquery-3.6.0.min.js"></script>
+<style type="text/css">
+</style>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var arr = [1,2,3,4,5,6,7,8,9];
+		
+		var arr2 = $.map(arr, function(value){
+			return value + value;
+		});
+		document.write(arr + '<br>');
+		document.write(arr2 + '<br>');
+	});
+</script>
+</head>
+<body>
+
+</body>
+</html>

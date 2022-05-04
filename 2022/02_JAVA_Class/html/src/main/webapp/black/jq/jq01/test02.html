@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript Study</title>
+<link rel="stylesheet" type="text/css" href="/black/resources/css/w3.css">
+<link rel="stylesheet" type="text/css" href="/black/resources/css/base.css">
+<script type="text/javascript" src="/black/resources/js/jquery-3.6.0.min.js"></script>
+<style type="text/css">
+</style>
+<script type="text/javascript">
+	function func01(){
+		var h1 = document.getElementById('h1');
+		h1.style.color = '#0000ff';
+		h1.style.backgroundColor = '#d5d5d5';
+		h1.style.fontSize = '50px';
+		h1.style.padding = '15px';
+		h1.style.margin = '0px';
+		h1.innerHTML = 'Hello jQuery!';
+		h1.style.textAlign = 'center';
+	}
+	function func02(){
+		alert('안녕하세요! 제이쿼리!!!');
+	}
+	$(func01);
+	$(func02);
+	$(function(){
+		$('#h1').click(function(){
+			$(location).attr('href', 'test01.html');
+		});
+	});
+</script>
+</head>
+<body>
+	<h1 id="h1"></h1>
+</body>
+</html>

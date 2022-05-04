@@ -1,43 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="../../resources/css/base.css">
-    <link rel="stylesheet" href="../../resources/css/w3.css">
-    <style>
-        label {
-            font-size: 16px;
-        }
-    </style>
-</head>
-<body>
-<form action="" method="get" name="frm" id="frm" class="w3-content mx650 w3-center">
-    <div class="w3-col">
-        <label for="" class="w3-col m3 w3-right-align w3-text-gray">과목선택 : </label>
-        <select name="subj" id="subj" class="w3-col m8 w3-input w3-border">
-            <option id="0" value=""># 과목선택 #</option>
-            <option id="1" value="java">java</option>
-            <option id="2" value="db">oracle</option>
-            <option id="3" value="html">html5</option>
-            <option id="4" value="javascript">js</option>
-            <option id="5" value="jsp">JSP</option>
-            <option id="6" value="spring">SPRING</option>
-        </select>
-    </div>
-</form>
-<script>
-    document.frm.subj.onchange = function () {
-        var tag = document.frm.subj;
-        var idx = tag.selectedIndex;
-        if (idx < 1) {
-            alert('과목선택은 필수입니다..');
-        } else {
-            alert('선택과목의 인덱스 : ' + idx + ' - 과목이름 : ' + tag[idx].value);
-        }
-    };
+<meta charset="UTF-8">
+<title>JavaScript Study</title>
+<link rel="stylesheet" type="text/css" href="/black/resources/css/w3.css">
+<link rel="stylesheet" type="text/css" href="/black/resources/css/base.css">
+<style type="text/css">
+	label {
+		font-size: 16pt;
+	}
+	[type="radio"] {
+		position: relative;
+		top: 5px;
+		right: 10px;
+	}
+</style>
+<script type="text/javascript">
 
 </script>
-
+</head>
+<body>
+	<form method="GET" action="" name="frm" id="frm"
+			class="w3-content mx650 w3-center">
+		<h1 class="w3-deep-purple w3-padding w3-margin-top w3-margin-bottom">과목 신청</h1>
+		<div class="w3-col">
+			<label class="w3-col m3 w3-right-align w3-text-grey">과목선택 : </label>
+			<select name="subj" id="subj" class="w3-col m8 w3-input w3-border">
+				<option id="0"># 과목선택 #</option>
+				<option id="1" value="java">JAVA</option>
+				<option id="2" value="db">oracle</option>
+				<option id="3" value="html">html5</option>
+				<option id="4" value="javascript">js</option>
+				<option id="5" value="jsp">JSP</option>
+				<option id="6" value="spring">SPRING</option>
+			</select>
+		</div>
+		<div class="w3-col w3-margin-top">
+			<label class="w3-col m3 w3-right-align w3-text-grey">계열구분 : </label>
+			<div class="w3-col m8">
+				<div class="w3-third">
+					<label class="w3-col m7 w3-right-align w3-text-grey">문과 </label>
+					<input type="radio" name="depart" id="mun" value="poem">
+				</div>
+				<div class="w3-third">
+					<label class="w3-col m7 w3-right-align w3-text-grey">이과 </label>
+					<input type="radio" name="depart" id="yee" value="eng">
+				</div>
+				<div class="w3-third">
+					<label class="w3-col m7 w3-right-align w3-text-grey">예체능 </label>
+					<input type="radio" name="depart" id="art" value="art" checked>
+				</div>
+			</div>
+		</div>
+	</form>
+<script type="text/javascript">
+	document.frm.subj.onchange = function(){
+		/*
+		var data = this.value;
+		alert(data);
+		*/
+		var tag = document.frm.subj;
+		var idx = tag.selectedIndex;
+		if(idx < 1){
+			alert('과목 선택은 필수입니다.');
+		} else {
+			alert('선택과목의 인덱스 : ' + idx + ' - 과목이름 : ' + tag[idx].value);
+		}
+	};
+</script>
 </body>
 </html>

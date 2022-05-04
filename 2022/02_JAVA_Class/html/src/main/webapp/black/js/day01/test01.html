@@ -1,49 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="../../resources/css/base.css">
-    <link rel="stylesheet" href="../../resources/css/w3.css">
-    <script src="/black/resources/js/day01/test01.js">
-        /*
-            이 부분에는 아무내용도 작성하면 안된다.
-         */
-    </script>
-
-    <script !src="">
-        /*
-            html 문서에 script 태그로 추가하는 방법 - Internal Script
-            외부에 별도로 파일을 만들어서(.js) 사용하는 방법 - External Script
-                ==> 형식 ]
-                    <script type="text/javascript" src="파일경로">
-                    로 추가해주면 되는데
-                    이 때 이 스크립트 태그에 내용은 작성하지 않는다.
-         */
-        // script 태그의 타입은 바드시 작성하는 것이 좋다.
-        alert('나는 자바스크립트 확인 창!!!');
-        /*
-            자바스크립트의 주석처리는 자바와 동일하게 처리하면 된다.
-            단, <script> 태그 내에서 작성해야 한다.
-         */
-    </script>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="/black/resources/css/w3.css">
+<link rel="stylesheet" type="text/css" href="/black/resources/css/base.css">
+<script type="text/javascript" src="/black/resources/js/day01/test01.js">
+/*  
+	이부분에는 아무내용도 작성하면 안된다.
+ */
+</script>
+<script type="text/javascript">
+/*
+	html 문서에 script 태그로 추가하는 방법 - Internal Script
+	외부에 별도로 파일을 만들어서(.js) 사용하는 방법 - External Script
+		==> 형식 ]
+				<script type="text/javascript" src="파일 경로">
+				로 추가해준면 되는데
+				이때 이 스크립트 태그에 내용은 작성하지 않는다.
+ */
+		
+	/* script 태그의 타입은 반드시 작성하는 것이 좋다. */
+	alert('나는 자바스크립트 확인 창!!!');
+	/*
+		자바스크립트의 주석처리는 자바와 동일하게 처리하면 된다.
+		단, <script> 태그 내에서 작성해야 한다.
+	*/
+</script>
 </head>
 <body>
-<!-- html 주석.. -->
-<script>
-    alert('***여기도 만세...!***')
+<!-- html 주석... -->
+<script type="text/javascript">
+	alert('*** 여기도 만세...! ***');
 </script>
-<div class="w3-content mx650">
-    <h1 class="w3-purple w3-center" id="h1" onclick="alert('인라인 스크립트!!!!')">자바스크립트 첫 파일!</h1>
-</div>
-<script !src="">
-    /*
-        만약 body 태그 안쪽에 스크립트 태그가 필요하다면
-        body 태그 맨 아래쪽에 작성하는 것이 좋다.
-     */
-
-    document.getElementById('h1').setAttribute('class', 'w3-blue w3-right-align');
-    alert('### 여기도 경고창 !!!');
+	<div class="w3-content mx650">
+		<h1 class="w3-purple w3-center" id="h1" 
+			onclick="alert('인라인 스크립트....!');">자바스크립트 첫 파일!</h1>
+	</div>
+<script type="text/javascript">
+/* 
+	만약 body 태그 안쪽에 스크립트 태그가 필요하다면 
+	body 태그 맨 아래쪽에 작성하는 것이 좋다.
+*/
+	document.getElementById('h1').setAttribute('class', 'w3-blue w3-right-align');
+	alert('### 여기도 경고창 !!!');
 </script>
 </body>
 </html>

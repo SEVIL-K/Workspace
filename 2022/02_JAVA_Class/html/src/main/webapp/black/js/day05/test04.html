@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript Study</title>
+<link rel="stylesheet" type="text/css" href="/black/resources/css/w3.css">
+<link rel="stylesheet" type="text/css" href="/black/resources/css/base.css">
+<style type="text/css">
+</style>
+</head>
+<body>
+	<div class="w3-content w3-center mx650">
+		<h1 class="w3-blue w3-padding">노드선택</h1>
+		<div class="w3-col w3-margin-top" id="d1">나는 첫번째
+			<p>여기는 첫번째 p태그</p>
+			<p>여기는 두번째 p태그</p>
+			<p>여기는 세번째 p태그</p>
+		</div>
+	</div>
+<script type="text/javascript">
+//	var txt = document.getElementById('d1').firstChild.nodeValue;
+// 	var txt = document.getElementById('d1').childNodes[1].innerHTML;
+ 	var txt = document.getElementById('d1').childNodes[2].nodeValue;
+	alert(txt);
+</script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript Study</title>
+<link rel="stylesheet" type="text/css" href="/black/resources/css/w3.css">
+<link rel="stylesheet" type="text/css" href="/black/resources/css/base.css">
+<script type="text/javascript" src="/black/resources/js/jquery-3.6.0.min.js"></script>
+<style type="text/css">
+</style>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.brd').click(function(){
+			/* alert('click!'); */
+			/*
+				해당 글이 클릭이 됬을때 감싸는 태그의 아이디 속성값으로
+				글번호를 셋팅해뒀기 때문에
+				이페이지에서 전달해야할 데이터는 해당 태그의 아이디 속성값이 될것이다.
+			*/
+			// 데이터를 읽고
+			var sno = $(this).attr('id');
+			
+			// 데이터 채우고
+			$('#bno').val(sno);
+			
+			// 폼을 전송
+			$('#frm').submit();
+		});
+	});
+</script>
+</head>
+<body>
+	<!-- 데이터 전송용 태그 -->
+	<form method="GET" action="test01.html" name="frm" id="frm">
+		<input type="hidden" name="bno" id="bno">
+	</form>
+	<div class="w3-content mx650 w3-center">
+		<h1 class="w3-green w3-card-4">방명록</h1>
+		<div class="w3-col w3-margin-top w3-padding">
+			<div class="w3-col w3-card-4 w3-margin-top brd" id="10001"><!-- 게시글 하나 -->
+			<!--  
+				게시판 테이블
+					일련번호, 작성자, 타이틀, 작성일, 글번문
+				으로 테이블이 정의 될 것이고
+				이때 게시글 하나를 선택할 수 있는 기본키로
+				일련번호를 사용할 것이기 때문에
+				게시글 하나가 선택되면 그 글의 기본키를 알 수 있어야 한다.
+			-->
+				<h4 class="w3-col m6 w3-left-align">제니</h4>
+				<h6 class="w3-third w3-right-align w3-right">2022년 05월 02일</h6>
+				<hr style="clear: left">
+				<p>제니 왔다감</p>
+			</div>
+			<div class="w3-col w3-card-4 w3-margin-top brd" id="10002">
+				<h4 class="w3-col m6 w3-left-align">리사</h4>
+				<h6 class="w3-third w3-right-align w3-right">2022년 05월 02일</h6>
+				<hr style="clear: left">
+				<p>리사도 왔다감</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript Study</title>
+<link rel="stylesheet" type="text/css" href="/black/resources/css/w3.css">
+<link rel="stylesheet" type="text/css" href="/black/resources/css/base.css">
+<style type="text/css">
+</style>
+<script type="text/javascript">
+/*
+	setTimeout(function(){
+		location.href = 'https://www.naver.com';
+	}, 1000);
+*/
+	
+	// 3초마다 네이버 팝업을 띄우게 해보자.
+	var itv = setInterval(function(){
+		open('https://www.naver.com');
+	}, 3000);
+</script>
+</head>
+<body>
+	<div class="w3-content w3-center">여기는 div 태그
+		<h3 class="w3-text-orange" id="h3">3초후 네이버 창이 열립니다.</h3>
+<!-- 		<h3 class="w3-text-orange">1초후 네이버로 이동합니다.</h3> -->
+	</div>
+	
+<script type="text/javascript">
+	
+	// h3 태그가 클릭이 되면 네이버 창 띄우기를 중지...
+	document.getElementById('h3').onclick= function(){
+		clearInterval(itv);
+	};
+
+</script>
+</body>
+</html>
