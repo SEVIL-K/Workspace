@@ -1,0 +1,26 @@
+1. 프로젝트 생성
+	ㄴ 기본 Java 모듈 -> 아무것도 체크하지 않고 -> 프로젝트 이름 설정 -> 완료
+
+2. 프레임워크 구성추가
+	ㄴ 프로젝트 우클릭 -> 프레임워크 구성추가(Add Framework Support)) -> Web Application 체크 
+		-> Web Services 체크(다이나믹웹 이용할 톰캣 설치용) -> 버전 Apache Axis로 변경, 다운로드 체크 -> 확인
+
+3. Tomcat 생성
+	ㄴ 상단 구성편집 -> 좌측 + 클릭 후 Tomcat 서버-로컬 선택 -> 애플리케이션 서버 구성 클릭
+		-> 디렉토리 눌러서 Tomcat 버전 폴더 선택 후 확인 -> VM 옵션 : -Dfile.encording=UTF-8
+		-> 하단 포트번호 중복되지 않게 수정 -> 우측하단 수정 또는 상단 배포메뉴 클릭
+		-> 프로젝트명:war exploded 선택 -> 하단 컨텍스트 / <로 수정
+		-> 프로젝트명:war exploded 선택 후 수정하기(연필) 눌러서 출력 디렉토리 수정(프로젝트명/web)
+		-> 다시 서버로 와서 Update 액션시, 프레임 비활성화 시 -> 클래스 및 리로스 업데이트 변경 후 완료
+
+4. servlet 추가
+	ㄴ scr폴더 우클릭 -> Open Module Settings(모듈설정열기) -> 라이브러리 이동 후 + 누르고 From Maven
+		-> javax.servlet 검색 -> javax.servlet:javax.servlet-api:4.0.1 선택
+		-> Transitive dependencies, Sources, Annotations (순서대로 1,2,4) 체크 후 확인
+
+5. 기본경로는
+	ㄴ JSP 파일은 web/WEB-INF/하위폴더..
+	ㄴ Servlet 파일은 src/하위폴더..
+		ㄴ Servlet 파일에서 어노테이션 경로 및 jsp 파일 경로 설정
+			1. @WebServlet("/main.pink") 로 하면 -> localhost::포트번호/main.pink 로 접속시 연결된 jsp파일 열람가능
+			2. jsp파일 경로 설정은 /WEB-INF/하위경로/...jsp 로 설정
