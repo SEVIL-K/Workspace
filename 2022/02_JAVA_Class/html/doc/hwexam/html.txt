@@ -1,0 +1,58 @@
+1번 ]
+<pre> </pre>
+
+
+
+2번 ]
+<div></div>
+<span></span>
+
+
+
+3번 ]
+<div style="width: 250px; background-color: red"></div>
+
+
+
+4번 ]
+<a>tag1</a>
+<div class="inBlock tCenter w-200 h-100 cRed tCenter">tag2</div>
+
+
+
+5번 ]
+<link rel="stylesheet" href="../css/style.css">
+
+
+
+6번 ]
+    var el = document.getElementById("d1");
+    el.textContent = "increpas";
+
+
+
+7번 ]
+
+setTimeout(func01, 1000);
+
+
+8번 ]
+var el = document.getElementById("d1");
+el.style="display: inline-block; width:250px"
+
+
+
+9번 ]
+document.getElementById("btn").onclick = function () {
+    var str = document.getElementById("in01").value
+    location.href = "test.html?str=" + str;
+};
+
+
+
+10번 ]
+var str = prompt("여기에 입력하세요");
+document.getElementById("h3").innerHTML = str;
+
+
+
