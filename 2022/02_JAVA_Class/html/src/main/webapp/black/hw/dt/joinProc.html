@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../resources/css/join.css">
+    <script src="../resources/js/jquery-3.6.0.min.js"></script>
+    <script src="../resources/js/join.js"></script>
+</head>
+<body class="tc">
+<div id="d1" class="dib bd1 bOrange w600">
+    <h4 class="tc dib bd0 fRed bShdw10" id="h4">회원정보</h4>
+</div>
+</body>
+<script>
+    var txt = $(location).attr('href');
+    var result = txt.substring(txt.indexOf('?') + 1);
+    result = result.split('&');
+
+    for (var i = 0; i < result.length; i++) {
+        $('#d1').append('<p>' + result[i].substring(0, result[i].indexOf('=')) + ' : ' + result[i].substring(result[i].indexOf('=') + 1) + '</p>');
+    }
+</script>
+</html>

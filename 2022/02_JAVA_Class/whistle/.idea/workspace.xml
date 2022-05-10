@@ -7,18 +7,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a44d25ad-3d38-4a94-b2b1-1272cbc73a92" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/tomcat_servlet.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/githrd/test/MainTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/../html/src/main/webapp/black/hw/dt/joinProc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../html/src/main/webapp/black/hw/joinProc.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../html/src/main/webapp/black/hw/resources/js/join.js" beforeDir="false" afterPath="$PROJECT_DIR$/../html/src/main/webapp/black/hw/resources/js/join.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testyyy/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testyyy/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testyyy/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testyyy/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testyyy/testyyy.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/whistle.iml" beforeDir="false" afterPath="$PROJECT_DIR$/whistle.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,9 +61,9 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/jstl-api-1.2.jar" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="project.structure.last.edited" value="패싯" />
+    <property name="project.structure.last.edited" value="모듈" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -177,6 +175,7 @@
       <updated>1651798073983</updated>
       <workItem from="1651798079080" duration="8681000" />
       <workItem from="1651808574244" duration="3591000" />
+      <workItem from="1652057039398" duration="1009000" />
     </task>
     <servers />
   </component>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<link rel="stylesheet" href="../resources/css/join.css">
+	<script src="../resources/js/jquery-3.6.0.min.js"></script>
+</head>
+<style>
+
+</style>
+</head>
+<body>
+	<div class="content">
+		<div class="inline">
+			<div class="header">
+				회원가입
+			</div><br>
+			<form name="frm" id="frm" method="GET" action="joinProc.pink" >
+				<div class="content">
+					<label for="name">회원이름 : </label>
+					<input type="text" id="name" name="name">
+				</div><br>
+				<div class="content">
+					<label for="id">아 이 디 : </label>
+					<input type="text" id="id" name="id">
+					<button type="button">id check</button>
+				</div><br>
+				<div class="content">
+					<label for="pw">비밀번호 : </label>
+					<input type="password" id="pw" name="pw">
+				</div><br>
+				<div class="content">
+					<label for="pwck">PW 확인 : </label>
+					<input type="password" id="pwck" name="pwck">
+					<p id="pwis" class="hidden"></p> 
+				</div><br>
+				
+					
+				<div class="content">
+					<label for="mail">회원메일 : </label>
+					<input type="text" id="mail" name="mail">
+				</div><br>
+				<div class="content">
+					<label for="tel">전화번호 : </label>
+					<input type="text" id="tel" name="tel">
+				</div><br>
+				<div class="content">
+					<label for="gen" id="lgen">회원성별 : </label>
+					<div class="gen">
+						<div>
+							<input type="radio" id="gen" name="gen" value="M" ><span>남자</span>
+						</div>
+						<div>
+							<input type="radio" id="gen1" name="gen" value="F" ><span>여자</span>
+						</div>
+					</div>
+				</div><br>
+				
+				<div>
+					<label id="avtla" for="avt">아바타 : </label>
+					<div class="inline1">
+						<div class="avtmainblock" id="avtblock1">
+							<div class="avtblock">
+								<div class="avtsubblock">
+									<img src="../resources/img/avatar/img_avatar1.png">
+								</div>
+								<div>
+									<input type="radio" name="avt" id="avt1" value="avt1">
+								</div>
+							</div>
+							<div class="avtblock">
+								<div class="avtsubblock">
+									<img src="../resources/img/avatar/img_avatar2.png">
+								</div>
+								<div>
+									<input type="radio" name="avt" id="avt2" value="avt2">
+								</div>
+							</div>
+							<div class="avtblock">
+								<div class="avtsubblock">
+									<img src="../resources/img/avatar/img_avatar3.png">
+								</div>
+								<div>
+									<input type="radio" name="avt" id="avt3" value="avt3">
+								</div>
+							</div>
+						</div>
+							
+						<div class="avtmainblock" id="avtblock2">
+							<div class="avtblock">
+								<div class="avtsubblock">
+									<img src="../resources/img/avatar/img_avatar4.png">
+								</div>
+								<div>
+									<input type="radio" name="avt" id="avt4" value="avt4">
+								</div>
+							</div>
+							<div class="avtblock">
+								<div class="avtsubblock">
+									<img src="../resources/img/avatar/img_avatar5.png">
+								</div>
+								<div>
+									<input type="radio" name="avt" id="avt5" value="avt5">
+								</div>
+							</div>
+							<div class="avtblock">
+								<div class="avtsubblock">
+									<img src="../resources/img/avatar/img_avatar6.png">
+								</div>
+								<div>
+									<input type="radio" name="avt" id="avt6" value="avt6">
+								</div>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+				
+			</form>
+				<div class="but">
+					<button type="reset" id="rbtn">RESET</button>
+					<button type="button" id="hbtn">HOME</button>
+					<button type="button" id="jbtn">JOIN</button>
+				</div>
+		</div>
+	</div>
+	<script src="../resources/js/join.js"></script>
+</body>
+</html>
