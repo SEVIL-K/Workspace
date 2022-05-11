@@ -7,16 +7,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a44d25ad-3d38-4a94-b2b1-1272cbc73a92" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/../html/src/main/webapp/black/hw/dt/joinProc.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../html/src/main/webapp/black/hw/joinProc.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../html/src/main/webapp/black/hw/resources/js/join.js" beforeDir="false" afterPath="$PROJECT_DIR$/../html/src/main/webapp/black/hw/resources/js/join.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../testyyy/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../testyyy/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../testyyy/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../testyyy/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../testyyy/testyyy.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/whistle.iml" beforeDir="false" afterPath="$PROJECT_DIR$/whistle.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/jsp02.txt" beforeDir="false" afterPath="$PROJECT_DIR$/doc/jsp02.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/whistle/com/githrd/test/MainTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/whistle/com/githrd/test/MainTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/githrd/test/MainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/githrd/test/MainTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/githrd/test/MainTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/githrd/test/MainTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/test/day02/test00.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/test/day02/test00.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/test/day02/test01.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/test/day02/test01.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,9 +24,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="CSS File" />
         <option value="Jsp File" />
+        <option value="JavaScript File" />
+        <option value="AnnotationType" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -55,21 +55,23 @@
   </component>
   <component name="PropertiesComponent">
     <property name="Downloaded.Files.Path.Enabled" value="false" />
-    <property name="Repository.Attach.Annotations" value="true" />
+    <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
-    <property name="Repository.Attach.Sources" value="true" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/jstl-api-1.2.jar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/WEB-INF/lib" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="project.structure.last.edited" value="모듈" />
+    <property name="project.structure.last.edited" value="라이브러리" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Workspace\2022\02_JAVA_Class\whistle\web\WEB-INF\lib" />
+      <recent name="C:\Workspace\2022\02_JAVA_Class\whistle\lib" />
       <recent name="C:\Workspace\2022\02_JAVA_Class\whistle\src" />
     </key>
   </component>
@@ -78,10 +80,11 @@
       <option name="COMMON_VM_ARGUMENTS" value="-Dfile.encording=UTF-8" />
       <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
       <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="whistle:war exploded">
           <settings>
-            <option name="CONTEXT_PATH" value="/" />
+            <option name="CONTEXT_PATH" value="/whistle" />
           </settings>
         </artifact>
       </deployment>
@@ -175,7 +178,7 @@
       <updated>1651798073983</updated>
       <workItem from="1651798079080" duration="8681000" />
       <workItem from="1651808574244" duration="3591000" />
-      <workItem from="1652057039398" duration="1009000" />
+      <workItem from="1652057039398" duration="18757000" />
     </task>
     <servers />
   </component>
