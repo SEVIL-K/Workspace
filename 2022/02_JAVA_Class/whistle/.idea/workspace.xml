@@ -8,13 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a44d25ad-3d38-4a94-b2b1-1272cbc73a92" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/jsp02.txt" beforeDir="false" afterPath="$PROJECT_DIR$/doc/jsp02.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/whistle/com/githrd/test/MainTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/whistle/com/githrd/test/MainTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/githrd/test/MainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/githrd/test/MainTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/githrd/test/MainTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/githrd/test/MainTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test/day02/test00.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/test/day02/test00.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test/day02/test01.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/test/day02/test01.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,6 +172,7 @@
       <workItem from="1651798079080" duration="8681000" />
       <workItem from="1651808574244" duration="3591000" />
       <workItem from="1652057039398" duration="18757000" />
+      <workItem from="1652229622236" duration="2431000" />
     </task>
     <servers />
   </component>
