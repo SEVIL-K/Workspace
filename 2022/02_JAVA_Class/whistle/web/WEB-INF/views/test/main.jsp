@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>WhistleMain</title>
 <link rel="stylesheet" type="text/css" href="/whistle/resources/css/w3.css">
-<link rel="stylesheet" type="text/css" href="/whistle/resources/css/kingdom.css">
+<link rel="stylesheet" type="text/css" href="/whistle/resources/css/base.css">
 <script type="text/javascript" src="/whistle/resources/js/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="/whistle/resources/js/main.js"></script>
 <style>

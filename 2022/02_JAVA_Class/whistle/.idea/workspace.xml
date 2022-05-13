@@ -8,6 +8,22 @@
   <component name="ChangeListManager">
     <list default="true" id="a44d25ad-3d38-4a94-b2b1-1272cbc73a92" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/jsp04.txt" beforeDir="false" afterPath="$PROJECT_DIR$/doc/jsp04.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/jsp05.txt" beforeDir="false" afterPath="$PROJECT_DIR$/doc/jsp05.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/test 요청설계.txt" beforeDir="false" afterPath="$PROJECT_DIR$/doc/test 요청설계.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/githrd/test/dao/MemberDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/githrd/test/dao/MemberDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/githrd/test/db/JenyJDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/githrd/test/db/JenyJDBC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/githrd/test/sql/MemberSQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/githrd/test/sql/MemberSQL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/githrd/test/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/githrd/test/Login.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/githrd/test/LoginProc.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/githrd/test/LoginProc.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/githrd/test/Logout.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/githrd/test/Logout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/githrd/test/db/JenyJDBC.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/githrd/test/db/JenyJDBC.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/githrd/test/sql/MemberSQL.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/githrd/test/sql/MemberSQL.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/test/main.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/test/main.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/whistle/main.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/whistle/main.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/whistle/member/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/whistle/member/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/resources/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/resources/css/base.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,9 +35,9 @@
       <list>
         <option value="CSS File" />
         <option value="Jsp File" />
-        <option value="JavaScript File" />
         <option value="AnnotationType" />
         <option value="Class" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -173,6 +189,7 @@
       <workItem from="1651808574244" duration="3591000" />
       <workItem from="1652057039398" duration="18757000" />
       <workItem from="1652229622236" duration="2431000" />
+      <workItem from="1652317523032" duration="7788000" />
     </task>
     <servers />
   </component>
