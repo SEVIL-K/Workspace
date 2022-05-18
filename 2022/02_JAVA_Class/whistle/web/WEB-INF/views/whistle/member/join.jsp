@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>Whistle Join</title>
 <link rel="stylesheet" type="text/css" href="/whistle/resources/css/w3.css">
-<link rel="stylesheet" type="text/css" href="/whistle/resources/css/base.css">
+<link rel="stylesheet" type="text/css" href="/whistle/resources/css/user.css">
 <script type="text/javascript" src="/whistle/resources/js/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="/whistle/resources/js/whistle/join.js"></script>
 <style type="text/css">
@@ -23,6 +23,19 @@
 		display: none;
 	}
 	
+	label.s3 {
+		position: relative;
+		top: 5px;
+		font-size: 14pt;
+		font-weight: normal;
+		opacity: 0.7;
+	}
+	
+	#gen label {
+		position: relative;
+		top: 2px;
+		left: 7px;
+	}
 </style>
 <script type="text/javascript">
 
@@ -41,8 +54,10 @@
 			<div>
 				<label for="id" class="w3-col s3 w3-right-align clrgrey ft14 mgb10">아 이 디 : </label>
 				<div class="w3-col s8 mgl10">
-					<input type="text" name="id" id="id" class="w3-col w3-input w3-border mgb10" style="width: 338px;">
-					<div class="w3-col w100 w3-button w3-blue w3-right" id="idck">id check</div>
+						<div class="w3-col w100 w3-button w3-blue w3-right pd9-16" id="idck">id check</div>
+					<div class="w3-rest pdr10">
+						<input type="text" name="id" id="id" class="w3-input w3-border mgb10">
+					</div>
 					<span class="w3-col mgb10 w3-center" id="idmsg"></span>
 				</div>
 			</div>
@@ -70,7 +85,7 @@
 			</div>
 			<div>
 				<label class="w3-col s3 w3-right-align clrgrey ft14 mgb10">회원성별 : </label>
-				<div class="w3-col s8 mgl10 mgb10 w3-center">
+				<div class="w3-col s8 mgl10 mgb10 w3-center" id="gen">
 					<div class="w3-half">
 						<input type="radio" name="gen" id="mgen" class="w3-radio" value="M"> <label for="mgen"> 남자</label>
 					</div>
