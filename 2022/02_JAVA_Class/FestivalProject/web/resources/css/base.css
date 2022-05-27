@@ -1,0 +1,167 @@
+.hidden {
+	display: none;
+}
+.overhidden {
+	overflow: hidden;
+}
+.leftclear {
+	clear: left;
+}
+.rightclear {
+	clear: right;
+}
+
+.content {
+	text-align: center;
+}
+.box {
+	display: inline-block;
+}
+.box65 {
+	display: inline-block;
+	width: 650px;
+}
+
+.wh100 {
+	width: 100px;
+	height: 100px;
+}
+
+.ml10 {
+	margin-left: 10px;
+}
+
+/* 너비 */
+.p50 {
+	width: 50%;
+}
+.mx650 {
+	max-width: 650px;
+}
+.mn600 {
+	min-width: 600px;
+}
+
+/* margin */
+.ml10 {
+	margin-left: 10px;
+}
+.mb5 {
+	margin-bottom: 5px;
+}
+/* padding */
+.pd10 {
+	padding: 10px;
+}
+
+.pd20 {
+	padding: 20px;
+}
+.pdl10  {
+	padding-left: 10px;
+}
+.pdr10  {
+	padding-right: 10px;
+}
+
+/* 칼라 */
+.blue {
+	background-color: #2196F3;
+	/*
+		16진수 칼라표기법
+		
+		16진수 코드를 여섯개를 나열해서 표현하는 방법
+			
+			앞 두자리 : 빨강
+			중간 두자리 : 초록
+			뒤 두자리 : 파랑
+			
+			0 ~ 9
+			10 ~ 15 :  a,  b,  c,  d,  e,  f
+					  10, 11, 12, 13, 14, 15
+			로 표현한다.
+			
+			예 ]
+				red : #ff0000
+				blue : #0000ff
+				==> 이때 대소문자는 구분하지 않는다.
+			
+			
+		rgb[a] 숫자로 표현
+			
+			==> 0 ~ 255 사이의 숫자를 세개를 나열해서 표현하는 방식
+				맨 뒤의 알파값은 생략할 수도 있는데
+				생략하면 투명도가 불투명하게 된다.
+				사용하는 값은 0 ~ 1 사이의 실수로 표현한다.
+				1로 갈수록 불투명해진다.
+				
+				예 ]
+					red : rgb(255, 0, 0)
+					투명도가 반쯤 있는 빨강의 경우는
+						 rgba(255, 0, 0, 0.5)
+				
+	*/
+}
+.green {
+	background-color: #4CAF50;
+}
+.pink {
+	background-color: #e91e63;
+}
+.deeporange {
+	background-color: #ff5722;
+}
+.indigo {
+	background-color: #3f51b5;
+}
+/* 가로사이즈 */
+.w50 {
+	width: 50px;
+}
+.w100 {
+	width: 100px;
+}
+.w135 {
+	width: 135px;
+}
+.w150 {
+	width: 150px;
+}
+.w170 {
+	width: 170px;
+}
+.w200 {
+	width: 200px;
+}
+
+/* 아바타 관련 클래스 */
+.avtbox {
+	width: 148px;
+	height: 148px;
+	border: 1px solid gray;
+}
+
+.avtimg {
+	width: 100%;
+	height: auto;
+}
+
+.blogo {
+	width: 300px;
+	height:auto;
+	margin-top: 100px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

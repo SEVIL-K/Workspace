@@ -1,0 +1,28 @@
+--------------------------------------------------------------
+# 축제정보 게시판 보기요청
+요청내용	: 	/festival/info/finfo.fes
+파라미터	:	무
+컨트롤러	: 	com.githrd.festival.controller.info.InfoForm
+뷰			:	/WEB-INF/views/info/finfo.jsp
+--------------------------------------------------------------
+
+
+--------------------------------------------------------------
+# 축제정보 디테일 보기요청
+요청내용	: 	/festival/info/finfodetail.fes
+파라미터	:	FNO, nowPage
+컨트롤러	: 	com.githrd.festival.controller.info.InfoDetail
+뷰			:	/WEB-INF/views/info/finfodetail.jsp
+--------------------------------------------------------------
+
+
+
+
+
+
+
+
+FinfoSQL
+FinfoDao
+FestivalVO 추가
+InfoForm
