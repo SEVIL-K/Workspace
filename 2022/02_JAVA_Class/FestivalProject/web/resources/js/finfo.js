@@ -1,3 +1,8 @@
+/*
+    작성자 : 윤한기
+    작성일 : 22-05-22
+ */
+
 $(document).ready(function(){
     /* 페이지 버튼 클릭이벤트 처리 */
     $('.pbtn').click(function(){
@@ -21,11 +26,4 @@ $(document).ready(function(){
         $('#schstr').val(str);
         $('#frm').submit();
     });
-
-/*
-    1. asdf 검색
-    2. 단어 넘겨주고
-    3. 단어를 sql에 넣어서 내놓으라고 하고
-    4. 받아온걸 뿌려주고
-    */
 });

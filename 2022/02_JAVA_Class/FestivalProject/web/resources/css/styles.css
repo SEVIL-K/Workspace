@@ -11784,13 +11784,16 @@ section#contact form#contactForm :-ms-input-placeholder {
 
 
 
-/*
-  finfodetail.jsp 에 사용된 부분
-      - 윤한기 -
 
+/*
+    작성자 : 윤한기
+    작성일 : 22-05-22
+    finfodetail.jsp 에 사용된 부분
 */
+/*-----------------------------------------*/
 div ul li strong{
   display: inline-block;
   width:140px;
   padding-left:15px;
 }
+/*-----------------------------------------*/

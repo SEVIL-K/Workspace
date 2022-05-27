@@ -1,4 +1,8 @@
 package com.githrd.festival.controller.info;
+/*
+    작성자 : 윤한기
+    작성일 : 22-05-22
+*/
 
 import java.io.*;
 import java.util.ArrayList;

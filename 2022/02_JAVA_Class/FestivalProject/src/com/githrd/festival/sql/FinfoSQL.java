@@ -1,7 +1,7 @@
 package com.githrd.festival.sql;
 /*
-    Created by HG on 2022-05-26
-    
+    작성자 : 윤한기
+    작성일 : 22-05-22
 */
 
 public class FinfoSQL {

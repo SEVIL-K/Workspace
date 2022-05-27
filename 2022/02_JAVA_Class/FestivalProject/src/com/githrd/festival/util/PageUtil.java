@@ -1,7 +1,7 @@
 package com.githrd.festival.util;
 /*
-    Created by HG on 2022-05-26
-    
+    작성자 : 윤한기
+    작성일 : 22-05-22
 */
 public class PageUtil {
     private int nowPage = 1; //현재 보고있는 페이지

@@ -1,3 +1,8 @@
+<%--
+    작성자 : 윤한기
+    작성일 : 22-05-22
+--%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>

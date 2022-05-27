@@ -10,8 +10,12 @@ public class FestivalVO {
     private Date hedate;
 
 
-
-//  축제정보에 사용하려고 추가한 부분 - 윤한기-
+/*
+    작성자 : 윤한기
+    작성일 : 22-05-22
+*/
+//  축제정보에 사용하려고 추가한 부분
+//------------------------------------------------------------
     private int rsco;
     private String idir;
 
@@ -19,7 +23,7 @@ public class FestivalVO {
     public void setRsco(int rsco) {this.rsco = rsco;}
     public String getIdir() {return idir;}
     public void setIdir(String idir) {this.idir = idir;}
-//
+//------------------------------------------------------------
 
 
     public int getFno() {
